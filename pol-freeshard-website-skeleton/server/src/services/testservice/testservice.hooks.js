@@ -3,8 +3,16 @@
 module.exports = {
   before: {
     all: [],
-    find: [],
-    get: [],
+    find: [
+      (context) => {
+        console.log('[Testservice] Find method triggered in the backend');
+      }
+    ],
+    get: [
+      (context) => {
+        console.log('[Testservice] Get method triggered in the backend');
+      } 
+    ],
     create: [],
     update: [],
     patch: [],

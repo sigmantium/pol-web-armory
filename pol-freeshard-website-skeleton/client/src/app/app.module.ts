@@ -3,23 +3,23 @@ import { NgModule } from '@angular/core';
 
 // Services
 import { ApiService } from './api.service';
-import { ArmoryService } from './armory/armory.service';
+import { TestserviceService } from './testservice/testservice.service';
 
 // Components
 import { AppComponent } from './app.component';
-import { ArmoryComponent } from './armory/armory.component';
+import { TestserviceComponent } from './testservice/testservice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArmoryComponent
+    TestserviceComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [
     ApiService,
-    ArmoryService
+    TestserviceService
   ],
   bootstrap: [AppComponent]
 })

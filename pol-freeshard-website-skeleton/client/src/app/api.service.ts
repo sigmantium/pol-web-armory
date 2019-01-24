@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import * as io from 'socket.io-client';
 import feathers from '@feathersjs/client';
-
 import rest from '@feathersjs/rest-client';
 
 @Injectable({
