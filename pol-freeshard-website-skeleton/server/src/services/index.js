@@ -1,5 +1,7 @@
 const armory = require('./armory/armory.service.js');
+const testservice = require('./testservice/testservice.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(armory);
+  app.configure(testservice);
 };
