@@ -38,17 +38,7 @@ export class TestserviceService {
   }
 
   private apiGetAll(): Promise<TestService[]> {
-    return this.service.find({
-      $sort: { id: -1 },
-      $limit: 1000
-    }).then((results) => {
-      if (results && results.length > 0) {
-        console.log('GETTING SOMETHING!');
-        return results.map(item => new TestService(item));
-      }
-
-      return [];
-    });
+    return this.service.find();
   }
 
 

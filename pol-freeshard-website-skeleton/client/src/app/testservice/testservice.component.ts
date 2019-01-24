@@ -22,10 +22,15 @@ export class TestserviceComponent implements OnInit {
     this.testservices = await this.testserviceService.getAll();
   }
 
-  onSubmit() {
-    console.log('Submit!');
+  onGet() {
     return this.testserviceService
       .get('5c49f5e9d937782d7833e85f')
-      .then((result) => console.log('Result: ' + result));
+      .then((result) => console.log('Results: ' + JSON.stringify(result)));
+  }
+
+  onFind() {
+    return this.testserviceService
+      .getAll()
+      .then((result) => console.log('Results: ' + JSON.stringify(result)));
   }
 }
