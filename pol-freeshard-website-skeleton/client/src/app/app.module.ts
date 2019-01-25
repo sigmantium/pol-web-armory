@@ -8,11 +8,13 @@ import { TestserviceService } from './testservice/testservice.service';
 // Components
 import { AppComponent } from './app.component';
 import { TestserviceComponent } from './testservice/testservice.component';
+import { CanvasComponent } from './components/canvas/canvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestserviceComponent
+    TestserviceComponent,
+    CanvasComponent
   ],
   imports: [
     BrowserModule
