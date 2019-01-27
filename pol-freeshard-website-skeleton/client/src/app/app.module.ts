@@ -1,27 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Materials
+import { MatSelectModule } from '@angular/material/select';
 
 // Services
 import { ApiService } from './api.service';
-import { TestserviceService } from './testservice/testservice.service';
+import { CharacterService } from './services/character.service';
 
 // Components
 import { AppComponent } from './app.component';
-import { TestserviceComponent } from './testservice/testservice.component';
 import { CanvasComponent } from './components/canvas/canvas.component';
+import { ArmoryComponent } from './components/armory/armory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestserviceComponent,
-    CanvasComponent
+    CanvasComponent,
+    ArmoryComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [
     ApiService,
-    TestserviceService
+    CharacterService
   ],
   bootstrap: [AppComponent]
 })

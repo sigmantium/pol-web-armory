@@ -1,0 +1,19 @@
+
+<form >
+    <mat-form-field>
+        <mat-select placeholder="Select a character" [(ngModel)]="selectedCharacter" name="food" (selectionChange)="valueChanged($event)">
+          <mat-option *ngFor="let char of characters" [value]="char.name">
+              {{ char.name }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+<p>Player name: {{ selectedCharacter }}</p>
+
+<app-canvas></app-canvas>
+
+<p>Skills:</p>
+<p *ngFor="let skill of characters; trackBy: characterSkills">
+  {{ skill.skillName }}
+</p>

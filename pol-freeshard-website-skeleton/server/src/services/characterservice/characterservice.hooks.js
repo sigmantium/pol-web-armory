@@ -5,12 +5,12 @@ module.exports = {
     all: [],
     find: [
       (context) => {
-        console.log('[Testservice] Find method triggered in the backend');
+        console.log('[CharacterService] Find method triggered in the backend');
       }
     ],
     get: [
       (context) => {
-        console.log('[Testservice] Get method triggered in the backend');
+        console.log('[CharacterService] Get method triggered in the backend');
       } 
     ],
     create: [],
