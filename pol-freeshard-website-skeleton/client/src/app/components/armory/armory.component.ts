@@ -23,7 +23,7 @@ export class ArmoryComponent implements OnInit {
   private characters: Character[];
   public selectedCharacter: string;
 
-  parentSubject: Subject<Equipment[]> = new Subject();
+  armorySubject: Subject<Equipment[]> = new Subject();
 
   constructor(
     private characterService: CharacterService
@@ -35,7 +35,7 @@ export class ArmoryComponent implements OnInit {
 
   public valueChanged() {
     this.character = this.characters.filter(char => char.name === this.selectedCharacter);
-    this.parentSubject.next(this.character[0].equipment);
+    this.armorySubject.next(this.character[0].equipment);
   }
 
   public getStats() {
