@@ -24,4 +24,8 @@ export class Character {
         this.skills = data.skills || null;
         this.equipment = data.equipment || null;
     }
+
+    getSkills() {
+        return this.skills;
+    }
 }

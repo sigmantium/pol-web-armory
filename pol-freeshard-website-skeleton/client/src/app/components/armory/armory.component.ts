@@ -17,14 +17,9 @@ export interface Food {
   styleUrls: ['./armory.component.css']
 })
 export class ArmoryComponent implements OnInit {
+  private character: Character[];
   private characters: Character[];
   public selectedCharacter: string;
-
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
 
   constructor(
     private characterService: CharacterService
@@ -34,12 +29,20 @@ export class ArmoryComponent implements OnInit {
     this.characters = await this.characterService.getAll();
   }
 
-  characterSkills(index, character) {
-    return character ? character.skills[index].skillName : undefined;
+  public valueChanged() {
+    this.character = this.characters.filter(char => char.name === this.selectedCharacter);
   }
 
-
-  valueChanged($event) {
-    console.log('Testing: ' + $event.value);
+  public getStats() {
+    return this.character[0].stats;
   }
+
+  public getSkills() {
+    return this.character[0].skills;
+  }
+
+  public getEquipment() {
+    return this.character[0].equipment;
+  }
+
 }

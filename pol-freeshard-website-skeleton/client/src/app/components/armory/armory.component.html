@@ -1,4 +1,5 @@
 
+<!-- The Select Form -->
 <form >
     <mat-form-field>
         <mat-select placeholder="Select a character" [(ngModel)]="selectedCharacter" name="food" (selectionChange)="valueChanged($event)">
@@ -9,11 +10,35 @@
     </mat-form-field>
 </form>
 
-<p>Player name: {{ selectedCharacter }}</p>
+<!-- The player name -->
+<p *ngIf="selectedCharacter">Player name: {{ selectedCharacter }}</p>
 
-<app-canvas></app-canvas>
+<!-- Canvas -->
+<app-canvas></app-canvas><br/><br/>
 
-<p>Skills:</p>
-<p *ngFor="let skill of characters; trackBy: characterSkills">
-  {{ skill.skillName }}
-</p>
+<!-- Show Character Information -->
+<ng-container *ngIf="selectedCharacter">
+    <!-- Stats -->
+    <b>Stats:</b>
+    <p *ngFor="let item of getStats() | keyvalue">
+        {{item.value.attributeName}}: {{item.value.attributeValue}} 
+    </p><br/>
+
+    <!-- Skills -->
+    <b>Skills:</b>
+    <p *ngFor="let item of getSkills() | keyvalue">
+        {{item.value.skillName}}: 
+        <ng-container *ngIf="!item.value.skillValue.$numberDecimal; else parseDouble">
+            {{item.value.skillValue}}
+        </ng-container>
+        <ng-template #parseDouble>
+            {{item.value.skillValue.$numberDecimal}}
+        </ng-template>
+    </p><br/>
+
+    <!-- Equipment -->
+    <b>Equipment:</b>
+    <p *ngFor="let item of getEquipment() | keyvalue">
+        objtype: {{item.value.objtype}}, color: {{item.value.color}}, layer: {{item.value.layer}} 
+    </p>
+</ng-container>
