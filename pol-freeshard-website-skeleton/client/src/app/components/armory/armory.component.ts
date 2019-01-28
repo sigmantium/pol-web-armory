@@ -30,9 +30,7 @@ export class ArmoryComponent implements OnInit {
   }
 
   valueChanged() {
-    this.character = this.characters.filter(char => {
-      return char.name === this.selectedCharacter;
-    });
+    this.character = this.characters.filter(char => char.name === this.selectedCharacter);
 
     this.getStats();
     this.getSkills();
