@@ -103,6 +103,8 @@ function readFile(inPath, useHeader, regex) {
           //data.push(stats);
           outData.push(data); // push it to the outData.
           data = []; // clear the data array.
+          line0 = [];
+          line1 = [];
         }
 			}
 		});
