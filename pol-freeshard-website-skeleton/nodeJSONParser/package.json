@@ -1,0 +1,23 @@
+{
+  "name": "JSONParser",
+  "version": "1.0.0",
+  "description": "JSONParser ",
+  "main": "app.js",
+  "dependencies": {
+    "split": "^1.0.1",
+    "text-2-json": "^1.0.4",
+    "twit": "^2.2.11",
+    "underscore": "^1.9.1",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js --i=pcs.txt  --o=pcs.json --h",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JSON Parse"
+  ],
+  "author": "Daniel Westlin",
+  "license": "ISC"
+}

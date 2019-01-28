@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#define QUOTE "\""
 
 #include "Equipment.h"
 #include "Skills.h"
@@ -34,4 +35,5 @@ public:
 	void addEquipment(Equipment equipment) { this->equipments.push_back(equipment); }
 	void addSkills(Skills skills) { this->skills.push_back(skills); }
 	void addStats(Stats stats) { this->stats.push_back(stats); }
+
 };
