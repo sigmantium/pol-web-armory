@@ -14,7 +14,7 @@
 <p *ngIf="selectedCharacter">Player name: {{ selectedCharacter }}</p>
 
 <!-- Canvas -->
-<app-canvas></app-canvas><br/><br/>
+<app-canvas [armorySubject]="armorySubject"></app-canvas><br/><br/>
 
 <!-- Show Character Information -->
 <ng-container *ngIf="selectedCharacter">

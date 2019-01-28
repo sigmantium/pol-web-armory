@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 // Models
 import { Character } from '../../models/character.model';
+import { Equipment } from '../../models/equipment.model';
 
 // Services
 import { CharacterService } from '../../services/character.service';
+import { Subject } from 'rxjs';
 
 export interface Food {
   value: string;
@@ -21,6 +23,8 @@ export class ArmoryComponent implements OnInit {
   private characters: Character[];
   public selectedCharacter: string;
 
+  parentSubject: Subject<Equipment[]> = new Subject();
+
   constructor(
     private characterService: CharacterService
   ) { }
@@ -31,6 +35,7 @@ export class ArmoryComponent implements OnInit {
 
   public valueChanged() {
     this.character = this.characters.filter(char => char.name === this.selectedCharacter);
+    this.parentSubject.next(this.character[0].equipment);
   }
 
   public getStats() {

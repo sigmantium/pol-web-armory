@@ -1,13 +1,18 @@
 import {
-  Component, OnInit, Input, ElementRef, AfterViewInit, ViewChild
+  Component, OnInit, OnDestroy, Input, ElementRef, AfterViewInit, ViewChild
 } from '@angular/core';
+import { Equipment } from 'src/app/models/equipment.model';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.css']
 })
-export class CanvasComponent implements AfterViewInit {
+export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  @Input()
+  armorySubject: Subject<Equipment[]>;
 
   @ViewChild('canvas')
   public canvas: ElementRef;
@@ -19,6 +24,17 @@ export class CanvasComponent implements AfterViewInit {
   public height = 237;
 
   private cx: CanvasRenderingContext2D;
+
+  ngOnInit() {
+    this.armorySubject.subscribe(event => {
+      console.log('Event incoming: ' + JSON.stringify(event));
+      // Re-render
+    });
+  }
+
+  ngOnDestroy() {
+    this.armorySubject.unsubscribe();
+  }
 
   public ngAfterViewInit() {
     // Get context
