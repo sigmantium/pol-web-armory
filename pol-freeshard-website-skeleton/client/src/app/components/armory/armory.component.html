@@ -9,11 +9,37 @@
     </mat-form-field>
 </form>
 
-<p>Player name: {{ selectedCharacter }}</p>
+<p *ngIf="selectedCharacter">Player name: {{ selectedCharacter }}</p>
 
+<!-- CANVAS -->
 <app-canvas></app-canvas>
+<br/>
+<!-- PARSE THE STATS -->
+<ng-container *ngIf="selectedCharacter">
+    <b>Stats:</b>
+    <p *ngFor="let item of getStats() | keyvalue">
+        {{item.value.attributeName}}: {{item.value.attributeValue}} 
+    </p>
+</ng-container>
 
-<p>Skills:</p>
-<p *ngFor="let skill of characters; trackBy: characterSkills">
-  {{ skill.skillName }}
-</p>
+<!-- PARSE THE SKILLS -->
+<ng-container *ngIf="selectedCharacter">
+    <b>Skills:</b>
+    <p *ngFor="let item of getSkills() | keyvalue">
+        {{item.value.skillName}}: 
+        <ng-container *ngIf="!item.value.skillValue.$numberDecimal; else parseDouble">
+            {{item.value.skillValue}}
+        </ng-container>
+        <ng-template #parseDouble>
+            {{item.value.skillValue.$numberDecimal}}
+        </ng-template>
+    </p>
+</ng-container>
+
+<!-- PARSE THE EQUIPMENT -->
+<ng-container *ngIf="selectedCharacter">
+    <b>Equipment:</b>
+    <p *ngFor="let item of getEquipment() | keyvalue">
+        objtype: {{item.value.objtype}}, color: {{item.value.color}}, layer: {{item.value.layer}} 
+    </p>
+</ng-container>
