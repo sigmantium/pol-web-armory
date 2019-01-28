@@ -29,7 +29,7 @@ export class ArmoryComponent implements OnInit {
     this.characters = await this.characterService.getAll();
   }
 
-  valueChanged() {
+  public valueChanged() {
     this.character = this.characters.filter(char => char.name === this.selectedCharacter);
   }
 
