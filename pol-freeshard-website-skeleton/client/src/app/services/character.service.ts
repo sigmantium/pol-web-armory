@@ -35,18 +35,18 @@ export class CharacterService {
   /**
    * Internal API
    */
-  private apiGet(id: string, query: any = {}): Promise<Character> {
-    return this.service
+  private async apiGet(id: string, query: any = {}): Promise<Character> {
+    return await this.service
       .get(id, query)
-      .then(result => new Character(result.data));
+      .then((result: any) => new Character(result.data));
   }
 
-  private apiGetAll(): Promise<Character[]> {
-    return this.service.find({
+  private async apiGetAll(): Promise<Character[]> {
+    return await this.service.find({
       $limit: 1000
-    }).then((results) => {
+    }).then((results: any) => {
       if (results.data && results.data.length > 0) {
-        return results.data.map(item => new Character(item));
+        return results.data.map((item: any) => new Character(item));
       }
       return [];
     });

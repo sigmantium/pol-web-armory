@@ -3,11 +3,11 @@ export class Equipment {
     color: number;
     layer: number;
 
-    constructor(data) {
+    constructor(data: any) {
         this.setData(data);
     }
 
-    setData(data) {
+    setData(data: any) {
         this.objtype = data.objtype || null;
         this.color = data.color || null;
         this.layer = data.layer || null;
