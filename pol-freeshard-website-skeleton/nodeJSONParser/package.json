@@ -1,9 +1,10 @@
 {
-  "name": "JSONParser",
+  "name": "jsonparser",
   "version": "1.0.0",
   "description": "JSONParser ",
   "main": "app.js",
   "dependencies": {
+    "concat-files": "^0.1.1",
     "split": "^1.0.1",
     "text-2-json": "^1.0.4",
     "twit": "^2.2.11",
@@ -12,8 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js --i=pcs.txt  --o=pcs.json --h",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node merge.js",
+    "test": "node app.js --i=test.txt  --o=pcs.json --h"
   },
   "keywords": [
     "JSON Parse"
