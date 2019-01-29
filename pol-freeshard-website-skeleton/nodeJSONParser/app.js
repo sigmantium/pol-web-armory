@@ -96,6 +96,8 @@ function readFile(inPath, useHeader, regex) {
 		});
 
 	readStream.on('end', function () {
+    // TODO: Tänker att vi här inne samlar ihop alla objekt och använder oss av en array med objektet och stegar igenom varje item och söker i character objektens array för att leta efter "Serial" och därefter pushar in varje item i en array
+    // i det character-objektet. 
 		writeFile(outData, yargs.o);
 	});
 }
