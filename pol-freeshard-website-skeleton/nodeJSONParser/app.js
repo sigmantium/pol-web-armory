@@ -5,9 +5,10 @@ const _ = require('underscore');
 const split = require('split');
 
 
-let line0 = [], line1 = [];
-let stats0 = [], stats1 = [];
-let skills0 = [], skills1 = [];
+let lineName = [], lineValue = [];
+let statsName = [], statsValue = [];
+let skillsName = [], skillsValue = [];
+let data;
 
 let equipments = [];
 let curlyBraces = 0;
@@ -39,14 +40,16 @@ let skillsWords = [
 ];
 
 
+
+
 if(yargs.i && yargs.o) {
-	readFile(yargs.i, (yargs.h == true), yargs.p ? new RegExp(yargs.p, 'g') : new RegExp("[^\\n\\r\\t ]+",'g'));
+	readFile(yargs.i, yargs.p ? new RegExp(yargs.p, 'g') : new RegExp("[^\\n\\r\\t ]+",'g'));
 }
 else {
-	console.log("Expected --i=\<inputFile.txt\> --o=\<inputFile.txt\> --h\<optional use header flag\> --p\<optional regex pattern to match field separator>");
+	console.log("Expected --i=\<inputFile.txt\> --o=\<inputFile.txt\> --p\<optional regex pattern to match field separator>");
 }
 // /[^\t]+/g
-function readFile(inPath, useHeader, regex) {
+function readFile(inPath, regex) {
 
   var outData = [];
 
@@ -69,14 +72,14 @@ function readFile(inPath, useHeader, regex) {
         if(curlyBraces < 2 && excludeWords.indexOf(line[0]) == -1){        
           // If it has a skillword as first value. Insert it into skills array.
           if(skillsWords.indexOf(line[0]) > -1){
-            skills0.push(line[0]);
-            skills1.push(line[1]);
+            skillsName.push(line[0]);
+            skillsValue.push(line[1]);
           }else if(statsWords.indexOf(line[0]) > -1){ // else if it has stats, insert it into stats array.
-            stats0.push(line[0]);
-            stats1.push(line[1]);       
+            statsName.push(line[0]);
+            statsValue.push(line[1]);       
           }else{ // or else to the main array.
-            line0.push(line[0]);
-            line1.push(line[1]);
+            lineName.push(line[0]);
+            lineValue.push(line[1]);
           }     
         }
 
@@ -85,7 +88,7 @@ function readFile(inPath, useHeader, regex) {
         if(curlyBraces == 2){
 
           // create objects of each array.
-          var data = _.object(line0,line1);
+          data = _.object(lineName,lineValue);
 
            // push it to the outData.
           outData.push(data);
@@ -108,12 +111,12 @@ function foundCurlyBraces(line){
 
 function resetValues(){
   data = [];
-  line0 = [];
-  line1 = [];
-  stats0 = [];
-  stats1 =[];
-  skills0 = [];
-  skills1 =[];
+  lineName = [];
+  lineValue = [];
+  statsName = [];
+  statsValue =[];
+  skillsName = [];
+  skillsValue =[];
   curlyBraces = 0;
 }
 
