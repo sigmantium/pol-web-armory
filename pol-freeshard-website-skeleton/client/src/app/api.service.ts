@@ -7,8 +7,8 @@ import rest from '@feathersjs/rest-client';
   providedIn: 'root'
 })
 export class ApiService {
-  private rest;
-  public client;
+  private rest: any;
+  public client: any;
 
   constructor() {
 

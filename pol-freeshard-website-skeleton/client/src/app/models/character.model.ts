@@ -11,11 +11,11 @@ export class Character {
     skills: Skill[];
     equipment: Equipment[];
 
-    constructor(data) {
+    constructor(data: any) {
         this.setData(data);
     }
 
-    setData(data) {
+    setData(data: any) {
         this.id = data._id || null;
         this.account = data.account || null;
         this.serial = data.serial || null;
