@@ -10,14 +10,11 @@ let statsName = [], statsValue = [];
 let skillsName = [], skillsValue = [];
 let data;
 
-let equipments = [];
+let equipmentName = [], equipmentValue = [], equipmentContainer = [];
 let curlyBraces = 0;
 
 let excludeWords = [ 'Character', 'Item', '{','}', '#', 'CProp'];
 
-let equipmentsWords = [
-  
-]
 let statsWords = [
   'Strength', 'Intelligence', 'Dexterity', 'Parry', 'Begging'
 ];
@@ -53,7 +50,7 @@ function readFile(inPath, regex) {
 
   var outData = [];
   var character = 0;
-  var item
+  var item = 0;
 
 	var readStream = fs.createReadStream(inPath)
 		.pipe(split())
@@ -90,7 +87,7 @@ function readFile(inPath, regex) {
           }else if(statsWords.indexOf(line[0]) > -1){ // else if it has stats, insert it into stats array.
             statsName.push(line[0]);
             statsValue.push(line[1]);       
-          }else{ // or else to the main array.
+          } else{ // or else to the main array.
             lineName.push(line[0]);
             lineValue.push(line[1]);
           }     
@@ -100,10 +97,11 @@ function readFile(inPath, regex) {
         // If it has two curly braces, it means that the object is closed. 
         if(curlyBraces == 2){
 
-          // create objects of each array.
           data = _.object(lineName,lineValue);
 
           if(character){
+            
+            data.equipment = [];
             data.skills = [];
             data.stats = [];
   
@@ -112,12 +110,18 @@ function readFile(inPath, regex) {
   
             data.skills.push(skills);
             data.stats.push(stats);
+            outData.push(data);
+          }else if(item){
+            // Iterate through all characters object.
+            for(j in outData){
+              // ..To see if the container value is the same as the Serial. 
+              if(data.Container == outData[j].Serial){  
+                //add it to the equipment array     
+                outData[j].equipment.push(data);
+              }
+            }
           }
-   
-
-           // push it to the outData.
-          outData.push(data);
-          
+  
           resetValues();
         }
 			}
