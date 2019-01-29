@@ -52,6 +52,8 @@ else {
 function readFile(inPath, regex) {
 
   var outData = [];
+  var character = 0;
+  var item
 
 	var readStream = fs.createReadStream(inPath)
 		.pipe(split())
@@ -59,9 +61,20 @@ function readFile(inPath, regex) {
       
 
       line = line.toString().match(regex);
+
+      
      
 
 			if(line){
+
+        if(line == 'Character'){
+          character = 1;
+          item = 0;
+        }
+        else if(line == 'Item'){
+          character = 0;
+          item = 1;
+        }
         
         // A counter to see if the line is within the Character or Item object. 
         if(foundCurlyBraces(line)){
@@ -89,6 +102,18 @@ function readFile(inPath, regex) {
 
           // create objects of each array.
           data = _.object(lineName,lineValue);
+
+          if(character){
+            data.skills = [];
+            data.stats = [];
+  
+            var skills = _.object(skillsName, skillsValue);
+            var stats = _.object(statsName, statsValue);
+  
+            data.skills.push(skills);
+            data.stats.push(stats);
+          }
+   
 
            // push it to the outData.
           outData.push(data);
