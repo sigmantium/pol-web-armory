@@ -3,16 +3,8 @@
 module.exports = {
   before: {
     all: [],
-    find: [
-      (context) => {
-        console.log('[CharacterService] Find method triggered in the backend');
-      }
-    ],
-    get: [
-      (context) => {
-        console.log('[CharacterService] Get method triggered in the backend');
-      } 
-    ],
+    find: [],
+    get: [],
     create: [],
     update: [],
     patch: [],

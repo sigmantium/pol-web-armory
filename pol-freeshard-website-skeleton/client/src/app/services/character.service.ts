@@ -45,7 +45,6 @@ export class CharacterService {
     return this.service.find({
       $limit: 1000
     }).then((results) => {
-      console.log('Results: ' + JSON.stringify(results));
       if (results.data && results.data.length > 0) {
         return results.data.map(item => new Character(item));
       }
