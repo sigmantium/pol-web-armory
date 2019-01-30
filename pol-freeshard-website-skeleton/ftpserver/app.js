@@ -1,6 +1,11 @@
 const FtpSrv = require('ftp-srv');
-
+const fs = require('fs');
 const ftpServer = new FtpSrv('ftp://localhost:21');
+
+const neededFiles = [
+    "pcs.txt",
+    "pcequip.txt"
+];
 
 ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
     if (username === 'test' && password === 'test') {
@@ -14,26 +19,12 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
             } else {
                 console.info(`FTP server: upload successfully received - ${fileName}`); 
 
-                // Wait untill all files are uploaded, then start the parser.
-                let files = [];
-                const neededFiles = ['pcs.txt', 'pcequip.txt'];
-                
-                // Add new filename to array
-                files.push(fileName);
-
-                // Check if all files are received
-                const allFilesReceived = neededFiles.every(filename => {
-                    console.log('Adding filename: ' + filename);
-                    files.includes(filename);
-                });
-
-                if (allFilesReceived) {
-                    // Start parse the files
-                    console.log('Start parse the files!');
-
-                    // Empty array
-                    files = [];
-                } 
+                if (allFilesReceived()) {
+                    console.log('ALL FILES RECEIVED!');
+                    // Start the parsing process
+                } else {
+                    console.log('Still missing files...');
+                }
             }
         });
 
@@ -50,3 +41,16 @@ ftpServer.on('client-error', ({ context, error }) => {
 }); 
 
 ftpServer.listen().then(() => console.log ('Server running at ftp://localhost:21'));
+
+function allFilesReceived() {
+    for (let i = 0; i < neededFiles.length; i++) {
+        if (!fileExists('./' + neededFiles[i])) 
+            return false;
+    }
+
+    return true;
+}
+
+function fileExists(filePath) {
+    return fs.existsSync(filePath);
+}
