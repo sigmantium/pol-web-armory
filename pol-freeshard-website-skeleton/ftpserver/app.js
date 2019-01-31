@@ -38,7 +38,7 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
 
                         // Starting the parser if the text-files is equal.
                         if(isEqual){
-                            console.log("The files isn't equal");
+                            console.log("The files is equal");
                           
                         }else{
                             startParser();
