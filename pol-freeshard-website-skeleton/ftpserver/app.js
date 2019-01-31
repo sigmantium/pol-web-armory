@@ -38,11 +38,12 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
 
                         // Starting the parser if the text-files is equal.
                         if(isEqual){
+                            console.log("The files isn't equal");
+                          
+                        }else{
                             startParser();
                             // Compare the parsed JSON with the existing collection in the MongoDB
                            // modifyCollections();
-                        }else{
-                            console.log("The files isn't equal");
                         }
                         
                     }
