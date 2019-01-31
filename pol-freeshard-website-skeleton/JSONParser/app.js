@@ -10,6 +10,14 @@ let statsName = [], statsValue = [];
 let skillsName = [], skillsValue = [];
 let data;
 
+let skillsN =[];
+let skillsV = [];
+let skillsObject = [];
+
+let statsN = [];
+let statsV = [];
+let statsObject = [];
+
 let equipmentName = [], equipmentValue = [], equipmentContainer = [];
 let curlyBraces = 0;
 
@@ -120,11 +128,15 @@ function readFile(inPath, regex) {
         if (curlyBraces < 2 && excludeWords.indexOf(line[0]) == -1) {
           // If it has a skillword as first value. Insert it into skills array.
           if (skillsWords.indexOf(line[0]) > -1) {
+            var num = parseFloat(line[1]);
+            var skillsV = Number(num);
             skillsName.push(line[0]);
-            skillsValue.push(line[1]);
+            skillsValue.push(Number(parseFloat(line[1])));
           } else if (statsWords.indexOf(line[0]) > -1) { // else if it has stats, insert it into stats array.
+            var number = parseFloat(line[1]);
+            var statsV = Number(number);            
             statsName.push(line[0]);
-            statsValue.push(line[1]);
+            statsValue.push(statsV);
           } else { // or else to the main array.
             lineName.push(line[0]);
             lineValue.push(line[1]);
@@ -140,11 +152,9 @@ function readFile(inPath, regex) {
             data.skills = [];
             data.stats = [];
 
-            const skills = _.object(skillsName, skillsValue);
-            const stats = _.object(statsName, statsValue);
-
-            data.skills.push(skills);
-            data.stats.push(stats);
+            fillStats();
+            fillSkills();
+            
             outData.push(data);
           } else if (item) {
             // Iterate through all characters object.
@@ -171,6 +181,36 @@ function readFile(inPath, regex) {
 
 function foundCurlyBraces(line) {
   return line == '{' || line == '}';
+}
+
+function fillSkills(){
+  
+  for(var i in skillsName){
+    skillsN.push(skillsName[i]);
+    skillsV.push(skillsValue[i]);
+    
+    skillsObject.push(_.object(skillsN,skillsV));
+    data.skills.push(skillsObject);
+
+    // Clearing the arrays for the next loop.
+    skillsN = [];
+    skillsV = [];
+    skillsObject = [];
+  }
+}
+
+function fillStats(){
+  for(var i in statsName){
+    statsN.push(statsName[i]);
+    statsV.push(statsValue[i]);
+    
+    statsObject.push(_.object(statsN,statsV));
+    data.stats.push(statsObject);
+
+    statsN = [];
+    statsV = [];
+    statsObject = [];
+  }  
 }
 
 function resetValues() {

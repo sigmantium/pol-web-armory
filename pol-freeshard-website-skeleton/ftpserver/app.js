@@ -17,6 +17,8 @@ const neededFiles = [
 // Event on the FTP server
 ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
     
+    resolve ({root: './data'});
+    
     if (!checkLoginCredentials(username, password)) {
         return reject(new Error("Bad username or password"));
     }
@@ -67,7 +69,7 @@ function compareFiles(incomingFile, oldFile) {
     if (!filesExists('./' + oldFile)) 
         return 1;
 
-    const isEqual = filecompare(incomingFile, oldFile, (isEqual) => (isEqual) ? 3 : 2 );
+    const isEqual = filecompare(incomingFile, oldFile);
 
     return isEqual;
 }
