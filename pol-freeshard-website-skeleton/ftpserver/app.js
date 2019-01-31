@@ -16,7 +16,6 @@ const neededFiles = [
 
 // Event on the FTP server
 ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
-<<<<<<< HEAD
     
     if (!checkLoginCredentials(username, password)) {
         return reject(new Error("Bad username or password"));
@@ -44,42 +43,6 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
                         break; 
                     case 3: break; // new and old file exists, compared and no difference. Do nothing. Add logging later...
                     default: break; // Error
-=======
-    if (username === 'test' && password === 'test') {
-        // Successful login
-        console.info('User: ' + username + 'successfully logged on.');
-        
-        // Handle incoming files
-        connection.on('STOR', (error, fileName) => { 
-            if (error) {
-                console.error(`FTP server error: could not receive file ${fileName} for upload ${error}`); 
-            } else {
-                console.info(`FTP server: upload successfully received - ${fileName}`); 
-
-                if (allFilesReceived()) {
-                    console.log('ALL FILES RECEIVED!');  
-
-                    // test data that is compared. I've copied them and changed test1.txt by purpose.
-                    var oldFile = '../JSONParser/test.txt';
-                    var newFile = '../JSONParser/test1.txt';
-
-                    var cb = function(isEqual)  {
-                        // Starting the parser if the text-files is equal.
-                        if (isEqual) {
-                            console.log("The files is equal");
-
-                            //TODO: delete new file that isn't going to be parsed.
-                        }else {
-                            startParser();
-                            // Compare the parsed JSON with the existing collection in the MongoDB
-                           // modifyCollections();
-                        }
-                        
-                    }
-                    filecompare(oldFile,newFile,cb);
-                } else {
-                    console.log('Still missing files...');
->>>>>>> 61c29f03080fad67e5c6ce10fb216c515b8f2f5b
                 }
             }
         }
