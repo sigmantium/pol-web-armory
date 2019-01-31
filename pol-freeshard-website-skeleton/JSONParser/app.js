@@ -18,8 +18,7 @@ let statsN = [];
 let statsV = [];
 let statsObject = [];
 
-let equipmentName = [], equipmentValue = [], equipmentContainer = [];
-let curlyBraces = 0;
+let curlyBrackets = 0;
 
 const excludeWords = [
   'Character',
@@ -110,7 +109,6 @@ function readFile(inPath, regex) {
       line = line.toString().match(regex);
 
       if (line) {
-
         if (line == 'Character') {
           character = 1;
           item = 0;
@@ -120,12 +118,12 @@ function readFile(inPath, regex) {
         }
 
         // A counter to see if the line is within the Character or Item object. 
-        if (foundCurlyBraces(line)) {
-          curlyBraces++;
+        if (foundCurlyBrackets(line)) {
+          curlyBrackets++;
         }
 
         // If its in the same object and it doesn't have any of the excluded words on the line.
-        if (curlyBraces < 2 && excludeWords.indexOf(line[0]) == -1) {
+        if (curlyBrackets < 2 && excludeWords.indexOf(line[0]) == -1) {
           // If it has a skillword as first value. Insert it into skills array.
           if (skillsWords.indexOf(line[0]) > -1) {
             var num = parseFloat(line[1]);
@@ -144,7 +142,7 @@ function readFile(inPath, regex) {
         }
 
         // If it has two curly braces, it means that the object is closed. 
-        if (curlyBraces == 2) {
+        if (curlyBrackets == 2) {
           data = _.object(lineName, lineValue);
 
           if (character) {
@@ -179,7 +177,7 @@ function readFile(inPath, regex) {
   });
 }
 
-function foundCurlyBraces(line) {
+function foundCurlyBrackets(line) {
   return line == '{' || line == '}';
 }
 
