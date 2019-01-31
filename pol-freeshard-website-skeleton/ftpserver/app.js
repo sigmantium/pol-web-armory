@@ -1,10 +1,11 @@
 // Native libraries
 const fs = require('fs');
+const filecompare = require('filecompare');
 
 // External libraries
 const FtpSrv = require('ftp-srv');
 const ftpServer = new FtpSrv('ftp://localhost:21');
-const MongoClient = require('mongodb').MongoClient;
+//const MongoClient = require('mongodb').MongoClient;
 
 // Needed files
 const neededFiles = [
@@ -27,11 +28,28 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
 
                 if (allFilesReceived()) {
                     console.log('ALL FILES RECEIVED!');  
-                    // Starting the parser
-                    startParser();
 
-                    // Compare the parsed JSON with the existing collection in the MongoDB
-                    modifyCollections();
+                    // test data that is compared. I've copied them and changed test1.txt by purpose.
+                    var path1 = '../JSONParser/test.txt';
+                    var path2 = '../JSONParser/test1.txt';
+
+                    var cb = function(isEqual)  {
+                        console.log("equal? :" + isEqual);
+
+                        // Starting the parser if the text-files is equal.
+                        if(isEqual){
+                            startParser();
+                            // Compare the parsed JSON with the existing collection in the MongoDB
+                           // modifyCollections();
+                        }else{
+                            console.log("The files isn't equal");
+                        }
+                        
+                    }
+                    filecompare(path1,path2,cb);
+
+                    
+                    
                 } else {
                     console.log('Still missing files...');
                 }
