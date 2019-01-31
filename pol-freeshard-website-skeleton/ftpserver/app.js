@@ -30,27 +30,23 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
                     console.log('ALL FILES RECEIVED!');  
 
                     // test data that is compared. I've copied them and changed test1.txt by purpose.
-                    var path1 = '../JSONParser/test.txt';
-                    var path2 = '../JSONParser/test1.txt';
+                    var oldFile = '../JSONParser/test.txt';
+                    var newFile = '../JSONParser/test1.txt';
 
                     var cb = function(isEqual)  {
-                        console.log("equal? :" + isEqual);
-
                         // Starting the parser if the text-files is equal.
-                        if(isEqual){
+                        if (isEqual) {
                             console.log("The files is equal");
-                          
-                        }else{
+
+                            //TODO: delete new file that isn't going to be parsed.
+                        }else {
                             startParser();
                             // Compare the parsed JSON with the existing collection in the MongoDB
                            // modifyCollections();
                         }
                         
                     }
-                    filecompare(path1,path2,cb);
-
-                    
-                    
+                    filecompare(oldFile,newFile,cb);
                 } else {
                     console.log('Still missing files...');
                 }
