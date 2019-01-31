@@ -64,10 +64,10 @@ function checkLoginCredentials(username, password) {
 }
 
 function compareFiles(incomingFile, oldFile) {
+    if (!filesExists('./' + oldFile)) 
+        return 1;
 
-    if (!filesExists('./' + oldFile)) return 1;
-
-    const isEqual = filecompare(incomingFile, oldFile, (isEqual) => { return (isEqual) ? 3 : 2 });
+    const isEqual = filecompare(incomingFile, oldFile, (isEqual) => (isEqual) ? 3 : 2 );
 
     return isEqual;
 }
@@ -92,7 +92,7 @@ function createMongoCollection(filename, collectionname) {
 }
 
 function updateMongoCollection(filename, collectionname) {
-    
+
 }
 
 // Start the POL-generated data to JSON-parser
