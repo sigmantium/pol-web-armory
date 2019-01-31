@@ -37,8 +37,7 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
                         // Starting the parser if the text-files is equal.
                         if (isEqual) {
                             console.log("The files is equal");
-
-                            //TODO: delete new file that isn't going to be parsed.
+                            deleteFile(newFile);
                         }else {
                             startParser();
                             // Compare the parsed JSON with the existing collection in the MongoDB
@@ -85,6 +84,14 @@ function filesExists(filePath) {
 // Start the POL-generated data to JSON-parser
 function startParser() {
     console.log('Starting the parser...');
+}
+
+function deleteFile(path) {  
+    return fs.statAsync(path)
+    .then((stat) => {
+      if (stat.isDirectory()) return fs.rmdirAsync(path);
+      else return fs.unlinkAsync(path);
+    });
 }
 
 // ModifyCollections

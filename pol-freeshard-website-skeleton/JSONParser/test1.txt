@@ -13,7 +13,7 @@ Character
 	ObjType	0x190
 	Graphic	0x190
 	Color	0x3ea
-	X	1430
+	X	1431
 	Y	1718
 	Z	20
 	Facing	6
