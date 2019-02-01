@@ -1,0 +1,3535 @@
+#
+#  PCS.TXT: Player-Character Data
+#
+#  In addition to PC data, this also contains hair, beards, death shrouds,
+#  and backpacks, but not the contents of each backpack.
+#
+
+Character
+{
+	Account	admin
+	CharIdx	1
+	Name	tjorven
+	Serial	0x955
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	1431
+	Y	1718
+	Z	20
+	Facing	6
+	Revision	9
+	Realm	britannia
+	CProp	%RegenRates% d1:S4:manai496400
+	CProp	%TimerList% d0:
+	CProp	Craft d9:S7:Alchemyd5:S6:amounti1S4:lasti0S4:marki0S6:retaini0S5:skillS7:AlchemyS11:Blacksmithyd5:S6:amounti13S4:lasti3913S4:marki1S6:retaini0S5:skillS11:BlacksmithyS17:BowcraftFletchingd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS17:BowcraftFletchingS9:Carpentryd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:CarpentryS11:Cartographyd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS11:CartographyS11:Inscriptiond5:S6:amounti1S4:lasti0S4:marki0S6:retaini0S5:skillS11:InscriptionS7:cookingd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS7:cookingS9:tailoringd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:tailoringS9:tinkeringd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:tinkering
+	CProp	CreationDate i5394
+	CProp	Fame i0
+	CProp	Karma i0
+	CProp	LastDamage t5:S6:amounti17S4:nameS13:a bone knightS6:seriali4074S4:timei1541229654S4:typei-1
+	CProp	NewbieQuest t6:S6:Amounti2S10:DifficultyS4:HardS4:NameS15:Stone GargoylesS11:StartAmounti0S8:TemplateS22::brainai:StonegargoyleS4:TypeS13:StoneGargoyle
+	CProp	Pets d0:
+	CProp	Quests d2:S8:Merchantd6:S11:BlackSmithyd2:S13:NextQuestTimei104515S19:TotalQuestCompletedi0S9:Carpentryd2:S13:NextQuestTimei35841S19:TotalQuestCompletedi1S18:MerchantBookSeriali1073756183S12:MerchantFamei31S9:Tailoringd2:S13:NextQuestTimei62240S19:TotalQUestCompletedi1S9:Tinkeringd3:S13:NextQuestTimei30298S19:TotalQUestCompletedi1S19:TotalQuestCompletedi26S6:Slayerd4:S12:CurrentQuestt5:S12:AmountKilledi0S12:AmountToKilli105S9:Templatesa2:S17::brainai:Brigand1S14::brainai:RogueS4:Timei46413S4:TypeS8:BridgandS13:NextQuestTimei45324S16:SlayerBookSeriali1073763471S14:finishedQuestsd2:i0d1:S6:Trollsi1i1d6:S4:Bonei2S8:Headlessi1S6:Ratmani2S4:Toadi1S4:Wolfi1S6:Zombiei1
+	CProp	SlayerQuest t7:S12:AmountKilleduS12:AmountToKilluS5:Leavei45563S10:LeaveStatei0S9:TemplatesuS4:TimeuS4:Typeu
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	craftL i7170
+	CProp	onlinetimer i37743
+	CmdLevel	dev
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	Strength	6000
+	Intelligence	6000
+	Dexterity	6000
+	Alchemy	6000
+	Anatomy	6000
+	AnimalLore	6000
+	ItemIdentification	6000
+	ArmsLore	6000
+	Parry	6000
+	Begging	6000
+	Blacksmithy	6000
+	BowcraftFletching	6000
+	Peacemaking	6000
+	Camping	6000
+	Carpentry	6000
+	Cartography	6000
+	Cooking	6000
+	DetectingHidden	6000
+	Discordance	6000
+	EvaluatingIntelligence	6000
+	Healing	6000
+	Fishing	6000
+	ForensicEvaluation	6000
+	Herding	6000
+	Hiding	6000
+	Provocation	6000
+	Inscription	6000
+	Lockpicking	6000
+	Magery	6000
+	ResistingSpells	6000
+	Tactics	6000
+	Snooping	6000
+	Musicianship	6000
+	Poisoning	6000
+	Archery	6000
+	SpiritSpeak	6000
+	Stealing	6000
+	Tailoring	6000
+	AnimalTaming	6000
+	TasteIdentification	6000
+	Tinkering	6000
+	Tracking	6000
+	Veterinary	6000
+	Swordsmanship	6000
+	MaceFighting	6000
+	Fencing	6000
+	Wrestling	6000
+	Lumberjacking	6000
+	Mining	6000
+	Meditation	6000
+	Stealth	6000
+	RemoveTrap	6000
+	Necromancy	6000
+	BattleFocus	6000
+	Chivalry	6000
+	Hits	6000
+	Mana	6000
+	Stamina	6000
+	Hunger	100
+	FollowersMax	5
+	CreatedAt	5393
+	TitleSuffix	"Ratmen Hunter"
+}
+
+Item
+{
+	Serial	0x400025f8
+	ObjType	0x203b
+	Graphic	0x203b
+	Color	0x44e
+	X	0
+	Y	0
+	Z	0
+	Facing	11
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i2389
+	Layer	11
+	Container	0x955
+	DecayAt	5993
+}
+
+Item
+{
+	Serial	0x400025f9
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i2389
+	Layer	21
+	Container	0x955
+	DecayAt	41701
+}
+
+Character
+{
+	Account	admin
+	CharIdx	0
+	Name	Robin
+	Serial	0x1563
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	6065
+	Y	1244
+	Z	0
+	Facing	2
+	Revision	234
+	Realm	britannia
+	CProp	%RegenRates% d1:S4:manai2750
+	CProp	%TimerList% d0:
+	CProp	Craft d9:S7:Alchemyd5:S6:amounti1S4:lasti56356S4:marki0S6:retaini0S5:skillS7:AlchemyS11:Blacksmithyd5:S6:amounti1S4:lasti61454S4:marki1S6:retaini0S5:skillS11:BlacksmithyS17:BowcraftFletchingd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS17:BowcraftFletchingS9:Carpentryd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:CarpentryS11:Cartographyd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS11:CartographyS11:Inscriptiond5:S6:amounti4S4:lasti7983S4:marki0S6:retaini0S5:skillS11:InscriptionS7:cookingd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS7:cookingS9:tailoringd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:tailoringS9:tinkeringd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:tinkering
+	CProp	CreationDate i54227
+	CProp	Fame i0
+	CProp	Karma i0
+	CProp	LastDamage t5:S6:amounti17S4:nameS16:a stone gargoyleS6:seriali5532S4:timei1548168802S4:typei-1
+	CProp	Pets d1:i5520i1
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	Stolen_from_last sthrth
+	CProp	Stolen_from_last_serial i5485
+	CProp	Stolen_timer i166985
+	CProp	craftL i56356
+	CProp	onlinetimer i126294
+	CProp	setautoDict d2:S7:Fishingi1S6:Miningi1
+	CProp	swings i25
+	CmdLevel	dev
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	MountedSteps	525
+	Strength	100
+	Intelligence	90
+	Dexterity	100
+	Alchemy	100
+	Anatomy	100
+	AnimalLore	100
+	ItemIdentification	100
+	ArmsLore	100
+	Parry	100
+	Begging	100
+	Blacksmithy	100
+	BowcraftFletching	100
+	Peacemaking	100
+	Camping	100
+	Carpentry	100
+	Cartography	100
+	Cooking	100
+	DetectingHidden	100
+	Discordance	100
+	EvaluatingIntelligence	99
+	Healing	99.9
+	Fishing	100
+	ForensicEvaluation	100
+	Herding	100
+	Hiding	100
+	Provocation	100
+	Inscription	99.9
+	Lockpicking	100
+	Magery	100
+	ResistingSpells	100
+	Tactics	100
+	Snooping	100
+	Musicianship	100
+	Poisoning	100
+	Archery	100
+	SpiritSpeak	90
+	Stealing	100
+	Tailoring	100
+	AnimalTaming	100
+	TasteIdentification	100
+	Tinkering	100
+	Tracking	100
+	Veterinary	100
+	Swordsmanship	100
+	MaceFighting	100
+	Fencing	100
+	Wrestling	100
+	Lumberjacking	99
+	Mining	100
+	Stealth	100
+	RemoveTrap	100
+	Necromancy	100
+	BattleFocus	100
+	Chivalry	100
+	Hits	100
+	Mana	90
+	Stamina	100
+	Hunger	100
+	FollowersMax	5
+	Followers	1
+	Privs	seeinvisitems 
+	Settings	seeinvisitems 
+	CreatedAt	54227
+}
+
+Item
+{
+	Serial	0x4000b835
+	ObjType	0x2045
+	Graphic	0x2045
+	Color	0x799
+	X	71
+	Y	65
+	Z	0
+	Facing	11
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5475
+	Layer	11
+	Container	0x1563
+	DecayAt	113568
+}
+
+Item
+{
+	Serial	0x4000b834
+	ObjType	0x204d
+	Graphic	0x204d
+	X	96
+	Y	129
+	Z	0
+	Facing	16
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5475
+	Layer	16
+	Container	0x1563
+	DecayAt	113568
+}
+
+Item
+{
+	Serial	0x40006a03
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5475
+	Layer	21
+	Container	0x1563
+	DecayAt	197593
+}
+
+Character
+{
+	Account	test
+	CharIdx	0
+	Name	thrth
+	Serial	0x156d
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	2598
+	Y	534
+	Z	15
+	Facing	7
+	Revision	0
+	Realm	britannia
+	CProp	%RegenRates% d2:S6:hungeri-1100S4:manai5075
+	CProp	%TimerList% d0:
+	CProp	CreationDate i81386
+	CProp	LastDamage t6:S8:acctnameS5:adminS6:amounti5S4:nameS5:RobinS6:seriali5475S4:timei1542407710S4:typeS6:Poison
+	CProp	LastHit a3:S5:Robini5475S15:poisoned weapon
+	CProp	Pets d0:
+	CProp	Robbed_by sRobin
+	CProp	Robbed_by_serial i5475
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	Stolen_timer i166985
+	CProp	TempDamage i20
+	CProp	hunger i1
+	CProp	onlinetimer i1606
+	CProp	poison_level i4
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	Strength	25
+	Intelligence	45
+	Dexterity	10.1
+	Magery	50
+	Fencing	0.4
+	Meditation	50
+	Hits	25
+	Mana	45
+	Stamina	10
+	FollowersMax	5
+	Privs	invul 
+	Settings	invul 
+	CreatedAt	81386
+}
+
+Item
+{
+	Serial	0x40008250
+	ObjType	0x203b
+	Graphic	0x203b
+	Color	0x44e
+	X	0
+	Y	0
+	Z	0
+	Facing	11
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5485
+	Layer	11
+	Container	0x156d
+	DecayAt	81986
+}
+
+Item
+{
+	Serial	0x40008251
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5485
+	Layer	21
+	Container	0x156d
+	DecayAt	166810
+}
+
+Character
+{
+	Account	admin
+	CharIdx	2
+	Name	erger
+	Serial	0x1584
+	ObjType	0x191
+	Graphic	0x191
+	Color	0x3ea
+	X	535
+	Y	992
+	Z	0
+	Facing	4
+	Revision	24
+	Realm	britannia
+	CProp	%RegenRates% d1:S4:manai9649
+	CProp	%TimerList% d0:
+	CProp	CreationDate i113799
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	onlinetimer i597
+	CmdLevel	dev
+	TrueColor	0x3ea
+	TrueObjtype	0x191
+	Gender	1
+	Race	0
+	Strength	100
+	Intelligence	100
+	Dexterity	100
+	Alchemy	100
+	Anatomy	100
+	AnimalLore	100
+	ItemIdentification	100
+	ArmsLore	100
+	Parry	100
+	Begging	100
+	Blacksmithy	100
+	BowcraftFletching	100
+	Peacemaking	100
+	Camping	100
+	Carpentry	100
+	Cartography	100
+	Cooking	100
+	DetectingHidden	100
+	Discordance	100
+	EvaluatingIntelligence	100
+	Healing	100
+	Fishing	100
+	ForensicEvaluation	100
+	Herding	100
+	Hiding	100
+	Provocation	100
+	Inscription	100
+	Lockpicking	100
+	Magery	100
+	ResistingSpells	100
+	Tactics	100
+	Snooping	100
+	Musicianship	100
+	Poisoning	100
+	Archery	100
+	SpiritSpeak	100
+	Stealing	100
+	Tailoring	100
+	AnimalTaming	100
+	TasteIdentification	100
+	Tinkering	100
+	Tracking	100
+	Veterinary	100
+	Swordsmanship	100
+	MaceFighting	100
+	Fencing	100
+	Wrestling	100
+	Lumberjacking	100
+	Mining	100
+	Meditation	100
+	Stealth	100
+	RemoveTrap	100
+	Necromancy	100
+	BattleFocus	100
+	Chivalry	100
+	Hits	100
+	Mana	100
+	Stamina	100
+	Hunger	100
+	FollowersMax	5
+	CreatedAt	113799
+}
+
+Item
+{
+	Serial	0x4000be8a
+	ObjType	0x203c
+	Graphic	0x203c
+	Color	0x44e
+	X	87
+	Y	92
+	Z	0
+	Facing	11
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5508
+	Layer	11
+	Container	0x1584
+	DecayAt	114885
+}
+
+Item
+{
+	Serial	0x4000bb24
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5508
+	Layer	21
+	Container	0x1584
+	DecayAt	114414
+}
+
+Character
+{
+	Account	admin
+	CharIdx	3
+	Name	ertetete
+	Serial	0x1585
+	ObjType	0x191
+	Graphic	0x191
+	Color	0x3ea
+	X	535
+	Y	992
+	Z	0
+	Facing	4
+	Revision	6
+	Realm	britannia
+	CProp	%RegenRates% d1:S4:manai2900
+	CProp	%TimerList% d0:
+	CProp	CreationDate i114093
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	onlinetimer i27
+	CmdLevel	dev
+	TrueColor	0x3ea
+	TrueObjtype	0x191
+	Gender	1
+	Race	0
+	Strength	100
+	Intelligence	100
+	Dexterity	100
+	Alchemy	100
+	Anatomy	100
+	AnimalLore	100
+	ItemIdentification	100
+	ArmsLore	100
+	Parry	100
+	Begging	100
+	Blacksmithy	100
+	BowcraftFletching	100
+	Peacemaking	100
+	Camping	100
+	Carpentry	100
+	Cartography	100
+	Cooking	100
+	DetectingHidden	100
+	Discordance	100
+	EvaluatingIntelligence	100
+	Healing	100
+	Fishing	100
+	ForensicEvaluation	100
+	Herding	100
+	Hiding	100
+	Provocation	100
+	Inscription	100
+	Lockpicking	100
+	Magery	100
+	ResistingSpells	100
+	Tactics	100
+	Snooping	100
+	Musicianship	100
+	Poisoning	100
+	Archery	100
+	SpiritSpeak	100
+	Stealing	100
+	Tailoring	100
+	AnimalTaming	100
+	TasteIdentification	100
+	Tinkering	100
+	Tracking	100
+	Veterinary	100
+	Swordsmanship	100
+	MaceFighting	100
+	Fencing	100
+	Wrestling	100
+	Lumberjacking	100
+	Mining	100
+	Meditation	100
+	Stealth	100
+	RemoveTrap	100
+	Necromancy	100
+	BattleFocus	100
+	Chivalry	100
+	Hits	100
+	Mana	100
+	Stamina	100
+	Hunger	100
+	FollowersMax	5
+	CreatedAt	114093
+}
+
+Item
+{
+	Serial	0x4000bcfb
+	ObjType	0x2044
+	Graphic	0x2044
+	Color	0x44e
+	X	132
+	Y	104
+	Z	0
+	Facing	11
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5509
+	Layer	11
+	Container	0x1585
+	DecayAt	114715
+}
+
+Item
+{
+	Serial	0x4000bcb0
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5509
+	Layer	21
+	Container	0x1585
+	DecayAt	114702
+}
+
+Character
+{
+	Account	admin
+	CharIdx	4
+	Name	qweqwe
+	Serial	0x1586
+	ObjType	0x191
+	Graphic	0x191
+	Color	0x3ea
+	X	535
+	Y	992
+	Z	0
+	Facing	4
+	Revision	6
+	Realm	britannia
+	CProp	%RegenRates% d1:S4:manai2900
+	CProp	%TimerList% d0:
+	CProp	CreationDate i114142
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	onlinetimer i24
+	CmdLevel	dev
+	TrueColor	0x3ea
+	TrueObjtype	0x191
+	Gender	1
+	Race	0
+	Strength	100
+	Intelligence	100
+	Dexterity	100
+	Alchemy	100
+	Anatomy	100
+	AnimalLore	100
+	ItemIdentification	100
+	ArmsLore	100
+	Parry	100
+	Begging	100
+	Blacksmithy	100
+	BowcraftFletching	100
+	Peacemaking	100
+	Camping	100
+	Carpentry	100
+	Cartography	100
+	Cooking	100
+	DetectingHidden	100
+	Discordance	100
+	EvaluatingIntelligence	100
+	Healing	100
+	Fishing	100
+	ForensicEvaluation	100
+	Herding	100
+	Hiding	100
+	Provocation	100
+	Inscription	100
+	Lockpicking	100
+	Magery	100
+	ResistingSpells	100
+	Tactics	100
+	Snooping	100
+	Musicianship	100
+	Poisoning	100
+	Archery	100
+	SpiritSpeak	100
+	Stealing	100
+	Tailoring	100
+	AnimalTaming	100
+	TasteIdentification	100
+	Tinkering	100
+	Tracking	100
+	Veterinary	100
+	Swordsmanship	100
+	MaceFighting	100
+	Fencing	100
+	Wrestling	100
+	Lumberjacking	100
+	Mining	100
+	Meditation	100
+	Stealth	100
+	RemoveTrap	100
+	Necromancy	100
+	BattleFocus	100
+	Chivalry	100
+	Hits	100
+	Mana	100
+	Stamina	100
+	Hunger	100
+	FollowersMax	5
+	CreatedAt	114142
+}
+
+Item
+{
+	Serial	0x4000bd48
+	ObjType	0x2046
+	Graphic	0x2046
+	Color	0x44e
+	X	88
+	Y	104
+	Z	0
+	Facing	11
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5510
+	Layer	11
+	Container	0x1586
+	DecayAt	114762
+}
+
+Item
+{
+	Serial	0x4000bcfd
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5510
+	Layer	21
+	Container	0x1586
+	DecayAt	114746
+}
+
+Character
+{
+	Account	masscurse1
+	CharIdx	0
+	Name	MassCurse1
+	Serial	0x159e
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	6070
+	Y	1245
+	Z	0
+	Facing	2
+	Revision	0
+	Realm	britannia
+	CProp	%RegenRates% d2:S6:hungeri-1000S4:manai6341
+	CProp	%TimerList% d0:
+	CProp	CreationDate i207143
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	hunger i1
+	CProp	onlinetimer i5589
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	Strength	100
+	Intelligence	100.2
+	Dexterity	10
+	Magery	100
+	Meditation	57.4
+	Hits	100
+	Mana	100
+	Stamina	10
+	FollowersMax	5
+	CreatedAt	207143
+}
+
+Item
+{
+	Serial	0x40012427
+	ObjType	0x203b
+	Graphic	0x203b
+	Color	0x44e
+	X	0
+	Y	0
+	Z	0
+	Facing	11
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5534
+	Layer	11
+	Container	0x159e
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x40012428
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5534
+	Layer	21
+	Container	0x159e
+	DecayAt	208028
+}
+
+Character
+{
+	Account	masscurse2
+	CharIdx	0
+	Name	MassCurse2
+	Serial	0x159f
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	6070
+	Y	1242
+	Z	0
+	Revision	0
+	Realm	britannia
+	CProp	%RegenRates% d2:S6:hungeri-300S4:manai5525
+	CProp	%TimerList% d0:
+	CProp	CreationDate i207269
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	hunger i3
+	CProp	onlinetimer i6307
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	Strength	25
+	Intelligence	45
+	Dexterity	10
+	Magery	50
+	Meditation	58.1
+	Hits	25
+	Mana	45
+	Stamina	10
+	Hunger	33
+	FollowersMax	5
+	CreatedAt	207269
+}
+
+Item
+{
+	Serial	0x400124af
+	ObjType	0x203b
+	Graphic	0x203b
+	Color	0x44e
+	X	0
+	Y	0
+	Z	0
+	Facing	11
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5535
+	Layer	11
+	Container	0x159f
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124b0
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5535
+	Layer	21
+	Container	0x159f
+	DecayAt	207869
+}
+
+Character
+{
+	Account	masscurse3
+	CharIdx	0
+	Name	MassCurse3
+	Serial	0x15a0
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	6048
+	Y	1250
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	%RegenRates% d2:S6:hungeri-1400S4:manai5075
+	CProp	%TimerList% d0:
+	CProp	CreationDate i207324
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	hunger i9
+	CProp	onlinetimer i713
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	Strength	25
+	Intelligence	45
+	Dexterity	10
+	Magery	50
+	Meditation	50
+	Hits	25
+	Mana	45
+	Stamina	10
+	Hunger	29
+	FollowersMax	5
+	CreatedAt	207324
+}
+
+Item
+{
+	Serial	0x400124be
+	ObjType	0x203b
+	Graphic	0x203b
+	Color	0x44e
+	X	0
+	Y	0
+	Z	0
+	Facing	11
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5536
+	Layer	11
+	Container	0x15a0
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124bf
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5536
+	Layer	21
+	Container	0x15a0
+	DecayAt	207924
+}
+
+#
+#  PCEQUIP.TXT: Player-Character Equipment Data
+#
+#  This file can be deleted to wipe all items held/equipped by characters
+#  Note that hair, beards, empty backpacks, and death shrouds are in PCS.TXT.
+#
+
+Item
+{
+	Serial	0x4001260b
+	ObjType	0xf4e
+	Graphic	0xf4e
+	X	0
+	Y	0
+	Z	0
+	Facing	2
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i2389
+	Layer	2
+	Container	0x955
+	DecayAt	214642
+}
+
+Item
+{
+	Serial	0x400025fe
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	51
+	Y	108
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	Container	0x400025f9
+	DecayAt	22053
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400025fd
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35
+	X	83
+	Y	104
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	Container	0x400025f9
+	DecayAt	22058
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400025fb
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	126
+	Y	105
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	Container	0x400025f9
+	DecayAt	22056
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400030b8
+	ObjType	0xefa
+	Graphic	0xefa
+	X	129
+	Y	103
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x400025f9
+	DecayAt	13151
+	Spellbits0	255
+	Spellbits1	255
+	Spellbits2	255
+	Spellbits3	255
+	Spellbits4	255
+	Spellbits5	255
+	Spellbits6	255
+	Spellbits7	255
+}
+
+Item
+{
+	Serial	0x400025fc
+	ObjType	0xf51
+	Graphic	0xf51
+	X	130
+	Y	125
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i2389
+	Container	0x400025f9
+	DecayAt	8809
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x40003817
+	ObjType	0xa374
+	Graphic	0xefa
+	Color	0x798
+	X	56
+	Y	123
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	CProp	OwnerSerial i2389
+	Container	0x400025f9
+	DecayAt	22048
+}
+
+Item
+{
+	Serial	0x40005206
+	ObjType	0xe34
+	Graphic	0xe34
+	Color	0x2bb
+	X	111
+	Y	82
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400025f9
+	DecayAt	41160
+}
+
+Item
+{
+	Serial	0x4000548f
+	ObjType	0xa373
+	Graphic	0xefa
+	Color	0x795
+	X	73
+	Y	90
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	CProp	OwnerSerial i2389
+	Container	0x400025f9
+	DecayAt	46015
+}
+
+Item
+{
+	Serial	0x40004e4c
+	ObjType	0x1f03
+	Graphic	0x1f03
+	Color	0x22
+	X	0
+	Y	0
+	Z	0
+	Facing	22
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	22
+	Container	0x955
+	DecayAt	214571
+}
+
+Item
+{
+	Serial	0x400122dc
+	ObjType	0x13fe
+	Graphic	0x13fe
+	X	0
+	Y	0
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5475
+	CProp	HitScripts a0:
+	CProp	poisoner sRobin
+	Layer	1
+	Container	0x1563
+	DecayAt	195614
+}
+
+Item
+{
+	Name	a drydocked medium dragon boat
+	Serial	0x4000f093
+	ObjType	0x602a
+	Graphic	0x14f3
+	X	130
+	Y	71
+	Z	0
+	Revision	3
+	Realm	britannia
+	Container	0x40006a03
+	DecayAt	161832
+}
+
+Item
+{
+	Serial	0x4000f20f
+	ObjType	0xefa
+	Graphic	0xefa
+	X	138
+	Y	106
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x40006a03
+	DecayAt	184036
+	Spellbits0	255
+	Spellbits1	255
+	Spellbits2	255
+	Spellbits3	255
+	Spellbits4	255
+	Spellbits5	255
+	Spellbits6	255
+	Spellbits7	255
+}
+
+Item
+{
+	Serial	0x40012288
+	ObjType	0xdc04
+	Graphic	0xf0a
+	X	127
+	Y	104
+	Z	0
+	Revision	3
+	Realm	britannia
+	Amount	9
+	Container	0x40006a03
+	DecayAt	195072
+}
+
+Item
+{
+	Serial	0x40012003
+	ObjType	0xe9b
+	Graphic	0xe9b
+	X	139
+	Y	69
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x40006a03
+	DecayAt	192898
+}
+
+Item
+{
+	Serial	0x40011eb9
+	ObjType	0x100f
+	Graphic	0x100f
+	X	79
+	Y	102
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	LockId i43
+	Container	0x40006a03
+	DecayAt	192897
+}
+
+Item
+{
+	Serial	0x40011e94
+	ObjType	0x100f
+	Graphic	0x100f
+	X	113
+	Y	98
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	LockId i40
+	Container	0x40006a03
+	DecayAt	192896
+}
+
+Item
+{
+	Serial	0x40011ea9
+	ObjType	0x100f
+	Graphic	0x100f
+	X	74
+	Y	93
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	LockId i42
+	Container	0x40006a03
+	DecayAt	192894
+}
+
+Item
+{
+	Serial	0x40011cfc
+	ObjType	0x100f
+	Graphic	0x100f
+	X	48
+	Y	127
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	LockId i38
+	Container	0x40006a03
+	DecayAt	192890
+}
+
+Item
+{
+	Serial	0x40011e85
+	ObjType	0x100f
+	Graphic	0x100f
+	X	69
+	Y	135
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	LockId i39
+	Container	0x40006a03
+	DecayAt	192889
+}
+
+Item
+{
+	Serial	0x40011e6d
+	ObjType	0xeed
+	Graphic	0xeed
+	X	65
+	Y	92
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	60000
+	Container	0x40006a03
+	DecayAt	192887
+}
+
+Item
+{
+	Serial	0x40011e79
+	ObjType	0xeed
+	Graphic	0xeed
+	X	111
+	Y	85
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	60000
+	Container	0x40006a03
+	DecayAt	192886
+}
+
+Item
+{
+	Serial	0x40011e6c
+	ObjType	0xeed
+	Graphic	0xeed
+	X	128
+	Y	103
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	60000
+	Container	0x40006a03
+	DecayAt	192885
+}
+
+Item
+{
+	Serial	0x40012147
+	ObjType	0xe9b
+	Graphic	0xe9b
+	X	99
+	Y	102
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	swings i65
+	Container	0x40006a03
+	DecayAt	192364
+}
+
+Item
+{
+	Serial	0x40012148
+	ObjType	0xf86
+	Graphic	0xf86
+	X	79
+	Y	113
+	Z	0
+	Revision	29
+	Realm	britannia
+	Amount	58
+	Container	0x40006a03
+	DecayAt	192902
+}
+
+Item
+{
+	Serial	0x40012149
+	ObjType	0xf0e
+	Graphic	0xf0e
+	X	119
+	Y	65
+	Z	0
+	Revision	40
+	Realm	britannia
+	Amount	7
+	Container	0x40006a03
+	DecayAt	195411
+}
+
+Item
+{
+	Serial	0x40011e78
+	ObjType	0xeed
+	Graphic	0xeed
+	X	139
+	Y	127
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	60000
+	Container	0x40006a03
+	DecayAt	195413
+}
+
+Item
+{
+	Serial	0x40011e75
+	ObjType	0xeed
+	Graphic	0xeed
+	X	119
+	Y	127
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	60000
+	Container	0x40006a03
+	DecayAt	195414
+}
+
+Item
+{
+	Serial	0x40012294
+	ObjType	0x1f03
+	Graphic	0x1f03
+	X	0
+	Y	0
+	Z	0
+	Facing	22
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	22
+	Container	0x1563
+	DecayAt	195742
+}
+
+Item
+{
+	Serial	0x40008253
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x156d
+	DecayAt	81986
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x40008255
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	4
+	Container	0x156d
+	DecayAt	81986
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x40008256
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x156d
+	DecayAt	81986
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x40008257
+	ObjType	0xfef
+	Graphic	0xfef
+	X	52
+	Y	88
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x40008251
+	DecayAt	81986
+}
+
+Item
+{
+	Serial	0x40008258
+	ObjType	0xefa
+	Graphic	0xefa
+	X	141
+	Y	125
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x40008251
+	DecayAt	81986
+	Spellbits0	0
+	Spellbits1	0
+	Spellbits2	0
+	Spellbits3	0
+	Spellbits4	0
+	Spellbits5	0
+	Spellbits6	0
+	Spellbits7	0
+}
+
+Item
+{
+	Serial	0x4000825a
+	ObjType	0x1f2d
+	Graphic	0x1f2d
+	X	120
+	Y	118
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	2
+	Container	0x40008251
+	DecayAt	81986
+}
+
+Item
+{
+	Serial	0x4000825d
+	ObjType	0x13c6
+	Graphic	0x13c6
+	X	54
+	Y	82
+	Z	0
+	Facing	7
+	Revision	1
+	Realm	britannia
+	Container	0x40008251
+	DecayAt	81986
+}
+
+Item
+{
+	Serial	0x40008254
+	ObjType	0xf51
+	Graphic	0xf51
+	X	131
+	Y	75
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5485
+	Container	0x40008251
+	DecayAt	166174
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000eb6b
+	ObjType	0x602b
+	Graphic	0x14f2
+	X	82
+	Y	99
+	Z	0
+	Revision	3
+	Realm	britannia
+	Container	0x40008251
+	DecayAt	166222
+	Quality	0.88
+}
+
+Item
+{
+	Serial	0x4000e3b8
+	ObjType	0x13e3
+	Graphic	0x13e3
+	X	139
+	Y	131
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i5475
+	CProp	swings i49
+	Container	0x40008251
+	DecayAt	166270
+	Hp	59
+}
+
+Item
+{
+	Serial	0x4000bb26
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x1584
+	DecayAt	114399
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bb29
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x1584
+	DecayAt	114399
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bb25
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb2a
+	ObjType	0xfef
+	Graphic	0xfef
+	X	53
+	Y	66
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb2b
+	ObjType	0xe81
+	Graphic	0xe81
+	X	85
+	Y	138
+	Z	0
+	Facing	2
+	Revision	1
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb2c
+	ObjType	0x1f03
+	Graphic	0x1f03
+	X	116
+	Y	131
+	Z	0
+	Facing	22
+	Revision	1
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb2d
+	ObjType	0x13f9
+	Graphic	0x13f9
+	X	47
+	Y	88
+	Z	0
+	Facing	2
+	Revision	1
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb2e
+	ObjType	0x153b
+	Graphic	0x153b
+	X	55
+	Y	75
+	Z	0
+	Facing	12
+	Revision	1
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb2f
+	ObjType	0x1030
+	Graphic	0x1030
+	X	130
+	Y	122
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114399
+}
+
+Item
+{
+	Serial	0x4000bb30
+	ObjType	0xefa
+	Graphic	0xefa
+	X	140
+	Y	81
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	114402
+	Spellbits0	255
+	Spellbits1	255
+	Spellbits2	255
+	Spellbits3	255
+	Spellbits4	255
+	Spellbits5	255
+	Spellbits6	255
+	Spellbits7	255
+}
+
+Item
+{
+	Serial	0x4000bb27
+	ObjType	0xf51
+	Graphic	0xf51
+	X	118
+	Y	65
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	Container	0x4000bb24
+	DecayAt	113873
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bb28
+	ObjType	0x1516
+	Graphic	0x1516
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	23
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	23
+	Container	0x1584
+	DecayAt	114399
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bcb2
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x1585
+	DecayAt	114693
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bcb5
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x1585
+	DecayAt	114693
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bcb1
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x4000bcb0
+	DecayAt	114693
+}
+
+Item
+{
+	Serial	0x4000bcb6
+	ObjType	0xfef
+	Graphic	0xfef
+	X	78
+	Y	81
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x4000bcb0
+	DecayAt	114693
+}
+
+Item
+{
+	Serial	0x4000bcb7
+	ObjType	0xe81
+	Graphic	0xe81
+	X	75
+	Y	78
+	Z	0
+	Facing	2
+	Revision	1
+	Realm	britannia
+	Container	0x4000bcb0
+	DecayAt	114693
+}
+
+Item
+{
+	Serial	0x4000bcb8
+	ObjType	0x1f03
+	Graphic	0x1f03
+	X	73
+	Y	68
+	Z	0
+	Facing	22
+	Revision	1
+	Realm	britannia
+	Container	0x4000bcb0
+	DecayAt	114693
+}
+
+Item
+{
+	Serial	0x4000bcb3
+	ObjType	0xf51
+	Graphic	0xf51
+	X	129
+	Y	136
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	Container	0x4000bcb0
+	DecayAt	114161
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bcb9
+	ObjType	0xefa
+	Graphic	0xefa
+	X	117
+	Y	127
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x4000bcb0
+	DecayAt	114704
+	Spellbits0	255
+	Spellbits1	255
+	Spellbits2	255
+	Spellbits3	255
+	Spellbits4	255
+	Spellbits5	255
+	Spellbits6	255
+	Spellbits7	255
+}
+
+Item
+{
+	Serial	0x4000bcb4
+	ObjType	0x1516
+	Graphic	0x1516
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	23
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	23
+	Container	0x1585
+	DecayAt	114693
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bcff
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x1586
+	DecayAt	114742
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bd02
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x1586
+	DecayAt	114742
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bcfe
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x4000bcfd
+	DecayAt	114742
+}
+
+Item
+{
+	Serial	0x4000bd03
+	ObjType	0xfef
+	Graphic	0xfef
+	X	135
+	Y	79
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x4000bcfd
+	DecayAt	114742
+}
+
+Item
+{
+	Serial	0x4000bd04
+	ObjType	0xe81
+	Graphic	0xe81
+	X	77
+	Y	137
+	Z	0
+	Facing	2
+	Revision	1
+	Realm	britannia
+	Container	0x4000bcfd
+	DecayAt	114742
+}
+
+Item
+{
+	Serial	0x4000bd05
+	ObjType	0x1f03
+	Graphic	0x1f03
+	X	93
+	Y	65
+	Z	0
+	Facing	22
+	Revision	1
+	Realm	britannia
+	Container	0x4000bcfd
+	DecayAt	114742
+}
+
+Item
+{
+	Serial	0x4000bd00
+	ObjType	0xf51
+	Graphic	0xf51
+	X	112
+	Y	77
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	Container	0x4000bcfd
+	DecayAt	114205
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4000bd06
+	ObjType	0xefa
+	Graphic	0xefa
+	X	140
+	Y	135
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x4000bcfd
+	DecayAt	114750
+	Spellbits0	255
+	Spellbits1	255
+	Spellbits2	255
+	Spellbits3	255
+	Spellbits4	255
+	Spellbits5	255
+	Spellbits6	255
+	Spellbits7	255
+}
+
+Item
+{
+	Serial	0x4000bd01
+	ObjType	0x1516
+	Graphic	0x1516
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	23
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	23
+	Container	0x1586
+	DecayAt	114742
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001242a
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x159e
+	DecayAt	207743
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001242c
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	4
+	Container	0x159e
+	DecayAt	207743
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001242d
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x159e
+	DecayAt	207743
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x40012429
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x4001242e
+	ObjType	0xfef
+	Graphic	0xfef
+	X	89
+	Y	135
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x4001242f
+	ObjType	0xefa
+	Graphic	0xefa
+	X	109
+	Y	80
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207743
+	Spellbits0	0
+	Spellbits1	0
+	Spellbits2	0
+	Spellbits3	0
+	Spellbits4	0
+	Spellbits5	0
+	Spellbits6	0
+	Spellbits7	0
+}
+
+Item
+{
+	Serial	0x40012430
+	ObjType	0x1f2e
+	Graphic	0x1f2e
+	X	90
+	Y	126
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x40012431
+	ObjType	0x1f30
+	Graphic	0x1f30
+	X	72
+	Y	97
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x40012432
+	ObjType	0x1f31
+	Graphic	0x1f31
+	X	52
+	Y	120
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x40012433
+	ObjType	0xf85
+	Graphic	0xf85
+	X	68
+	Y	133
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	6
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x40012435
+	ObjType	0x13c6
+	Graphic	0x13c6
+	X	129
+	Y	103
+	Z	0
+	Facing	7
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207743
+}
+
+Item
+{
+	Serial	0x40012436
+	ObjType	0xefa
+	Graphic	0xefa
+	X	118
+	Y	77
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207259
+	Spellbits0	255
+	Spellbits1	255
+	Spellbits2	255
+	Spellbits3	255
+	Spellbits4	255
+	Spellbits5	255
+	Spellbits6	255
+	Spellbits7	255
+}
+
+Item
+{
+	Serial	0x4001242b
+	ObjType	0xf51
+	Graphic	0xf51
+	X	149
+	Y	133
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207486
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x40012492
+	ObjType	0x9b2
+	Graphic	0x9b2
+	Color	0x3
+	X	85
+	Y	70
+	Z	0
+	Facing	21
+	Revision	1
+	Realm	britannia
+	Container	0x40012428
+	DecayAt	207488
+}
+
+Item
+{
+	Serial	0x40012495
+	ObjType	0xf84
+	Graphic	0xf84
+	X	82
+	Y	80
+	Z	0
+	Revision	33
+	Realm	britannia
+	Amount	4
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x40012496
+	ObjType	0xf85
+	Graphic	0xf85
+	X	58
+	Y	126
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x40012498
+	ObjType	0xf88
+	Graphic	0xf88
+	X	128
+	Y	96
+	Z	0
+	Facing	1
+	Revision	35
+	Realm	britannia
+	Amount	3
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x40012499
+	ObjType	0xf8c
+	Graphic	0xf8c
+	X	107
+	Y	133
+	Z	0
+	Revision	27
+	Realm	britannia
+	Amount	7
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x4001249b
+	ObjType	0xf78
+	Graphic	0xf78
+	X	121
+	Y	89
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x4001249c
+	ObjType	0xf79
+	Graphic	0xf79
+	X	45
+	Y	105
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x4001249d
+	ObjType	0xf7c
+	Graphic	0xf7c
+	X	47
+	Y	108
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x4001249e
+	ObjType	0xf7d
+	Graphic	0xf7d
+	X	98
+	Y	81
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x4001249f
+	ObjType	0xf7e
+	Graphic	0xf7e
+	X	138
+	Y	94
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a0
+	ObjType	0xf7f
+	Graphic	0xf7f
+	X	138
+	Y	83
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a1
+	ObjType	0xf80
+	Graphic	0xf80
+	X	87
+	Y	118
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a2
+	ObjType	0xf81
+	Graphic	0xf81
+	X	68
+	Y	93
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a3
+	ObjType	0xf82
+	Graphic	0xf82
+	X	114
+	Y	75
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a4
+	ObjType	0xf83
+	Graphic	0xf83
+	X	111
+	Y	86
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a5
+	ObjType	0xf87
+	Graphic	0xf87
+	X	128
+	Y	97
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a6
+	ObjType	0xf89
+	Graphic	0xf89
+	X	101
+	Y	113
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a7
+	ObjType	0xf8a
+	Graphic	0xf8a
+	X	49
+	Y	139
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a8
+	ObjType	0xf8b
+	Graphic	0xf8b
+	X	80
+	Y	127
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124a9
+	ObjType	0xf8e
+	Graphic	0xf8e
+	X	82
+	Y	78
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124aa
+	ObjType	0xf8f
+	Graphic	0xf8f
+	X	140
+	Y	74
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124ab
+	ObjType	0xf90
+	Graphic	0xf90
+	X	67
+	Y	137
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x400124ac
+	ObjType	0xf91
+	Graphic	0xf91
+	X	72
+	Y	104
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012492
+	DecayAt	207792
+}
+
+Item
+{
+	Serial	0x40012477
+	ObjType	0x9b2
+	Graphic	0x9b2
+	Color	0x3
+	X	103
+	Y	119
+	Z	0
+	Facing	21
+	Revision	1
+	Realm	britannia
+	Container	0x40012492
+	DecayAt	207253
+}
+
+Item
+{
+	Serial	0x40012478
+	ObjType	0xf7a
+	Graphic	0xf7a
+	X	53
+	Y	82
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012479
+	ObjType	0xf7b
+	Graphic	0xf7b
+	X	50
+	Y	107
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001247a
+	ObjType	0xf84
+	Graphic	0xf84
+	X	69
+	Y	130
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001247b
+	ObjType	0xf85
+	Graphic	0xf85
+	X	117
+	Y	103
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001247c
+	ObjType	0xf86
+	Graphic	0xf86
+	X	129
+	Y	67
+	Z	0
+	Revision	35
+	Realm	britannia
+	Amount	3
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001247d
+	ObjType	0xf88
+	Graphic	0xf88
+	X	138
+	Y	83
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001247e
+	ObjType	0xf8c
+	Graphic	0xf8c
+	X	111
+	Y	137
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001247f
+	ObjType	0xf8d
+	Graphic	0xf8d
+	X	112
+	Y	135
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012480
+	ObjType	0xf78
+	Graphic	0xf78
+	X	59
+	Y	74
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012481
+	ObjType	0xf79
+	Graphic	0xf79
+	X	52
+	Y	105
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012482
+	ObjType	0xf7c
+	Graphic	0xf7c
+	X	119
+	Y	70
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012483
+	ObjType	0xf7d
+	Graphic	0xf7d
+	X	62
+	Y	125
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012484
+	ObjType	0xf7e
+	Graphic	0xf7e
+	X	114
+	Y	75
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012485
+	ObjType	0xf7f
+	Graphic	0xf7f
+	X	112
+	Y	83
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012486
+	ObjType	0xf80
+	Graphic	0xf80
+	X	121
+	Y	136
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012487
+	ObjType	0xf81
+	Graphic	0xf81
+	X	118
+	Y	117
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012488
+	ObjType	0xf82
+	Graphic	0xf82
+	X	122
+	Y	83
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012489
+	ObjType	0xf83
+	Graphic	0xf83
+	X	57
+	Y	88
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001248a
+	ObjType	0xf87
+	Graphic	0xf87
+	X	74
+	Y	104
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001248b
+	ObjType	0xf89
+	Graphic	0xf89
+	X	93
+	Y	71
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001248c
+	ObjType	0xf8a
+	Graphic	0xf8a
+	X	91
+	Y	97
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001248d
+	ObjType	0xf8b
+	Graphic	0xf8b
+	X	133
+	Y	100
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001248e
+	ObjType	0xf8e
+	Graphic	0xf8e
+	X	137
+	Y	83
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x4001248f
+	ObjType	0xf8f
+	Graphic	0xf8f
+	X	44
+	Y	117
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012490
+	ObjType	0xf90
+	Graphic	0xf90
+	X	119
+	Y	131
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x40012491
+	ObjType	0xf91
+	Graphic	0xf91
+	X	102
+	Y	92
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	20
+	Container	0x40012477
+	DecayAt	207790
+}
+
+Item
+{
+	Serial	0x400124b3
+	ObjType	0xf51
+	Graphic	0xf51
+	X	0
+	Y	0
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5535
+	Layer	1
+	Container	0x159f
+	DecayAt	207869
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124b2
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x159f
+	DecayAt	207869
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124b4
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	4
+	Container	0x159f
+	DecayAt	207869
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124b5
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x159f
+	DecayAt	207869
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124b1
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124b6
+	ObjType	0xfef
+	Graphic	0xfef
+	X	96
+	Y	83
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124b7
+	ObjType	0xefa
+	Graphic	0xefa
+	X	76
+	Y	99
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x400124b0
+	DecayAt	207869
+	Spellbits0	0
+	Spellbits1	0
+	Spellbits2	0
+	Spellbits3	0
+	Spellbits4	0
+	Spellbits5	0
+	Spellbits6	0
+	Spellbits7	0
+}
+
+Item
+{
+	Serial	0x400124b8
+	ObjType	0x1f30
+	Graphic	0x1f30
+	X	53
+	Y	136
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124b9
+	ObjType	0x1f2d
+	Graphic	0x1f2d
+	X	136
+	Y	95
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124ba
+	ObjType	0x1f2f
+	Graphic	0x1f2f
+	X	138
+	Y	84
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124bb
+	ObjType	0xf8c
+	Graphic	0xf8c
+	X	96
+	Y	87
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	6
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124bc
+	ObjType	0xf7a
+	Graphic	0xf7a
+	X	142
+	Y	71
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	3
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124bd
+	ObjType	0x13c6
+	Graphic	0x13c6
+	X	116
+	Y	81
+	Z	0
+	Facing	7
+	Revision	1
+	Realm	britannia
+	Container	0x400124b0
+	DecayAt	207869
+}
+
+Item
+{
+	Serial	0x400124c2
+	ObjType	0xf51
+	Graphic	0xf51
+	X	0
+	Y	0
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn i5536
+	Layer	1
+	Container	0x15a0
+	DecayAt	207924
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124c1
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	3
+	Container	0x15a0
+	DecayAt	207924
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124c3
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	4
+	Container	0x15a0
+	DecayAt	207924
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124c4
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	CProp	EquippedOn u
+	Layer	5
+	Container	0x15a0
+	DecayAt	207924
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x400124c0
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124c5
+	ObjType	0xfef
+	Graphic	0xfef
+	X	59
+	Y	84
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124c6
+	ObjType	0xefa
+	Graphic	0xefa
+	X	111
+	Y	131
+	Z	0
+	Facing	1
+	Revision	1
+	Realm	britannia
+	Container	0x400124bf
+	DecayAt	207924
+	Spellbits0	0
+	Spellbits1	0
+	Spellbits2	0
+	Spellbits3	0
+	Spellbits4	0
+	Spellbits5	0
+	Spellbits6	0
+	Spellbits7	0
+}
+
+Item
+{
+	Serial	0x400124c7
+	ObjType	0x1f2f
+	Graphic	0x1f2f
+	X	128
+	Y	65
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124c8
+	ObjType	0x1f34
+	Graphic	0x1f34
+	X	122
+	Y	72
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124c9
+	ObjType	0x1f33
+	Graphic	0x1f33
+	X	57
+	Y	91
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124ca
+	ObjType	0xf8d
+	Graphic	0xf8d
+	X	119
+	Y	90
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	3
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124cb
+	ObjType	0xf7a
+	Graphic	0xf7a
+	X	82
+	Y	94
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	6
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x400124cc
+	ObjType	0x13c6
+	Graphic	0x13c6
+	X	129
+	Y	138
+	Z	0
+	Facing	7
+	Revision	1
+	Realm	britannia
+	Container	0x400124bf
+	DecayAt	207924
+}
+
+

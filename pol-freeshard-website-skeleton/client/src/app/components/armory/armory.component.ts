@@ -35,6 +35,7 @@ export class ArmoryComponent implements OnInit {
 
   public valueChanged() {
     this.character = this.characters.filter(char => char.name === this.selectedCharacter);
+    console.log('this.character.equipment: ' + JSON.stringify(this.character[0].equipment));
     this.armorySubject.next(this.character[0].equipment);
   }
 

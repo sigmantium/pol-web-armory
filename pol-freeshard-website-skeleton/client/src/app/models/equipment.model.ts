@@ -8,8 +8,11 @@ export class Equipment {
     }
 
     setData(data: any) {
-        this.objtype = data.objtype || null;
-        this.color = data.color || null;
-        this.layer = data.layer || null;
+
+        console.log('Equipment data: ' + JSON.stringify(data));
+
+        this.objtype = Number(data.ObjType) || null;
+        this.color = Number(data.Color) || null;
+        this.layer = Number(data.Layer) || null;
     }
 }

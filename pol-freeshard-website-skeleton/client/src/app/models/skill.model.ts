@@ -1,13 +1,13 @@
 export class Skill {
-    skillName: string;
-    skillValue: number;
+    name: string;
+    value: number;
 
     constructor(data: any) {
         this.setData(data);
     }
 
     setData(data: any) {
-        this.skillName = data.skillName || null;
-        this.skillValue = data.skillValue || null;
+        this.name = data.name || null;
+        this.value = data.value || null;
     }
 }

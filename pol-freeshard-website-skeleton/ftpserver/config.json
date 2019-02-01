@@ -1,0 +1,106 @@
+{
+    "database": {
+        "host": "localhost",
+        "port": "27017",
+        "dbname": "armory_backend"
+    },
+    "ftp": {
+        "host": "localhost",
+        "port": "21",
+        "username": "test",
+        "password": "test"
+    },
+    "files": [
+        { 
+        "filename": "pcs_pcequip.txt",
+        "parsedFilename": "pcs_pcequip.json",
+        "collectionname": "characterservices",
+        "required": true
+        }, {
+        "filename": "serverinfo.txt",
+        "parsedFilename": "serverinfo.json",
+        "collectionname": "servercollection",
+        "required": false
+        }
+    ],
+    "parserwords": {
+        "excludewords" : [
+            "Character",
+            "Item",
+            "{",
+            "}",
+            "#",
+            "CProp"
+        ],
+        "excludeequipmentsword" : [
+            "Serial",
+            "X",
+            "Y",
+            "Z",
+            "Facing",
+            "Revision",
+            "Realm",
+            "DecayAt",
+            "Graphic"
+        ],
+        "statswords" : [
+            "Strength",
+            "Intelligence",
+            "Dexterity"
+        ],
+        "skillswords" : [
+            "Alchemy",
+            "Anatomy",
+            "AnimalLore",
+            "ItemIdentification",
+            "ArmsLore",
+            "Begging",
+            "Blacksmithy",
+            "BowcraftFletching",
+            "Peacemaking",
+            "Camping",
+            "Carpentry",
+            "Cartography",
+            "Cooking",
+            "DetectingHidden",
+            "Discordance",
+            "EvaluatingIntelligence",
+            "Healing",
+            "Fishing",
+            "ForensicEvaluation",
+            "Herding",
+            "Hiding",
+            "Provocation",
+            "Inscription",
+            "Lockpicking",
+            "Magery",
+            "ResistingSpells",
+            "Tactics",
+            "Snooping",
+            "Musicianship",
+            "Poisoning",
+            "Archery",
+            "SpiritSpeak",
+            "Stealing",
+            "Tailoring",
+            "AnimalTaming",
+            "TasteIdentification",
+            "Tinkering",
+            "Tracking",
+            "Veterinary",
+            "Swordsmanship",
+            "MaceFighting",
+            "Fencing",
+            "Wrestling",
+            "Lumberjacking",
+            "Mining",
+            "Meditation",
+            "Stealth",
+            "RemoveTrap",
+            "Parry",
+            "Necromancy",
+            "BattleFocus",
+            "Chivalry"
+        ]
+    }
+}

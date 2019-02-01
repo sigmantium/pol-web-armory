@@ -1,13 +1,13 @@
 export class Stat {
-    attributeName: string;
-    attributeValue: number;
+    name: string;
+    value: number;
 
     constructor(data: any) {
         this.setData(data);
     }
 
     setData(data: any) {
-        this.attributeName = data.attributeName || null;
-        this.attributeValue = data.attributeValue || null;
+        this.name = data.name || null;
+        this.value = data.value || null;
     }
 }

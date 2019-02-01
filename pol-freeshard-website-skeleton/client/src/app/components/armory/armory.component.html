@@ -21,18 +21,18 @@
     <!-- Stats -->
     <b>Stats:</b>
     <p *ngFor="let item of getStats() | keyvalue">
-        {{item.value.attributeName}}: {{item.value.attributeValue}} 
+        {{item.value.name}}: {{item.value.value}} 
     </p><br/>
 
     <!-- Skills -->
     <b>Skills:</b>
     <p *ngFor="let item of getSkills() | keyvalue">
-        {{item.value.skillName}}: 
-        <ng-container *ngIf="!item.value.skillValue.$numberDecimal; else parseDouble">
-            {{item.value.skillValue}}
+        {{item.value.name}}: 
+        <ng-container *ngIf="!item.value.value.$numberDecimal; else parseDouble">
+            {{item.value.value}}
         </ng-container>
         <ng-template #parseDouble>
-            {{item.value.skillValue.$numberDecimal}}
+            {{item.value.value.$numberDecimal}}
         </ng-template>
     </p><br/>
 

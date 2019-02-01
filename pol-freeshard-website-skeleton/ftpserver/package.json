@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "filecompare": "^1.0.4",
-    "ftp-srv": "^3.0.5"
+    "ftp-srv": "^3.0.5",
+    "mongodb": "^3.1.13",
+    "split": "^1.0.1",
+    "underscore": "^1.9.1"
   }
 }
