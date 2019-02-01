@@ -105,13 +105,13 @@ class JSONParser {
   static fillSkills(){
 
     for(var i in skillsNameArray){
-      data.skills.push( {"name:" : skillsNameArray[i], "value": skillsValueArray[i]});
+      data.skills.push( {"name" : skillsNameArray[i], "value": skillsValueArray[i]});
     }
   }
 
   static fillStats(){
     for(var i in statsNameArray){
-      data.stats.push( {"name:" : statsNameArray[i], "value": statsValueArray[i]});
+      data.stats.push( {"name" : statsNameArray[i], "value": statsValueArray[i]});
     }
   }
 
