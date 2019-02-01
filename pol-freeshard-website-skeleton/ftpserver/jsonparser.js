@@ -25,10 +25,10 @@ class JSONParser {
     static StartJSONParser() {
         console.log('Starting JSON parser...');
         // HÄR FELAR koden. "msg":"readFile is not defined", är felmeddelandet.
-       // readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
+        this.readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
     }
 
-    readFile(inPath, outPath, regex) {
+    static readFile(inPath, outPath, regex) {
       let outData = [];
       let character = 0;
       let item = 0;
@@ -48,19 +48,20 @@ class JSONParser {
             }
 
             // A counter to see if the line is within the Character or Item object.
-            if (foundCurlyBrackets(line)) {
+            if (this.foundCurlyBrackets(line)) {
               curlyBrackets++;
             }
 
+
             // If its in the same object and it doesn't have any of the excluded words on the line.
-            if (curlyBrackets < 2 && config.parserwords.excludewords.word.indexOf(line[0]) == -1) {
+            if (curlyBrackets < 2 && config.parserwords.excludewords.indexOf(line[0]) == -1) {
               var word = line[0];
               var value = line[1];
               // If it has a skillword as first value. Insert it into skills array.
-              if (config.parserwords.skillswords.word.indexOf(line[0]) > -1) {
+              if (config.parserwords.skillswords.indexOf(line[0]) > -1) {
                 skillsNameArray.push(word);
                 skillsValueArray.push(Number(parseFloat(value)));
-              } else if (config.parserwords.statswords.word.indexOf(line[0]) > -1) { // else if it has stats, insert it into stats array.
+              } else if (config.parserwords.statswords.indexOf(line[0]) > -1) { // else if it has stats, insert it into stats array.
                 statsNameArray.push(word);
                 statsValueArray.push(Number(parseFloat(value)));
               } else { // or else to the main array.
@@ -71,20 +72,20 @@ class JSONParser {
 
             // If it has two curly braces, it means that the object is closed.
             if (curlyBrackets == 2) {
-              data = _.object(lineName, lineValue);
+              data = _.object(lineNameArray, lineValueArray);
 
               if (character) {
                 data.equipment = [];
                 data.skills = [];
                 data.stats = [];
 
-                fillStats();
-                fillSkills();
+                this.fillStats();
+                this.fillSkills();
 
                 outData.push(data);
               } else if (item) {
                 // Iterate through all characters object.
-                for (j in outData) {
+                for (var j in outData) {
                   // ..To see if the container value is the same as the Serial.
                   if (data.Container == outData[j].Serial) {
                     //add it to the equipment array
@@ -93,23 +94,21 @@ class JSONParser {
                 }
               }
 
-              resetValues();
+              this.resetValues();
             }
           }
     });
 
     readStream.on('end', () => {
-      // TODO: Tänker att vi här inne samlar ihop alla objekt och använder oss av en array med objektet och stegar igenom varje item och söker i character objektens array för att leta efter "Serial" och därefter pushar in varje item i en array
-      // i det character-objektet.
-      writeFile(outData, outPath);
+      this.writeFile(outData, outPath);
     });
   }
 
-  foundCurlyBrackets(line) {
+  static foundCurlyBrackets(line) {
     return line == '{' || line == '}';
   }
 
-  fillSkills(){
+  static fillSkills(){
 
     for(var i in skillsName){
       skillsName.push(skillsName[i]);
@@ -125,7 +124,7 @@ class JSONParser {
     }
   }
 
-  fillStats(){
+  static fillStats(){
     for(var i in statsName){
       statsName.push(statsName[i]);
       statsValue.push(statsValue[i]);
@@ -140,7 +139,7 @@ class JSONParser {
     }
   }
 
-  resetValues() {
+  static resetValues() {
     data = [];
     lineNameArray = [];
     lineValueArray = [];
@@ -151,7 +150,7 @@ class JSONParser {
     curlyBrackets = 0;
   }
 
-  writeFile(data, path) {
+  static writeFile(data, path) {
     let jsonOut = fs.createWriteStream(path);
     jsonOut.write(JSON.stringify(data));
     jsonOut.on('error', err => console.log(err));
