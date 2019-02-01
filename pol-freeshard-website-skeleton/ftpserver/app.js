@@ -9,6 +9,8 @@ const ftpserver = new ftpsrv('ftp://' + config.ftp.host + ':' + config.ftp.port)
 
 // Event on the FTP server
 ftpserver.on('login', ({ connection, username, password}, resolve, reject) => {
+
+    resolve ({root: './data'});
     
     if (username !== config.ftp.username || password !== config.ftp.password) {
         return reject(new Error("Bad username or password"));
@@ -20,10 +22,10 @@ ftpserver.on('login', ({ connection, username, password}, resolve, reject) => {
         if (error) return;
 
         // Check if all files received
-        /*if (!FileFunctions.RequiredFilesReceived()) {
+        if (!FileFunctions.RequiredFilesReceived()) {
             console.log('Not all files received.');
             return;
-        }*/
+        }
 
         console.log('All files received!');
         JSONParser.StartJSONParser();

@@ -110,11 +110,11 @@ class JSONParser {
 
   static fillSkills(){
 
-    for(var i in skillsName){
-      skillsName.push(skillsName[i]);
-      skillsValue.push(skillsValue[i]);
+    for(var i in skillsNameArray){
+      skillsName.push(skillsNameArray[i]);
+      skillsValue.push(skillsValueArray[i]);
 
-      skillsObject.push(_.object(skillsN,skillsV));
+      skillsObject.push(_.object(skillsName,skillsValue));
       data.skills.push(skillsObject);
 
       // Clearing the arrays for the next loop.
@@ -125,11 +125,11 @@ class JSONParser {
   }
 
   static fillStats(){
-    for(var i in statsName){
-      statsName.push(statsName[i]);
-      statsValue.push(statsValue[i]);
+    for(var i in statsNameArray){
+      statsName.push(statsNameArray[i]);
+      statsValue.push(statsValueArray[i]);
 
-      statsObject.push(_.object(statsN,statsV));
+      statsObject.push(_.object(statsName,statsValue));
       data.stats.push(statsObject);
 
       // Clearing the arrays for the next loop.
