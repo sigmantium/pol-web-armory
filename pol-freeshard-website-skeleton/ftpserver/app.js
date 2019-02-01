@@ -14,7 +14,9 @@ ftpserver.on('login', ({ connection, username, password}, resolve, reject) => {
     resolve ({root: './data'});
     
     if (username !== config.ftp.username || password !== config.ftp.password) {
-        
+        reject(new Error('Bad username or password.'));   
+    }
+
     // Listen to incoming files
     connection.on('STOR', async (error, filename) => {
         // Check if theres an error
@@ -37,7 +39,7 @@ ftpserver.on('login', ({ connection, username, password}, resolve, reject) => {
     });
 
     return resolve();
-}});
+});
 
 // Event on the FTP server
 ftpserver.on('client-error', ({ context, error }) => console.error(`FTP server error: error interfacing with client ${context} ${error} ${JSON.stringify(error)}`)); 
