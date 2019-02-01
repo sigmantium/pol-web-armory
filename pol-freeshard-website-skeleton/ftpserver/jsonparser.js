@@ -9,6 +9,8 @@ let skillsNameArray = [], skillsValueArray = [];
 let data;
 
 let curlyBrackets = 0;
+let character = 0;
+let item = 0;
 
 class JSONParser {
 
@@ -16,14 +18,12 @@ class JSONParser {
 
     static StartJSONParser() {
         console.log('Starting JSON parser...');
-        // HÄR FELAR koden. "msg":"readFile is not defined", är felmeddelandet.
         this.readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
     }
 
     static readFile(inPath, outPath, regex) {
       let outData = [];
-      let character = 0;
-      let item = 0;
+     
 
       const readStream = fs.createReadStream(inPath)
         .pipe(split())
@@ -31,13 +31,8 @@ class JSONParser {
           line = line.toString().match(regex);
 
           if (line) {
-            if (line == 'Character') {
-              character = 1;
-              item = 0;
-            } else if (line == 'Item') {
-              character = 0;
-              item = 1;
-            }
+
+            this.setObjectName(line);
 
             // A counter to see if the line is within the Character or Item object.
             if (this.foundCurlyBrackets(line)) {
@@ -131,6 +126,16 @@ class JSONParser {
     jsonOut.write(JSON.stringify(data));
     jsonOut.on('error', err => console.log(err));
     jsonOut.end();
+  }
+
+  static setObjectName(name){
+    if (name == 'Character') {
+      character = 1;
+      item = 0;
+    } else if (name == 'Item') {
+      character = 0;
+      item = 1;
+    }
   }
 }
 
