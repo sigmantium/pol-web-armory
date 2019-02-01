@@ -50,15 +50,17 @@ class JSONParser {
               var word = line[0];
               var value = line[1];
               // If it has a skillword as first value. Insert it into skills array.
-              if (config.parserwords.skillswords.indexOf(line[0]) > -1) {
+              if (config.parserwords.skillswords.indexOf(word) > -1) {
                 skillsNameArray.push(word);
                 skillsValueArray.push(Number(parseFloat(value)));
-              } else if (config.parserwords.statswords.indexOf(line[0]) > -1) { // else if it has stats, insert it into stats array.
+              } else if (config.parserwords.statswords.indexOf(word) > -1) { // else if it has stats, insert it into stats array.
                 statsNameArray.push(word);
                 statsValueArray.push(Number(parseFloat(value)));
               } else { // or else to the main array.
-                lineNameArray.push(word);
-                lineValueArray.push(value);
+                if(!(item && config.parserwords.excludeequipmentsword.indexOf(word) > -1)){
+                  lineNameArray.push(word);
+                  lineValueArray.push(value);
+                }  
               }
             }
 

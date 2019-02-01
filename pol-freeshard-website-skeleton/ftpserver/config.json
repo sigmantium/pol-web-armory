@@ -30,6 +30,17 @@
             "#",
             "CProp"
         ],
+        "excludeequipmentsword" : [
+            "Serial",
+            "X",
+            "Y",
+            "Z",
+            "Facing",
+            "Revision",
+            "Realm",
+            "DecayAt",
+            "Graphic"
+        ],
         "statswords" : [
             "Strength",
             "Intelligence",
