@@ -8,14 +8,6 @@ let statsNameArray = [], statsValueArray = [];
 let skillsNameArray = [], skillsValueArray = [];
 let data;
 
-let skillsName =[];
-let skillsValue = [];
-let skillsObject = [];
-
-let statsName = [];
-let statsValue = [];
-let statsObject = [];
-
 let curlyBrackets = 0;
 
 class JSONParser {
@@ -111,31 +103,13 @@ class JSONParser {
   static fillSkills(){
 
     for(var i in skillsNameArray){
-      skillsName.push(skillsNameArray[i]);
-      skillsValue.push(skillsValueArray[i]);
-
-      skillsObject.push(_.object(skillsName,skillsValue));
-      data.skills.push(skillsObject);
-
-      // Clearing the arrays for the next loop.
-      skillsName = [];
-      skillsValue = [];
-      skillsObject = [];
+      data.skills.push( {"name:" : skillsNameArray[i], "value": skillsValueArray[i]});
     }
   }
 
   static fillStats(){
     for(var i in statsNameArray){
-      statsName.push(statsNameArray[i]);
-      statsValue.push(statsValueArray[i]);
-
-      statsObject.push(_.object(statsName,statsValue));
-      data.stats.push(statsObject);
-
-      // Clearing the arrays for the next loop.
-      statsName = [];
-      statsValue = [];
-      statsObject = [];
+      data.stats.push( {"name:" : statsNameArray[i], "value": statsValueArray[i]});
     }
   }
 
