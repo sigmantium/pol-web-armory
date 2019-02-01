@@ -9,7 +9,7 @@ class FileFunctions {
     static RequiredFilesReceived() {
         const neededFiles = config.files;
         for (let i = 0; i < neededFiles.length; i++) {
-            if (neededFiles[i].required && !this.filesExists('./' + neededFiles[i].filename)) {
+            if (neededFiles[i].required && !this.filesExists('./data/' + neededFiles[i].filename)) {
                 console.log('Failed to find file: ' + neededFiles[i].filename);
                 return false;
             }
