@@ -24,7 +24,8 @@ class JSONParser {
 
     static StartJSONParser() {
         console.log('Starting JSON parser...');
-        readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
+        // HÄR FELAR koden. "msg":"readFile is not defined", är felmeddelandet.
+       // readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
     }
 
     readFile(inPath, outPath, regex) {
