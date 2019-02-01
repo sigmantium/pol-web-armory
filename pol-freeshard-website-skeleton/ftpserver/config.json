@@ -1,0 +1,94 @@
+{
+    "database": {
+        "host": "localhost",
+        "port": "27017",
+        "dbname": "armory_backend"
+    },
+    "ftp": {
+        "host": "localhost",
+        "port": "21",
+        "username": "test",
+        "password": "test"
+    },
+    "files": [
+        {
+        "filename": "pcs_pcequip.txt",
+        "collectionname": "characterservices",
+        "required": true
+        }, {
+        "filename": "serverinfo.txt",
+        "collectionname": "servercollection",
+        "required": false
+        }
+    ],
+    "parserwords": {
+        "excludewords" : [
+            { "word" : "Character"},
+            { "word" : "Item" },
+            { "word" : "{" },
+            { "word" : "}" },
+            { "word" : "#" },
+            { "word" : "CProp" }
+        ],
+        "statswords" : [
+            { "word" : "Strength"},
+            {"word" : "Intelligence" },
+            {"word" : "Dexterity" }
+        ],
+        "skillswords" : [
+            { "word" : "Alchemy" },
+            { "word" : "Anatomy" },
+            { "word" : "AnimalLore" },
+            { "word" : "ItemIdentification" },
+            { "word" : "ArmsLore" },
+            { "word" : "Begging" },
+            { "word" : "Blacksmithy" },
+            { "word" : "BowcraftFletching" },
+            { "word" : "Peacemaking" },
+            { "word" : "Camping" },
+            { "word" : "Carpentry" },
+            { "word" : "Cartography" },
+            { "word" : "Cooking" },
+            { "word" : "DetectingHidden" },
+            { "word" : "Discordance" },
+            { "word" : "EvaluatingIntelligence" },
+            { "word" : "Healing" },
+            { "word" : "Fishing" },
+            { "word" : "ForensicEvaluation" },
+            { "word" : "Herding" },
+            { "word" : "Hiding" },
+            { "word" : "Provocation" },
+            { "word" : "Inscription" },
+            { "word" : "Lockpicking" },
+            { "word" : "Magery" },
+            { "word" : "ResistingSpells" },
+            { "word" : "Tactics" },
+            { "word" : "Snooping" },
+            { "word" : "Musicianship" },
+            { "word" : "Poisoning" },
+            { "word" : "Archery" },
+            { "word" : "SpiritSpeak" },
+            { "word" : "Stealing" },
+            { "word" : "Tailoring" },
+            { "word" : "AnimalTaming" },
+            { "word" : "TasteIdentification" },
+            { "word" : "Tinkering" },
+            { "word" : "Tracking" },
+            { "word" : "Veterinary" },
+            { "word" : "Swordsmanship" },
+            { "word" : "MaceFighting" },
+            { "word" : "Fencing" },
+            { "word" : "Wrestling" },
+            { "word" : "Lumberjacking" },
+            { "word" : "Mining" },
+            { "word" : "Meditation" },
+            { "word" : "Stealth" },
+            { "word" : "RemoveTrap" },
+            { "word" : "Parry" },
+            { "word" : "Necromancy" },
+            { "word" : "BattleFocus" },
+            { "word" : "Chivalry" },
+        ]
+    }
+
+}
