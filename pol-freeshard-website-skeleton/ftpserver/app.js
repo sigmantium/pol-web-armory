@@ -1,6 +1,7 @@
 // Native libraries
 const fs = require('fs');
 const filecompare = require('filecompare');
+const file = require('./JSONParser/parser.js');
 
 // External libraries
 const FtpSrv = require('ftp-srv');
@@ -29,13 +30,15 @@ ftpServer.on('login', ({ connection, username, password}, resolve, reject) => {
         if (error) return;
 
         // Check if all files received
-        if (!checkAllFilesReceived()) {
+       /* if (!checkAllFilesReceived()) {
+            console.log("Files didn't exist");
             return;
-        }
+        }*/
 
         // Loop through all necessary files
         for (let i = 0; i < neededFiles.length; i++) {
             if (neededFiles[i].necessary) {
+                const testFunc1 = file.readFile('./data/test.txt', './data/pcs.json',new RegExp("[^\\n\\r\\t ]+", 'g'));
                 switch(compareFiles(neededFiles[i].incomingFile, neededFiles[i].oldFile)) {
                     case 1: // No old file exists, create new mongodb collection and insert JSON document
                         createMongoCollection(neededFiles[i].incomingFile, neededFiles[i].collectionname);

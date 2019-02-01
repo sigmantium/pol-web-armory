@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node JSONParser/parser.js --i=./data/testData.txt  --o=./data/pcs.json --h"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "filecompare": "^1.0.4",
-    "ftp-srv": "^3.0.5"
+    "ftp-srv": "^3.0.5",
+    "split": "^1.0.1",
+    "underscore": "^1.9.1",
+    "yargs": "^12.0.5"
   }
 }
