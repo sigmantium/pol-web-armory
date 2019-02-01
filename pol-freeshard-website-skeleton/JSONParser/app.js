@@ -92,13 +92,13 @@ const skillsWords = [
 
 // Read file
 if (yargs.i && yargs.o) {
-  readFile(yargs.i, yargs.p ? new RegExp(yargs.p, 'g') : new RegExp("[^\\n\\r\\t ]+", 'g'));
+  readFile(yargs.i, yargs.o, yargs.p ? new RegExp(yargs.p, 'g') : new RegExp("[^\\n\\r\\t ]+", 'g'));
 } else {
   console.log("Expected --i=\<inputFile.txt\> --o=\<inputFile.txt\> --p\<optional regex pattern to match field separator>");
 }
 
 // /[^\t]+/g
-function readFile(inPath, regex) {
+function readFile(inPath, outPath, regex) {
   let outData = [];
   let character = 0;
   let item = 0;
@@ -173,7 +173,7 @@ function readFile(inPath, regex) {
   readStream.on('end', () => {
     // TODO: Tänker att vi här inne samlar ihop alla objekt och använder oss av en array med objektet och stegar igenom varje item och söker i character objektens array för att leta efter "Serial" och därefter pushar in varje item i en array
     // i det character-objektet. 
-    writeFile(outData, yargs.o);
+    writeFile(outData, outPath);
   });
 }
 
