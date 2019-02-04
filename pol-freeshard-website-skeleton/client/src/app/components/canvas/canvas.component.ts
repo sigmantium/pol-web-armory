@@ -35,10 +35,10 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
       console.log('Equipment info: ' + this.equipmentInfo);
 
       // Sort the array based on layers
-      this.equipmentInfo.sort((a, b) => a.Layer - b.Layer);
+      this.equipmentInfo.sort((a, b) => a.layer - b.layer);
 
       // Foreach the equipmentInfo
-      this.equipmentInfo.forEach(equipment => this.renderImage(Number(equipment.ObjType), Number(equipment.Color)));
+      this.equipmentInfo.forEach(equipment => this.renderImage(Number(equipment.objtype), Number(equipment.color)));
     });
   }
 

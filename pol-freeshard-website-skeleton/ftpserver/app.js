@@ -11,7 +11,7 @@ const ftpserver = new ftpsrv('ftp://' + config.ftp.host + ':' + config.ftp.port)
 // Event on the FTP server
 ftpserver.on('login', ({ connection, username, password}, resolve, reject) => {
     
-    resolve ({root: './data'});
+    resolve({root: './data'});
     
     if (username !== config.ftp.username || password !== config.ftp.password) {
         reject(new Error('Bad username or password.'));   
