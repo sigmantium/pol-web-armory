@@ -24,7 +24,7 @@ ftpserver.on('login', ({ connection, username, password}, resolve, reject) => {
 
         // Check if all files received
         if (!FileFunctions.RequiredFilesReceived()) {
-            console.log('Not all files received.');
+            console.log('Not all files received.'); 
             return;
         }
 
