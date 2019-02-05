@@ -10,7 +10,6 @@ import { ApiService } from '../api.service';
   providedIn: 'root'
 })
 export class GuildService {
-  private guilds: Promise<Guild[]>;
   private service: any;
 
   constructor(

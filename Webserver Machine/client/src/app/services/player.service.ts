@@ -10,7 +10,6 @@ import { ApiService } from '../api.service';
   providedIn: 'root'
 })
 export class PlayerService {
-  private players: Promise<Player[]>;
   private service: any;
 
   constructor(

@@ -10,7 +10,6 @@ import { ApiService } from '../api.service';
   providedIn: 'root'
 })
 export class CharacterService {
-  private characters: Promise<Character[]>;
   private service: any;
 
   constructor(
