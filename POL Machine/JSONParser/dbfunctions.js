@@ -63,14 +63,14 @@ class MongoDB {
 
         data.forEach(async (elem) => {
             await collection.findOneAndUpdate({ 'serial': elem.serial }, { $set: { 
-                'name': elem.accounts,
-                'gender': elem.guildcount,
-                'race': elem.itemcount,
-                'title_guild': elem.mobilecount,
-                'title_prefix': elem.onlinecount,
-                'title_suffix': elem.polversion,
-                'title_race': elem.serverload,
-                'guild': elem.uptime,
+                'name': elem.name,
+                'gender': elem.gender,
+                'race': elem.race,
+                'title_guild': elem.title_guild,
+                'title_prefix': elem.title_prefix,
+                'title_suffix': elem.title_suffix,
+                'title_race': elem.title_race,
+                'guild': elem.guild,
                 'murderer': elem.murderer
             }}, { upsert: true }, (err, res) => {
 
@@ -89,15 +89,14 @@ class MongoDB {
 
         data.forEach(async (elem) => {
             await collection.findOneAndUpdate({ 'guildid': elem.guildid }, { $set: { 
-                'abbr': elem.accounts,
-                'charter': elem.guildcount,
-                'color': elem.itemcount,
-                'faction': elem.mobilecount,
-                'master': elem.onlinecount,
-                'name': elem.polversion,
-                'title_race': elem.serverload,
-                'stone': elem.uptime,
-                'type': elem.murderer,
+                'abbr': elem.abbr,
+                'charter': elem.charter,
+                'color': elem.color,
+                'faction': elem.faction,
+                'master': elem.master,
+                'name': elem.name,
+                'stone': elem.stone,
+                'type': elem.type,
                 'website': elem.website,
                 'members': elem.members,
                 'allies': elem.allies,

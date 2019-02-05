@@ -17,14 +17,14 @@ import { CharacterService } from './services/character.service';
 import { AppComponent } from './app.component';
 import { CanvasComponent } from './components/canvas/canvas.component';
 import { ArmoryComponent } from './components/armory/armory.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardGuestComponent } from './dashboard/dashboard-guest/dashboard-guest.component';
-import { DashboardUserComponent } from './dashboard/dashboard-user/dashboard-user.component';
-import { DashboardAdminComponent } from './dashboard/dashboard-admin/dashboard-admin.component';
-import { AboutComponent } from './about/about.component';
-import { HowToJoinComponent } from './how-to-join/how-to-join.component';
-import { ServerStatisticsComponent } from './server-statistics/server-statistics.component';
-import { WikipediaComponent } from './wikipedia/wikipedia.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardGuestComponent } from './components/dashboard/dashboard-guest/dashboard-guest.component';
+import { DashboardUserComponent } from './components/dashboard/dashboard-user/dashboard-user.component';
+import { DashboardAdminComponent } from './components/dashboard/dashboard-admin/dashboard-admin.component';
+import { AboutComponent } from './components/about/about.component';
+import { HowToJoinComponent } from './components/how-to-join/how-to-join.component';
+import { ServerStatisticsComponent } from './components/server-statistics/server-statistics.component';
+import { WikipediaComponent } from './components/wikipedia/wikipedia.component';
 
 @NgModule({
   declarations: [
