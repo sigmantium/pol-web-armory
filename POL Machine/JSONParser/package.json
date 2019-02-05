@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "filecompare": "^1.0.4",
     "ftp-srv": "^3.0.5",
     "mongodb": "^3.1.13",

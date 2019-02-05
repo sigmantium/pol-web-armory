@@ -16,11 +16,6 @@
         "parsedFilename": "pcs_pcequip.json",
         "collectionname": "characterservices",
         "required": true
-        }, {
-        "filename": "serverinfo.txt",
-        "parsedFilename": "serverinfo.json",
-        "collectionname": "servercollection",
-        "required": false
         }
     ],
     "parserwords": {
