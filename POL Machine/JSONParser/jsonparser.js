@@ -91,8 +91,31 @@ class JSONParser {
     });
 
     readStream.on('end', () => {
+   
+      this.changeGumpid(outData);
       this.writeFile(outData, outPath);
     });
+  }
+
+  static changeGumpid(outData){
+    var gumpid = fs.readFileSync("objtype_to_gumpid.json");
+    var data = JSON.parse(gumpid);
+    for(var i in outData){
+      var gender = outData[i]['Gender'];
+      
+      for(var y in outData[i]['equipment']){
+        for(var j in data){
+          if (outData[i]['equipment'][y]['ObjType'] == data[j]['objtype']){
+            if(gender == 0){
+              outData[i]['ObjType'] = data[j]['gumpid'];
+            }else if(gender == 1){
+              outData[i]['ObjType'] = data[j]['gumpid2'];
+            }
+        }
+      }
+      
+    }
+  }
   }
 
   static foundCurlyBrackets(line) {
