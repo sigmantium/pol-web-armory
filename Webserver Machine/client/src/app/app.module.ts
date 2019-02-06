@@ -12,45 +12,41 @@ import { RoutingModule } from './routing.module';
 // Services
 import { ApiService } from './api.service';
 import { CharacterService } from './services/character.service';
+import { GuildService } from './services/guild.service';
+import { PlayerService } from './services/player.service';
 
 // Components
 import { AppComponent } from './app.component';
 import { CanvasComponent } from './components/canvas/canvas.component';
 import { ArmoryComponent } from './components/armory/armory.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { DashboardGuestComponent } from './components/dashboard/dashboard-guest/dashboard-guest.component';
-import { DashboardUserComponent } from './components/dashboard/dashboard-user/dashboard-user.component';
-import { DashboardAdminComponent } from './components/dashboard/dashboard-admin/dashboard-admin.component';
-import { AboutComponent } from './components/about/about.component';
-import { HowToJoinComponent } from './components/how-to-join/how-to-join.component';
 import { ServerStatisticsComponent } from './components/server-statistics/server-statistics.component';
-import { WikipediaComponent } from './components/wikipedia/wikipedia.component';
+import { GuildsComponent } from './components/guilds/guilds.component';
+import { PlayersComponent } from './components/players/players.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CanvasComponent,
     ArmoryComponent,
+    CanvasComponent,
     DashboardComponent,
-    DashboardGuestComponent,
-    DashboardUserComponent,
-    DashboardAdminComponent,
-    AboutComponent,
-    HowToJoinComponent,
-    ServerStatisticsComponent,
-    WikipediaComponent
+    GuildsComponent,
+    PlayersComponent,
+    ServerStatisticsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatSelectModule,
     ReactiveFormsModule,
-    RoutingModule,
-    MatSelectModule
+    RoutingModule
   ],
   providers: [
     ApiService,
-    CharacterService
+    CharacterService,
+    GuildService,
+    PlayerService
   ],
   bootstrap: [AppComponent]
 })

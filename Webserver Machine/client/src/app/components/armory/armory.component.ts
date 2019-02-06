@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Models
 import { Character } from '../../models/character.model';
@@ -7,11 +7,6 @@ import { Equipment } from '../../models/equipment.model';
 // Services
 import { CharacterService } from '../../services/character.service';
 import { Subject } from 'rxjs';
-
-export interface Food {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-armory',
@@ -35,7 +30,6 @@ export class ArmoryComponent implements OnInit {
 
   public valueChanged() {
     this.character = this.characters.filter(char => char.name === this.selectedCharacter);
-    console.log('this.character.equipment: ' + JSON.stringify(this.character[0].equipment));
     this.armorySubject.next(this.character[0].equipment);
   }
 

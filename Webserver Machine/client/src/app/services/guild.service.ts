@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // Models
-import { Character } from '../models/character.model';
+import { Guild } from '../models/guild.model';
 
 // Services
 import { ApiService } from '../api.service';
@@ -9,13 +9,13 @@ import { ApiService } from '../api.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CharacterService {
+export class GuildService {
   private service: any;
 
   constructor(
     private apiService: ApiService
   ) {
-    this.service = this.apiService.client.service('characterservice');
+    this.service = this.apiService.client.service('guildservice');
 
     this.getAll();
   }
@@ -23,29 +23,29 @@ export class CharacterService {
   /**
    * Public API
    */
-  public get(id: string): Promise<Character> {
+  public get(id: number): Promise<Guild> {
     return this.apiGet(id);
   }
 
-  public getAll(): Promise<Character[]> {
+  public getAll(): Promise<Guild[]> {
     return this.apiGetAll();
   }
 
   /**
    * Internal API
    */
-  private async apiGet(id: string, query: any = {}): Promise<Character> {
+  private async apiGet(id: number, query: any = {}): Promise<Guild> {
     return await this.service
       .get(id, query)
-      .then((result: any) => new Character(result.data));
+      .then((result: any) => new Guild(result.data));
   }
 
-  private async apiGetAll(): Promise<Character[]> {
+  private async apiGetAll(): Promise<Guild[]> {
     return await this.service.find({
       $limit: 1000
     }).then((results: any) => {
       if (results.data && results.data.length > 0) {
-        return results.data.map((item: any) => new Character(item));
+        return results.data.map((item: any) => new Guild(item));
       }
       return [];
     });
