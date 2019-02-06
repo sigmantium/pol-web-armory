@@ -106,9 +106,9 @@ class JSONParser {
       for (var y in outData[i]['equipment']){
         for (var j in data){
           if (outData[i]['equipment'][y]['objtype'] == data[j]['objtype']){
-            if( gender == 0){ // If it's a male.
+            if( gender == "0"){ // If it's a male.
               outData[i]['objtype'] = data[j]['gumpid'];
-            }else if (gender == 1){ // If it's a female.
+            }else if (gender == "1"){ // If it's a female.
               if (data[j]['gumpid2']){ // If gumpid exists..
                 outData[i]['objtype'] = data[j]['gumpid2'];
               }else{ // Else..
