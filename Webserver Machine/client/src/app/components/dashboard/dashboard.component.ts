@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  public page: number;
 
-  ngOnInit() {
+  constructor() {
+    this.page = 1;
+  }
+
+  ngOnInit() { }
+
+  setPage(page: number) {
+    this.page = page;
   }
 
 }

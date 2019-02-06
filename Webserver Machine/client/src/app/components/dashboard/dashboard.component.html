@@ -1,9 +1,4 @@
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="../assets/images/favicon.png" type="image/png">
-  <title>POL Freeshard Website</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
   <!-- main css -->
@@ -32,15 +27,25 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav">
-              <li class="nav-item active"><a class="nav-link" routerLink="/dashboard">Home</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/server-statistics">Server statistics</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/playersonline">Players Online</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/guilds">Guilds</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="/armory">Armory</a></li>
+              <li class="nav-item active"><a class="nav-link" (click)="setPage(1)">Home</a></li>
+              <li class="nav-item"><a class="nav-link" (click)="setPage(2)">Server statistics</a></li>
+              <li class="nav-item"><a class="nav-link" (click)="setPage(3)">Players Online</a></li>
+              <li class="nav-item"><a class="nav-link" (click)="setPage(4)">Guilds</a></li>
+              <li class="nav-item"><a class="nav-link" (click)="setPage(5)">Armory</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
   </header>
-  <!--================Header Menu Area =================-->
+<!--================Header Menu Area =================-->
+
+<div style="margin-top: 250px;">
+<ng-container [ngSwitch]="page">
+    <p *ngSwitchCase="1">Welcome to the home page!</p>
+    <app-server-statistics *ngSwitchCase="2"></app-server-statistics>
+    <app-players *ngSwitchCase="3"></app-players>
+    <app-guilds  *ngSwitchCase="4"></app-guilds>
+    <app-armory  *ngSwitchCase="5"></app-armory>
+</ng-container>
+</div>
