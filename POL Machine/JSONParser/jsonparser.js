@@ -101,18 +101,18 @@ class JSONParser {
     var gumpid = fs.readFileSync("objtype_to_gumpid.json");
     var data = JSON.parse(gumpid);
     for (var i in outData){
-      var gender = outData[i]['Gender'];
+      var gender = outData[i]['gender'];
       
       for (var y in outData[i]['equipment']){
         for (var j in data){
-          if (outData[i]['equipment'][y]['ObjType'] == data[j]['objtype']){
+          if (outData[i]['equipment'][y]['objtype'] == data[j]['objtype']){
             if( gender == 0){ // If it's a male.
-              outData[i]['ObjType'] = data[j]['gumpid'];
+              outData[i]['objtype'] = data[j]['gumpid'];
             }else if (gender == 1){ // If it's a female.
               if (data[j]['gumpid2']){ // If gumpid exists..
-                outData[i]['ObjType'] = data[j]['gumpid2'];
+                outData[i]['objtype'] = data[j]['gumpid2'];
               }else{ // Else..
-                outData[i]['ObjType'] = data[j]['gumpid'];
+                outData[i]['objtype'] = data[j]['gumpid'];
               }  
             }
         }
