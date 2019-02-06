@@ -78,7 +78,7 @@ class JSONParser {
                 // Iterate through all characters object.
                 for (var j in outData) {
                   // ..To see if the container value is the same as the Serial.
-                  if (data.Container == outData[j].Serial) {
+                  if (data.container == outData[j].serial) {
                     //add it to the equipment array
                     outData[j].equipment.push(data);
                   }
@@ -100,19 +100,22 @@ class JSONParser {
   static changeGumpid(outData){
     var gumpid = fs.readFileSync("objtype_to_gumpid.json");
     var data = JSON.parse(gumpid);
+
     for (var i in outData){
       var gender = outData[i]['gender'];
       
-      for (var y in outData[i]['equipment']){
+      for (var y in outData[i]['equipment']){      
         for (var j in data){
-          if (outData[i]['equipment'][y]['objtype'] == data[j]['objtype']){
-            if( gender == "0"){ // If it's a male.
-              outData[i]['objtype'] = data[j]['gumpid'];
-            }else if (gender == "1"){ // If it's a female.
-              if (data[j]['gumpid2']){ // If gumpid exists..
-                outData[i]['objtype'] = data[j]['gumpid2'];
-              }else{ // Else..
-                outData[i]['objtype'] = data[j]['gumpid'];
+          
+          if (outData[i]['equipment'][y]['objtype'].toLowerCase() === data[j]['objtype'].toLowerCase()){
+            if (gender == '0'){ // If it's a male.
+              outData[i]['equipment'][y]['objtype'] = data[j]['gumpid'];
+            } else if (gender == '1'){ // If it's a female.
+              if (data[j]['gumpid2']){ // If gumpid2 exists..
+                outData[i]['equipment'][y]['objtype'] = data[j]['gumpid2'];
+              }
+              else{ // Else..
+                outData[i]['equipment'][y]['objtype'] = data[j]['gumpid'];
               }  
             }
         }
