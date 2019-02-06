@@ -12,14 +12,14 @@ import { ServerStatsService } from '../../services/serverstats.service';
   styleUrls: ['./server-statistics.component.css']
 })
 export class ServerStatisticsComponent implements OnInit {
-  private serverStats: ServerStats;
+  private serverStats: ServerStats[];
 
   constructor(
     private serverStatsService: ServerStatsService
   ) { }
 
   async ngOnInit() {
-    this.serverStats = await this.serverStatsService.get(1);
+    this.serverStats = await this.serverStatsService.getAll();
   }
 
 }
