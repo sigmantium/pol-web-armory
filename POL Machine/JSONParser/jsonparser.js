@@ -48,15 +48,15 @@ class JSONParser {
               var value = line[1];
               // If it has a skillword as first value. Insert it into skills array.
               if (config.parserwords.skillswords.indexOf(word) > -1) {
-                skillsNameArray.push(word);
+                skillsNameArray.push(word.toLowerCase());
                 skillsValueArray.push(Number(parseFloat(value)));
               } else if (config.parserwords.statswords.indexOf(word) > -1) { // else if it has stats, insert it into stats array.
                 statsNameArray.push(word);
                 statsValueArray.push(Number(parseFloat(value)));
               } else { // or else to the main array.
                 if(!(item && config.parserwords.excludeequipmentsword.indexOf(word) > -1)){
-                  lineNameArray.push(word);
-                  lineValueArray.push(value);
+                  lineNameArray.push(word.toLowerCase());
+                  lineValueArray.push(value).toLowerCase();
                 }  
               }
             }
@@ -100,16 +100,20 @@ class JSONParser {
   static changeGumpid(outData){
     var gumpid = fs.readFileSync("objtype_to_gumpid.json");
     var data = JSON.parse(gumpid);
-    for(var i in outData){
+    for (var i in outData){
       var gender = outData[i]['Gender'];
       
-      for(var y in outData[i]['equipment']){
-        for(var j in data){
+      for (var y in outData[i]['equipment']){
+        for (var j in data){
           if (outData[i]['equipment'][y]['ObjType'] == data[j]['objtype']){
-            if(gender == 0){
+            if( gender == 0){ // If it's a male.
               outData[i]['ObjType'] = data[j]['gumpid'];
-            }else if(gender == 1){
-              outData[i]['ObjType'] = data[j]['gumpid2'];
+            }else if (gender == 1){ // If it's a female.
+              if (data[j]['gumpid2']){ // If gumpid exists..
+                outData[i]['ObjType'] = data[j]['gumpid2'];
+              }else{ // Else..
+                outData[i]['ObjType'] = data[j]['gumpid'];
+              }  
             }
         }
       }
