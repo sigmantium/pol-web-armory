@@ -14,7 +14,7 @@ export class ServerStats {
     }
 
     setData(data: any) {
-        this.id = data.id || null;
+        this.id = data._id || null;
         this.accounts = data.accounts || null;
         this.guildcount = data.guildcount || null;
         this.itemcount = data.itemcount || null;

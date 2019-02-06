@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Materials
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material';
 
 // Modules
 import { RoutingModule } from './routing.module';
@@ -39,6 +40,7 @@ import { PlayersComponent } from './components/players/players.component';
     BrowserAnimationsModule,
     FormsModule,
     MatSelectModule,
+    MatTableModule,
     ReactiveFormsModule,
     RoutingModule
   ],

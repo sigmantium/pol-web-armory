@@ -17,23 +17,28 @@ export class ServerStatsService {
   ) {
     this.service = this.apiService.client.service('serverstatsservice');
 
-    this.get(1);
+    this.getAll();
   }
 
   /**
    * Public API
    */
-  public get(id: number): Promise<ServerStats> {
-    return this.apiGet(id);
+  public getAll(): Promise<ServerStats[]> {
+    return this.apiGetAll();
   }
 
   /**
    * Internal API
    */
-  private async apiGet(id: number, query: any = {}): Promise<ServerStats> {
-    return await this.service
-      .get(id, query)
-      .then((result: any) => new ServerStats(result.data));
+  private async apiGetAll(): Promise<ServerStats[]> {
+    return await this.service.find({
+      $limit: 1000
+    }).then((results: any) => {
+      if (results.data && results.data.length > 0) {
+        return results.data.map((item: any) => new ServerStats(item));
+      }
+      return [];
+    });
   }
 
 }

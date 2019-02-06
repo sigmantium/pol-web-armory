@@ -5,12 +5,11 @@ export class Guild {
     faction: string;
     master: string;
     name: string;
-    stone: number;
     type: string;
     website: string;
-    members: string;
-    allies: string;
-    enemies: string;
+    members: number;
+    allies: number;
+    enemies: number;
 
     constructor(data: any) {
         this.setData(data);
@@ -23,11 +22,10 @@ export class Guild {
         this.faction = data.faction || null;
         this.master = data.master || null;
         this.name = data.name || null;
-        this.stone = data.stone || null;
         this.type = data.type || null;
         this.website = data.website || null;
-        this.members = data.members || null;
-        this.allies = data.allies || null;
-        this.enemies = data.enemies || null;
+        this.members = data.members.length || 1;
+        this.allies = data.allies.length || 0;
+        this.enemies = data.enemies.length || 0;
     }
 }

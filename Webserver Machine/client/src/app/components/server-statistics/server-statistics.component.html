@@ -1,2 +1,17 @@
-<p>server-statistics works!</p>
-<p> {{ serverStats.polversion }}</p>
+<ng-container *ngIf="serverStats; else noStatistics" >
+    <div *ngFor="let stats of serverStats"> 
+        <b>Server statistics:</b>
+        <p>Polversion: {{ stats.polversion }}</p>
+        <p>Server uptime: {{ stats.uptime }}</p>
+        <p>Server load: {{ stats.serverload }}%</p>
+        <p>Accounts: {{ stats.accounts }}</p>
+        <p>Guilds: {{ stats.guildcount }}</p>
+        <p>Item count: {{ stats.itemcount }}</p>
+        <p>Mobile count: {{ stats.mobilecount }}</p>
+        <p>Online count: {{ stats.onlinecount }}</p>
+    </div>
+</ng-container>
+
+<ng-template #noStatistics>
+    <p>No statistics available.</p>
+</ng-template>

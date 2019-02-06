@@ -1,4 +1,59 @@
-<p>players works!</p>
-<p *ngFor="let player of players">
-  {{ player.name }}
-</p>
+<ng-container *ngIf="players; else noPlayers" >
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Gender Column -->
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+      
+        <!-- Race Column -->
+        <ng-container matColumnDef="race">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Race </th>
+          <td mat-cell *matCellDef="let element"> {{element.race}} </td>
+        </ng-container>
+
+        <!-- Title Prefix Column -->
+        <ng-container matColumnDef="title_prefix">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Title (Prefix) </th>
+          <td mat-cell *matCellDef="let element"> {{element.title_prefix}} </td>
+        </ng-container>
+      
+        <!-- Title Suffix Column -->
+        <ng-container matColumnDef="title_suffix">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Title (Suffix) </th>
+          <td mat-cell *matCellDef="let element"> {{element.title_suffix}} </td>
+        </ng-container>
+
+        <!-- Title Race Column -->
+        <ng-container matColumnDef="title_race">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Title (Race) </th>
+          <td mat-cell *matCellDef="let element"> {{element.title_race}} </td>
+        </ng-container>
+
+        <!-- Title Guild Column -->
+        <ng-container matColumnDef="title_guild">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Title (Guild) </th>
+          <td mat-cell *matCellDef="let element"> {{element.title_guild}} </td>
+        </ng-container>
+
+        <!-- Murderer Column -->
+        <ng-container matColumnDef="murderer">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Murderer </th>
+          <td mat-cell *matCellDef="let element"> {{element.murderer}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</ng-container>
+
+<ng-template #noPlayers>
+    <p>No players online</p>
+</ng-template>
