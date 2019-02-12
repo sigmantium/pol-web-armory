@@ -29,50 +29,6 @@ $(document).ready(function () {
     }), $("#event-results > a").on("click", function (e) {
         e.preventDefault(), $("#event-results").children(".dropdown-container").stop(!0, !0).fadeToggle("fast", function () {})
     }), $(".tournament-link").click(!1)), $("#private-character").find(".private").html("----");
-    var n = ["1v1_results", "2v2_results", "3v3_results", "ctf_results", "koth_results", "dd_results"];
-    $("#view-results").change(function () {
-        $("select option:selected").each(function () {
-            var e = $(this).attr("value"); - 1 != $.inArray(e, n) && ("1v1_results" == $(this).attr("value") && ($(".results").hide(), $("#tourn1").fadeIn()), "2v2_results" == $(this).attr("value") && ($(".results").hide(), $("#tourn2").fadeIn()), "3v3_results" == $(this).attr("value") && ($(".results").hide(), $("#tourn3").fadeIn()), "ctf_results" == $(this).attr("value") && ($(".results").hide(), $("#ctfstats").fadeIn()), "koth_results" == $(this).attr("value") && ($(".results").hide(), $("#kothstats").fadeIn()), "dd_results" == $(this).attr("value") && ($(".results").hide(), $("#ddstats").fadeIn()))
-        })
-    }).change();
-    var a = ["all-ach", "skill-ach", "pvm-ach", "event-ach", "explore-ach", "craft-ach"];
-    $("#view-achieves").change(function () {
-        $("select option:selected").each(function () {
-            var e = $(this).attr("value");
-            if (-1 != $.inArray(e, a))
-                if ("all-ach" == e)
-                    for (i = 0; i < a.length; i++) $("#" + a[i]).fadeIn();
-                else {
-                    for (i = 0; i < a.length; i++) $("#" + a[i]).hide();
-                    $("#" + e).fadeIn()
-                }
-        })
-    }).change(), $("#damageType").change(function () {
-        $("select option:selected").each(function () {
-            var e = $(this).attr("value");
-            ("monster" == e || "player" == e) && ("monster" == e ? ($("#pvp-armor").hide(), $("#pvm-armor").fadeIn()) : "player" == e && ($("#pvm-armor").hide(), $("#pvp-armor").fadeIn()))
-        })
-    }).change();
-    var o = ["swords", "macing", "fencing", "archery", "fists"];
-    $("#weaponType").change(function () {
-        $("select option:selected").each(function () {
-            var e = $(this).attr("value");
-            if (-1 != $.inArray(e, o)) {
-                for (i = 0; i < o.length; i++) $("#" + o[i]).hide();
-                $("#" + e).show()
-            }
-        })
-    }).change();
-    var r = ["category-mcat", "total-mcat", "undead-mcat", "animal-mcat", "dragonkind-mcat", "orcish-mcat", "humanoid-mcat", "elemental-mcat", "daemons-mcat", "plants-mcat", "spiderorsnake-mcat", "ophidian-mcat", "terathan-mcat", "boss-mcat", "special-mcat", "misc-mcat"];
-    $("#view-monster-category").change(function () {
-        $("select option:selected").each(function () {
-            var e = $(this).attr("value");
-            if (-1 != $.inArray(e, r)) {
-                for (i = 0; i < r.length; i++) $("#" + r[i]).hide(), $("#" + r[i] + "-title").hide(), $("#" + r[i] + "-none").hide();
-                $("#" + e).fadeIn(), $("#" + e + "-title").show(), $("#" + e + "-none").fadeIn()
-            }
-        })
-    }).change();
     var s = $(".main-container").offset().top,
         c = function () {
             var e = $(window).scrollTop();
