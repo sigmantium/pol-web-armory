@@ -9,6 +9,7 @@ import { MatTableModule } from '@angular/material';
 
 // Modules
 import { RoutingModule } from './routing.module';
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 // Services
 import { ApiService } from './api.service';
@@ -24,6 +25,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ServerStatisticsComponent } from './components/server-statistics/server-statistics.component';
 import { GuildsComponent } from './components/guilds/guilds.component';
 import { PlayersComponent } from './components/players/players.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { PlayersComponent } from './components/players/players.component';
     DashboardComponent,
     GuildsComponent,
     PlayersComponent,
-    ServerStatisticsComponent
+    ServerStatisticsComponent,
+    NavigationComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import { PlayersComponent } from './components/players/players.component';
     MatSelectModule,
     MatTableModule,
     ReactiveFormsModule,
-    RoutingModule
+    RoutingModule,
+    SlideshowModule
   ],
   providers: [
     ApiService,

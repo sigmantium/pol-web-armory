@@ -1,51 +1,234 @@
-<head>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.css">
-  <!-- main css -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
-</head>
+<!-- Left column -->
+<div class="left-column">
 
-  <!--================Header Menu Area =================-->
-  <header class="header_area">
-    <div class="logo_part">
-      <div class="container">
-        <a class="logo" href="#"><img src="../assets/images/logo.png" alt=""></a>
+    <!-- The Slider -->
+    <app-slider></app-slider>
+
+    <!-- Here starts the articles-->
+    <div class="article">
+      <div class="article-content-container">
+        <div class="intro-content clearfloats">
+
+          <h1>Welcome to POLServer Website Solution</h1>
+          <p>
+            Welcome to the Penultima OnLine (POL) emulator home page.<br/><br/>
+
+            POL is an Ultima Online® emulator that has been in development for over 12 years and supports most of the
+            features that players have enjoyed from Ultima Online: The Second Age® to Ultima Online: Mondain's Legacy®.
+            POL is the most flexible and customizable UO emulator around.<br/><br/>
+
+            Some of POL’s features are:<br/>
+            An emphasis on flexibility and customization that allows you to create the world you want
+            POL’s eScript scripting language is simple enough to allow those with no previous programming experience to
+            learn how to customize their world and yet powerful enough to accomplish complex tasks
+            A complete set of scripts (the “Distro”) that emphasize the basics of game play, but are designed to allow you
+            to easily modify or expand their functionality
+            If you want to create your world entirely from scratch there’s a set of “bare bones” scripts that provide the
+            minimum files needed to start POL, login, walk around, and talk
+            Extensive documentation is available in both online and downloadable form
+            Packethooks to allow expansion of the emulator core functions
+            Scripts run inside a virtual machine for greater security
+            A unified emulator core
+            An active and dedicated community of people ready to answer any questions you might have and provide help
+            whenever you need it<br/><br/>
+
+            If you don’t know where to start, we suggest that you download the latest core release and its associated set
+            of Distro scripts.<br/><br/>
+
+            So download POL and start creating your world today!
+          </p>
+
+        </div>
       </div>
     </div>
-    <div class="main_menu">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" routerLink="/dashboard"><img src="../assets/images/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav">
-              <li class="nav-item active"><a class="nav-link" (click)="setPage(1)">Home</a></li>
-              <li class="nav-item"><a class="nav-link" (click)="setPage(2)">Server statistics</a></li>
-              <li class="nav-item"><a class="nav-link" (click)="setPage(3)">Players Online</a></li>
-              <li class="nav-item"><a class="nav-link" (click)="setPage(4)">Guilds</a></li>
-              <li class="nav-item"><a class="nav-link" (click)="setPage(5)">Armory</a></li>
-            </ul>
+
+    <div class="article">
+      <div class="article-content-container">
+        <h2 class="news-events-title">News &amp; Events</h2>
+        <!--news article starts-->
+
+        <div class="news-teaser-content clearfloats">
+          <div class="left-column">
+
+            <div class="featured-image">
+              <img src="/src/assets/images/content/candy.png" alt="" class="image-border" />
+            </div>
+
+          </div>
+          <div class="right-column">
+            <div class="news-post"><b>9th February 2019</b>
+              <br/><br/><h3 class="truncate">New website up!</h3>
+              <b>Testing testing testing...</b>
+            </div>
+            <span class="timestamp">Robin</span>
           </div>
         </div>
-      </nav>
-    </div>
-  </header>
-<!--================Header Menu Area =================-->
 
-<div style="margin-top: 250px;">
-<ng-container [ngSwitch]="page">
-    <p *ngSwitchCase="1">Welcome to the home page!</p>
-    <app-server-statistics *ngSwitchCase="2"></app-server-statistics>
-    <app-players *ngSwitchCase="3"></app-players>
-    <app-guilds  *ngSwitchCase="4"></app-guilds>
-    <app-armory  *ngSwitchCase="5"></app-armory>
-</ng-container>
-</div>
+        <br />
+
+        <div class="news-teaser-content clearfloats">
+          <div class="left-column">
+
+            <div class="featured-image">
+              <img src="/src/assets/images/content/candy.png" alt="" class="image-border" />
+            </div>
+
+          </div>
+          <div class="right-column">
+            <div class="news-post"><b>5th February 2019</b>
+              <br/><br/><h3 class="truncate">Test Title</h3>
+              <b>Test text...</b>
+            </div>
+            <span class="timestamp">Robin</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-content-container">
+        <div class="three-column-content clearfloats">
+          <div class="left-column">
+            <h2>Title 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <img src="/src/assets/images/decoration/bones.png" align="right">
+            </p>
+          </div>
+          <div class="mid-column">
+            <h2>Title 2</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <img src="/src/assets/images/decoration/bones.png" align="right">
+            </p>
+          </div>
+          <div class="right-column">
+            <h2>Title 3</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <img src="/src/assets/images/decoration/bones.png" align="right">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The container below content-->
+      <div class="blue-container">
+        POLServer Website Solution<br />
+        2019
+      </div>
+
+    </div>
+  </div>
+
+  <!-- The right column -->
+  <div class="right-column">
+
+    <!-- Server Status -->
+    <div class="right-column-content">
+      <ul>
+        <li><br/><br/>
+          Client 7.0.15.1<br />
+          LoginServer=127.0.0.1,2493<br />
+          POL version 100
+        </li>
+      </ul>
+    </div>
+
+    <!-- PVP Rankings -->
+    <h2 class="right-column-title red">PVP Ranking</h2>
+    <div class="right-column-content">
+      <ul class="right-column-leaderboard">
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test1
+          </div>
+          <div class="right-column">
+            500 Kills
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test2
+          </div>
+          <div class="right-column">
+            400 Kills
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test3
+          </div>
+          <div class="right-column">
+            300 Kills
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test4
+          </div>
+          <div class="right-column">
+            200 Kills
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test5
+          </div>
+          <div class="right-column">
+            100 Kills
+          </div>
+        </li>
+      </ul>
+    </div><br />
+
+    <!-- PVM Rankings -->
+    <h2 class="right-column-title red">PVM Rankings</h2>
+    <div class="right-column-content">
+      <ul class="right-column-leaderboard">
+
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test1
+          </div>
+          <div class="right-column">
+            5000 points
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test2
+          </div>
+          <div class="right-column">
+            4000 points
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test3
+          </div>
+          <div class="right-column">
+            3000 points
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test4
+          </div>
+          <div class="right-column">
+            2000 points
+          </div>
+        </li>
+        <li class="clearfloats">
+          <div class="left-column truncate">
+            <img src="/src/assets/images/decoration/head.png" alt=""/>Test5
+          </div>
+          <div class="right-column">
+            1000 points
+          </div>
+        </li>
+      </ul>
+    </div><br />
+
+  </div>

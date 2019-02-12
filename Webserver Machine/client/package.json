@@ -28,6 +28,8 @@
     "@feathersjs/rest-client": "^1.4.7",
     "@feathersjs/socketio-client": "^1.2.1",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
+    "ng-simple-slideshow": "^1.2.8",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
@@ -38,6 +40,7 @@
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.3.29",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
