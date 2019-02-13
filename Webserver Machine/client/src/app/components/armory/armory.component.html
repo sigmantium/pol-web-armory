@@ -22,13 +22,13 @@
     <!-- Show Character Information -->
     <ng-container *ngIf="selectedCharacter">
         <!-- Stats -->
-        <b>Stats:</b>
+        <b>Stats:</b><br/><br/>
         <p *ngFor="let item of getStats() | keyvalue">
             {{item.value.name}}: {{item.value.value}} 
         </p><br/>
 
         <!-- Skills -->
-        <b>Skills:</b>
+        <b>Skills:</b><br/><br/>
         <p *ngFor="let item of getSkills() | keyvalue">
             {{item.value.name}}: 
             <ng-container *ngIf="!item.value.value.$numberDecimal; else parseDouble">
