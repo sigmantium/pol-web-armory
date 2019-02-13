@@ -1,0 +1,372 @@
+@media screen and (max-width:1370px) {
+    .wrapper {
+        width: 1240px
+    }
+
+    .content {
+        padding: 0 12px 0 15px
+    }
+
+    .content .left-column {
+        width: 912px
+    }
+
+    .content .right-column {
+        width: 286px
+    }
+
+    .spell-icons {
+        width: 912px;
+    }
+
+    .three-column-content .left-column,
+    .three-column-content .mid-column,
+    .three-column-content .right-column {
+        width: 230px
+    }
+
+    .article,
+    .article-content-container,
+    .main-container,
+    .main-navigation,
+    .main-navigation .menu-button,
+    .main-navigation .menu-button:hover {
+        background-size: contain
+    }
+
+    .slide-content img {
+        width: 100%
+    }
+
+    .image-slider {
+        height: auto
+    }
+
+    .image-slider img {
+        display: block;
+        width: 100%
+    }
+
+    .article-content-container img {
+        max-width: 100%
+    }
+
+    .right-column-title,
+    .right-column-title.red {
+        width: 270px;
+        line-height: 52px;
+        font-size: 16px;
+        background-size: cover
+    }
+
+    .right-column-content .right-column {
+        width: 70px
+    }
+
+    .right-column-content .left-column {
+        width: 150px
+    }
+
+    .news-teaser-content .right-column {
+        width: 560px
+    }
+
+    .right-column .download-button {
+        background-size: cover;
+        vertical-align: middle;
+        width: 246px;
+        height: 44px;
+        padding-top: 20px;
+        line-height: 28px;
+        font-size: 17px;
+        margin-bottom: 4px
+    }
+
+    .right-column .download-button img {
+        top: 4px;
+        left: 10px
+    }
+
+    nav .right-column {
+        width: 286px
+    }
+
+    .main-navigation .menu-button {
+        width: 115px;
+        padding-top: 36px
+    }
+
+    .main-navigation {
+        height: 65px
+    }
+
+    .main-navigation .menu-button .icon-home {
+        top: -18px;
+        right: 37px
+    }
+
+    .main-navigation .menu-button .icon-about {
+        top: -30px;
+        right: 35px
+    }
+
+    .main-navigation .menu-button .icon-shard-info {
+        top: -19px;
+        right: 37px
+    }
+
+    .main-navigation .menu-button .icon-unknown {
+        top: -18px;
+        right: 36px
+    }
+
+    .main-navigation .menu-button .icon-myuo {
+        top: -12px;
+        right: 38px
+    }
+
+    .main-navigation .menu-button .icon-armory {
+        top: -14px;
+        right: 39px
+    }
+
+    .main-navigation .menu-button .icon-forums {
+        top: -14px;
+        right: 39px
+    }
+
+
+    .main-navigation .menu-button .icon-discord {
+        top: -5px;
+        right: 35px
+    }
+
+    .dropdown-container {
+        top: 56px
+    }
+
+    .main-navigation .download-button {
+        margin: 5px 22px
+    }
+
+    .article-content-container {
+        padding: 45px 50px
+    }
+
+    .news-teaser-content .left-column {
+        width: 216px
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    .content .left-column,
+    .content .right-column,
+    .intro-left-column,
+    .left-column,
+    .right-column {
+        float: none;
+        width: auto
+    }
+
+    .image-slider {
+        display: none
+    }
+
+    .top {
+        height: auto
+    }
+
+    .wrapper {
+        width: auto
+    }
+
+    .right-column-content ul .right-column {
+        float: right
+    }
+
+    .right-column-content ul .left-column {
+        float: left
+    }
+
+    .main-container {
+        background: 0 0
+    }
+
+    body {
+        background-size: contain;
+        background-attachment: inherit
+    }
+
+    .right-column-title,
+    .right-column-title.red {
+        margin: 10px auto
+    }
+
+    .right-column-content {
+        padding: 0 40px
+    }
+
+    .footer {
+        background: #070707;
+        margin-top: 20px
+    }
+
+    .featured-image {
+        padding: 15px 0;
+        border-top: 1px solid #C3B09C
+    }
+
+    .three-column-content .mid-column {
+        width: auto
+    }
+
+    .three-column-content .left-column,
+    .three-column-content .mid-column,
+    .three-column-content .right-column {
+        padding: 0;
+        float: none
+    }
+
+    .news-teaser-content {
+        margin-bottom: 10px
+    }
+
+    .main-navigation {
+        height: auto;
+        padding: 0
+    }
+
+    .logo-container img {
+        width: 100%;
+        margin: auto;
+        display: block
+    }
+
+    .logo-container {
+        margin: auto;
+        float: none;
+        padding: 20px 15px
+    }
+
+    nav .right-column {
+        margin: auto;
+        width: auto;
+        float: none
+    }
+
+    .main-navigation li+li {
+        display: none
+    }
+
+    .article-content-container h2 {
+        padding-top: 0
+    }
+
+    .main-navigation .mobile-button,
+    .main-navigation .menu-button {
+        width: auto;
+        height: auto;
+        border-top: 1px solid #170100;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #170100;
+        border-right: 1px solid #000000
+    }
+
+    .main-navigation .mobile-button {
+        padding: 15px;
+        background: #2e2d2a;
+        color: #fff;
+        text-align: center;
+        font-size: 25px;
+        display: block
+    }
+
+    .main-navigation li {
+        background: 0 0;
+        width: auto;
+        float: none
+    }
+
+    .main-navigation .menu-button {
+        background: #333;
+        padding: 15px
+    }
+
+    .main-navigation {
+        background: 0 0
+    }
+
+    .main-navigation .menu-button:hover {
+        background: #005c82
+    }
+
+    .main-navigation .menu-button img {
+        display: none
+    }
+
+    .main-navigation .right-column {
+        clear: both;
+        padding: 15px
+    }
+
+    .blue-container {
+        background: #003162
+    }
+
+    .dropdown-container {
+        position: static;
+        width: auto;
+        background: #005c82;
+        display: none;
+        box-shadow: none;
+        padding: 0
+    }
+
+    .dropdown-container .dropdown {
+        width: auto;
+        background: 0 0;
+        padding: 6px;
+        display: block
+    }
+
+    .dropdown:after,
+    .dropdown:before {
+        display: none
+    }
+
+    .dropdown ul {
+        padding: 0
+    }
+
+    .main-navigation .download-button {
+        margin: auto
+    }
+
+    .main-navigation li .fa-caret-down {
+        display: inline-block;
+        margin-left: 10px
+    }
+
+    .article-content-container {
+        background: 0 0
+    }
+
+    .article-content-container {
+        padding: 0;
+        border: none
+    }
+
+    .blue-container {
+        display: none
+    }
+
+    .article {
+        background: url(../images/background/mobile-bg.png) top left repeat-y;
+        padding: 20px
+    }
+
+    .content {
+        padding: 0
+    }
+}

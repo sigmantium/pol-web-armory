@@ -38,8 +38,8 @@ class MongoDB {
         });
 
         // Update server stats
-        await collection.findOneAndUpdate({ 'id': 1 }, { $set: { 
-            'id': 1,
+        await collection.insertOne({ 
+            $set: { 
             'accounts': data.accounts,
             'guildcount': data.guildcount,
             'itemcount': data.itemcount,
@@ -48,7 +48,8 @@ class MongoDB {
             'polversion': data.polversion,
             'serverload': data.serverload,
             'uptime': data.uptime
-        }}, { upsert: true }, (err, res) => {
+            }
+        }, { upsert: true }, (err, res) => {
     
         if (err) throw err;
         });

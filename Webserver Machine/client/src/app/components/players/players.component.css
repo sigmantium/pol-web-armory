@@ -1,7 +1,24 @@
 table {
-    width: 80%;
-  }
-  
-  th.mat-sort-header-sorted {
-    color: black;
-  }
+  width: 80%;
+  background: none;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.players-wrapper {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  max-width: 956px;
+}
+
+.title {
+  text-align: left;
+}
+
+.mat-header-cell {
+  color: black;
+}

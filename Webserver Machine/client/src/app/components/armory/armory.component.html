@@ -1,45 +1,42 @@
 
-<!-- The Select Form -->
-<form >
-    <mat-form-field>
-        <mat-select placeholder="Select a character" [(ngModel)]="selectedCharacter" name="food" (selectionChange)="valueChanged($event)">
-          <mat-option *ngFor="let char of characters" [value]="char.name">
-              {{ char.name }}
-          </mat-option>
-        </mat-select>
-    </mat-form-field>
-</form>
+<!-- Left column -->
+<div class="left-column armory-wrapper">
 
-<!-- The player name -->
-<p *ngIf="selectedCharacter">Player name: {{ selectedCharacter }}</p>
+    <!-- The Select Form -->
+    <form>
+        <mat-form-field>
+            <mat-select placeholder="Select a character" [(ngModel)]="selectedCharacter" name="food" (selectionChange)="valueChanged($event)">
+            <mat-option *ngFor="let char of characters" [value]="char.name">
+                {{ char.name }}
+            </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
 
-<!-- Canvas -->
-<app-canvas [armorySubject]="armorySubject"></app-canvas><br/><br/>
+    <!-- The player name -->
+    <p *ngIf="selectedCharacter">Player name: {{ selectedCharacter }}</p>
 
-<!-- Show Character Information -->
-<ng-container *ngIf="selectedCharacter">
-    <!-- Stats -->
-    <b>Stats:</b>
-    <p *ngFor="let item of getStats() | keyvalue">
-        {{item.value.name}}: {{item.value.value}} 
-    </p><br/>
+    <!-- Canvas -->
+    <app-canvas [armorySubject]="armorySubject"></app-canvas><br/><br/>
 
-    <!-- Skills -->
-    <b>Skills:</b>
-    <p *ngFor="let item of getSkills() | keyvalue">
-        {{item.value.name}}: 
-        <ng-container *ngIf="!item.value.value.$numberDecimal; else parseDouble">
-            {{item.value.value}}
-        </ng-container>
-        <ng-template #parseDouble>
-            {{item.value.value.$numberDecimal}}
-        </ng-template>
-    </p><br/>
+    <!-- Show Character Information -->
+    <ng-container *ngIf="selectedCharacter">
+        <!-- Stats -->
+        <b>Stats:</b>
+        <p *ngFor="let item of getStats() | keyvalue">
+            {{item.value.name}}: {{item.value.value}} 
+        </p><br/>
 
-    <!-- Equipment 
-    <b>Equipment:</b>
-    <p *ngFor="let item of getEquipment() | keyvalue">
-        objtype: {{item.value.objtype}}, color: {{item.value.color}}, layer: {{item.value.layer}} 
-    </p>
-    -->
-</ng-container>
+        <!-- Skills -->
+        <b>Skills:</b>
+        <p *ngFor="let item of getSkills() | keyvalue">
+            {{item.value.name}}: 
+            <ng-container *ngIf="!item.value.value.$numberDecimal; else parseDouble">
+                {{item.value.value}}
+            </ng-container>
+            <ng-template #parseDouble>
+                {{item.value.value.$numberDecimal}}
+            </ng-template>
+        </p>
+    </ng-container>
+</div>
