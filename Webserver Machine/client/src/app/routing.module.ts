@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'server-statistics', component: ServerStatisticsComponent },
-  { path: 'playersonline', component: PlayersComponent },
+  { path: 'online-players', component: PlayersComponent },
   { path: 'guilds', component: GuildsComponent },
   { path: 'armory', component: ArmoryComponent }
 ];

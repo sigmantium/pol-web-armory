@@ -1,17 +1,21 @@
-<ng-container *ngIf="serverStats; else noStatistics" >
-    <div *ngFor="let stats of serverStats"> 
-        <b>Server statistics:</b>
-        <p>Polversion: {{ stats.polversion }}</p>
-        <p>Server uptime: {{ stats.uptime }}</p>
-        <p>Server load: {{ stats.serverload }}%</p>
-        <p>Accounts: {{ stats.accounts }}</p>
-        <p>Guilds: {{ stats.guildcount }}</p>
-        <p>Item count: {{ stats.itemcount }}</p>
-        <p>Mobile count: {{ stats.mobilecount }}</p>
-        <p>Online count: {{ stats.onlinecount }}</p>
-    </div>
-</ng-container>
+<!-- Left column -->
+<div class="left-column stats-wrapper">
+    <ng-container *ngIf="serverStats; else noStatistics" >
+        <div class="title"><b>Server Statistics:</b><br/><br/>
+            <div *ngFor="let stats of serverStats"> 
+                <p>Polversion: {{ stats.polversion }}</p>
+                <p>Server uptime: {{ stats.uptime }}</p>
+                <p>Server load: {{ stats.serverload }}%</p>
+                <p>Accounts: {{ stats.accounts }}</p>
+                <p>Guilds: {{ stats.guildcount }}</p>
+                <p>Item count: {{ stats.itemcount }}</p>
+                <p>Mobile count: {{ stats.mobilecount }}</p>
+                <p>Online count: {{ stats.onlinecount }}</p>
+            </div>
+        </div>
+    </ng-container>
 
-<ng-template #noStatistics>
-    <p>No statistics available.</p>
-</ng-template>
+    <ng-template #noStatistics>
+        <p>No statistics available.</p>
+    </ng-template>
+</div>

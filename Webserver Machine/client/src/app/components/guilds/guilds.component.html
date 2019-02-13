@@ -1,65 +1,69 @@
-<ng-container *ngIf="guilds; else noGuilds" >
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<!-- Left column -->
+<div class="left-column guilds-wrapper">
+  <div class="title"><b>Guilds:</b><br/><br/>
+  <ng-container *ngIf="guilds; else noGuilds" >
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-        <!-- Guild ID Column -->
-        <ng-container matColumnDef="guildid">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Guild Id. </th>
-          <td mat-cell *matCellDef="let element"> {{element.guildid}} </td>
-        </ng-container>
-      
-        <!-- Abbr Column -->
-        <ng-container matColumnDef="abbr">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Abbr </th>
-          <td mat-cell *matCellDef="let element"> {{element.abbr}} </td>
-        </ng-container>
-      
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
+          <!-- Guild ID Column -->
+          <ng-container matColumnDef="guildid">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Guild Id. </th>
+            <td mat-cell *matCellDef="let element"> {{element.guildid}} </td>
+          </ng-container>
+        
+          <!-- Abbr Column -->
+          <ng-container matColumnDef="abbr">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Abbr </th>
+            <td mat-cell *matCellDef="let element"> {{element.abbr}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
 
-        <!-- Type Column -->
-        <ng-container matColumnDef="type">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
-          <td mat-cell *matCellDef="let element"> {{element.type}} </td>
-        </ng-container>
-      
-        <!-- Master Column -->
-        <ng-container matColumnDef="master">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Master </th>
-          <td mat-cell *matCellDef="let element"> {{element.master}} </td>
-        </ng-container>
+          <!-- Type Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+          </ng-container>
+        
+          <!-- Master Column -->
+          <ng-container matColumnDef="master">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Master </th>
+            <td mat-cell *matCellDef="let element"> {{element.master}} </td>
+          </ng-container>
 
-        <!-- Number Members Column -->
-        <ng-container matColumnDef="members">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Members </th>
-          <td mat-cell *matCellDef="let element"> {{element.members}} </td>
-        </ng-container>
+          <!-- Number Members Column -->
+          <ng-container matColumnDef="members">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Members </th>
+            <td mat-cell *matCellDef="let element"> {{element.members}} </td>
+          </ng-container>
 
-        <!-- Number Allies Column -->
-        <ng-container matColumnDef="allies">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Allies </th>
-          <td mat-cell *matCellDef="let element"> {{element.allies}} </td>
-        </ng-container>
+          <!-- Number Allies Column -->
+          <ng-container matColumnDef="allies">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Allies </th>
+            <td mat-cell *matCellDef="let element"> {{element.allies}} </td>
+          </ng-container>
 
-        <!-- Number Enemies Column -->
-        <ng-container matColumnDef="enemies">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Enemies </th>
-          <td mat-cell *matCellDef="let element"> {{element.enemies}} </td>
-        </ng-container>
+          <!-- Number Enemies Column -->
+          <ng-container matColumnDef="enemies">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Enemies </th>
+            <td mat-cell *matCellDef="let element"> {{element.enemies}} </td>
+          </ng-container>
 
-        <!-- Website Column -->
-        <ng-container matColumnDef="website">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Website </th>
-          <td mat-cell *matCellDef="let element"> {{element.website}} </td>
-        </ng-container>
+          <!-- Website Column -->
+          <ng-container matColumnDef="website">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Website </th>
+            <td mat-cell *matCellDef="let element"> {{element.website}} </td>
+          </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-</ng-container>
-
-<ng-template #noGuilds>
-    <p>No guilds available.</p>
-</ng-template>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  </ng-container>
+</div>
+  <ng-template #noGuilds>
+      <p>No guilds available.</p>
+  </ng-template>
+</div>
