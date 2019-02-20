@@ -4,8 +4,6 @@ const FileFunctions = require('./filefunctions');
 const MongoClient = require('mongodb').MongoClient;
 
 class MongoDB {
-    
-
     // Constructor
     constructor() {
         this.db = null;
@@ -36,11 +34,11 @@ class MongoDB {
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
             if (err) throw err;
             
-            var dbo = db.db("armory_backend");
+            var dbo = db.db(config.database.dbname);
             const data = JSON.parse(fs.readFileSync('./data/server.json'));
     
             data.forEach(async (elem) => {
-                /*dbo.collection('serverstatsservice').insertOne({ $set: { 
+                dbo.collection('serverstatsservice').insertOne({ $set: { 
                     'accounts': data.accounts,
                     'guildcount': data.guildcount,
                     'itemcount': data.itemcount,
@@ -54,10 +52,7 @@ class MongoDB {
                     if (err) throw err;
     
                     console.log('Updated record: ' + elem.serial);
-                });*/
-                console.log("Data:" +data);
-    
-    //            console.log('Done updating all records!');
+                });
             });
             db.close();
         });
@@ -68,7 +63,7 @@ class MongoDB {
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
             if (err) throw err;
             
-            var dbo = db.db("armory_backend");
+            var dbo = db.db(config.database.dbname);
             const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
     
             data.forEach(async (elem) => {
@@ -99,7 +94,7 @@ class MongoDB {
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
             if (err) throw err;
             
-            var dbo = db.db("armory_backend");
+            var dbo = db.db(config.database.dbname);
             const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
     
             data.forEach(async (elem) => {
@@ -134,20 +129,15 @@ class MongoDB {
             if (err) throw err;
             
             // Declaring the database with its name.
-            var dbo = db.db("armory_backend");
+            var dbo = db.db(config.database.dbname);
 
             // get the data to put in to the DB.
             const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
 
-            // The current data.
-            const dbData = dbo.collection("characterservices").find({});
-            console.log(data);
-            console.log("dbData: "+dbData);
-
            
             // Iterate through all the data and insert it into mongo
             data.forEach(async (elem) => {
-            /*    dbo.collection("characterservices").findOneAndUpdate({ 'serial': elem.serial }, { $set: { 
+                dbo.collection("characterservices").findOneAndUpdate({ 'serial': elem.serial }, { $set: { 
                         'account': elem.account,
                         'name': elem.name,
                         'stats': elem.stats,
@@ -158,7 +148,7 @@ class MongoDB {
                     if (err) throw err;
     
                     console.log('UpdateJSON: updated record: ' + elem.serial);
-                });*/
+                });
     
                // console.log("Data: "+elem.serial);
              
