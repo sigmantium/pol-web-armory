@@ -1,11 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+// Core
+import { Component, OnInit } from '@angular/core';
 
 // Models
 import { Guild } from '../../models/guild.model';
 
 // Services
 import { GuildService } from '../../services/guild.service';
+
+// Angular Material
+import { MatTableDataSource } from '@angular/material';
 
 // Interface
 export interface GuildElement {
@@ -26,9 +29,11 @@ export interface GuildElement {
   styleUrls: ['./guilds.component.css']
 })
 export class GuildsComponent implements OnInit {
+  // Server-related variables
   private guilds: Guild[];
-  private data: GuildElement[];
 
+  // Table-related variables
+  private data: GuildElement[];
   public dataSource: any;
   public displayedColumns: string[] = [
     'guildid',
@@ -42,13 +47,30 @@ export class GuildsComponent implements OnInit {
     'website'
   ];
 
+  /**
+   * Class Description Title
+   * @implements OnInit
+   * @class GuildsComponent
+   * @classdesc Guilds component class
+   * @param {any} guildService The guild service
+   */
   constructor(
     private guildService: GuildService
   ) { }
 
-  async ngOnInit() {
+  /**
+   * ngOnInit Description
+   * Initiates and assigns all variables
+   * Creates datasources for the table
+   * @async
+   * @method GuildsComponent#ngOnInit
+   * @returns {Promise<void>}
+   */
+  async ngOnInit(): Promise<void> {
+    // Get data from database
     this.guilds = await this.guildService.getAll();
 
+    // Prepare data for table
     this.data = this.guilds;
     this.dataSource = new MatTableDataSource(this.data);
   }

@@ -1,5 +1,7 @@
+// Core
 import { Component } from '@angular/core';
 
+// Interface
 export interface IImage {
   url: string | null;
   href?: string;
@@ -17,7 +19,7 @@ export interface IImage {
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent {
-
+  // Image file paths
   imageUrls: (string | IImage)[] = [
     { url: 'assets/images/slideshow/shrines.jpg' },
     { url: 'assets/images/slideshow/dung02.jpg' },
@@ -26,4 +28,10 @@ export class SliderComponent {
     { url: 'assets/images/slideshow/spanky.jpg' }
   ];
 
+  /**
+   * Class Description Title
+   * @class SliderComponent
+   * @classdesc Slider component class
+   */
+  constructor() { }
 }
