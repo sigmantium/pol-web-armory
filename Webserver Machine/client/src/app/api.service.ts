@@ -24,7 +24,7 @@ export class ApiService {
     // Create an instance of feathers attached to the client
     this.client = feathers();
 
-    // REST
+    // REST for back-end communication
     this.rest = rest('http://localhost:3030');
 
     // Client configuration
