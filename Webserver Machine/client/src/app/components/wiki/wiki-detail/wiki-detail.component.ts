@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // JSON
-import WikiPage from '../wiki.json';
+// import WikiPage from '../wiki.json';
 
 @Component({
   selector: 'app-wiki-detail',
@@ -24,7 +24,7 @@ export class WikiDetailComponent implements OnInit {
   ngOnInit() {
     this.id = Number(this.route.snapshot.params['id']);
 
-    console.log('Wikipage: ' + WikiPage);
+    // console.log('Wikipage: ' + WikiPage);
 
     this.wikiPage = {
       'title': 'Alchemy',
