@@ -28,6 +28,8 @@ import { GuildsComponent } from './components/guilds/guilds.component';
 import { PlayersComponent } from './components/players/players.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { WikiComponent } from './components/wiki/wiki.component';
+import { WikiDetailComponent } from './components/wiki/wiki-detail/wiki-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { SliderComponent } from './components/slider/slider.component';
     PlayersComponent,
     ServerStatisticsComponent,
     NavigationComponent,
-    SliderComponent
+    SliderComponent,
+    WikiComponent,
+    WikiDetailComponent
   ],
   imports: [
     BrowserModule,

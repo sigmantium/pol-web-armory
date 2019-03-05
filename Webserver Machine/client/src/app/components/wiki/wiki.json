@@ -1,0 +1,12 @@
+{
+    "alchemy": {
+        "title": "Title (Alchemy)",
+        "description": "This is a description for Alchemy",
+        "training": "Training guide for alchemy"
+    },
+    "anatomy": {
+        "title": "Title (Anatomy)",
+        "description": "This is a description for Anatomy",
+        "training": "Training guide for anatomy"
+    }
+}
