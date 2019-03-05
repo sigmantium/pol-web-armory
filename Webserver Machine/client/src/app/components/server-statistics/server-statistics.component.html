@@ -1,16 +1,16 @@
 <!-- Left column -->
 <div class="left-column stats-wrapper">
-    <ng-container *ngIf="serverStats; else noStatistics" >
+    <ng-container *ngIf="recentServerStats; else noStatistics" >
         <div class="title"><b>Server Statistics:</b><br/><br/>
-            <div *ngFor="let stats of serverStats"> 
-                <p>Polversion: {{ stats.polversion }}</p>
-                <p>Server uptime: {{ stats.uptime }}</p>
-                <p>Server load: {{ stats.serverload }}%</p>
-                <p>Accounts: {{ stats.accounts }}</p>
-                <p>Guilds: {{ stats.guildcount }}</p>
-                <p>Item count: {{ stats.itemcount }}</p>
-                <p>Mobile count: {{ stats.mobilecount }}</p>
-                <p>Online count: {{ stats.onlinecount }}</p>
+            <div> 
+                <p>Polversion: {{ recentServerStats.polversion }}</p>
+                <p>Server uptime: {{ recentServerStats.uptime }}</p>
+                <p>Server load: {{ recentServerStats.serverload }}%</p>
+                <p>Accounts: {{ recentServerStats.accounts }}</p>
+                <p>Guilds: {{ recentServerStats.guildcount }}</p>
+                <p>Item count: {{ recentServerStats.itemcount }}</p>
+                <p>Mobile count: {{ recentServerStats.mobilecount }}</p>
+                <p>Online count: {{ recentServerStats.onlinecount }}</p>
             </div>
         </div>
     </ng-container>
@@ -18,4 +18,9 @@
     <ng-template #noStatistics>
         <p>No statistics available.</p>
     </ng-template>
+
+    <br/><br/>
+    <div *ngIf="chart" style="margin-left: 12%; max-width: 750px">
+    <canvas id="canvas">{{ chart }}</canvas>
+    </div>
 </div>

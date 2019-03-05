@@ -1,3 +1,4 @@
+// Core
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,6 +9,7 @@ import { ServerStatisticsComponent } from './components/server-statistics/server
 import { GuildsComponent } from './components/guilds/guilds.component';
 import { PlayersComponent } from './components/players/players.component';
 
+// Routes
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },

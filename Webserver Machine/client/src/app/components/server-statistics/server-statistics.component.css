@@ -7,3 +7,8 @@
 .title {
     text-align: center;
 }
+
+p {
+    font-weight: normal;
+    font-size: 12px;
+}

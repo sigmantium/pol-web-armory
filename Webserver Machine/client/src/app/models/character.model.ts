@@ -1,8 +1,10 @@
+// Models
 import { Equipment } from './equipment.model';
 import { Skill } from './skill.model';
 import { Stat } from './stat.model';
 
 export class Character {
+    // Model variables
     id: number;
     account: string;
     serial: number;
@@ -11,11 +13,21 @@ export class Character {
     skills: Skill[];
     equipment: Equipment[];
 
+    /**
+     * Class Description Title
+     * @class Character
+     * @classdesc Character model class
+     * @param {any} data Data to be assigned to model variables
+     */
     constructor(data: any) {
         this.setData(data);
     }
 
-    setData(data: any) {
+    /**
+     * setData Description
+     * @param {any} data Data to be assigned to model variables
+     */
+    setData(data: any): void {
         this.id = data._id || null;
         this.account = data.account || null;
         this.serial = data.serial || null;
@@ -25,7 +37,12 @@ export class Character {
         this.equipment = data.equipment || null;
     }
 
-    getSkills() {
+    /**
+     * getSkills Description
+     * @method Character#getSkills
+     * @returns {Skill[]} An array including all skills
+     */
+    getSkills(): Skill[] {
         return this.skills;
     }
 }

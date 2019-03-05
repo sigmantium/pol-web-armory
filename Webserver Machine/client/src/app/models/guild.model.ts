@@ -1,4 +1,5 @@
 export class Guild {
+    // Model variables
     guildid: number;
     abbr: string;
     charter: string;
@@ -11,11 +12,21 @@ export class Guild {
     allies: number;
     enemies: number;
 
+    /**
+     * Class Description Title
+     * @class Guild
+     * @classdesc Guild model class
+     * @param {any} data Data to be assigned to model variables
+     */
     constructor(data: any) {
         this.setData(data);
     }
 
-    setData(data: any) {
+    /**
+     * setData Description
+     * @param {any} data Data to be assigned to model variables
+     */
+    setData(data: any): void {
         this.guildid = data.guildid || null;
         this.abbr = data.abbr || null;
         this.charter = data.charter || null;

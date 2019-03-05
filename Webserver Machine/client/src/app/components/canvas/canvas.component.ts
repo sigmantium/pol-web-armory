@@ -1,8 +1,13 @@
+// Core
 import {
   Component, OnInit, OnDestroy, Input, ElementRef, AfterViewInit, ViewChild
 } from '@angular/core';
-import { Equipment } from 'src/app/models/equipment.model';
+
+// Libraries
 import { Subject } from 'rxjs';
+
+// Models
+import { Equipment } from 'src/app/models/equipment.model';
 
 @Component({
   selector: 'app-canvas',
@@ -10,7 +15,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./canvas.component.css']
 })
 export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
-
+  // Variables for the Canvas
   @Input()
   armorySubject: Subject<Equipment[]>;
 
@@ -25,9 +30,24 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private cx: CanvasRenderingContext2D;
 
+  // Equipment to show
   equipmentInfo: Equipment[];
 
-  ngOnInit() {
+  /**
+   * Class Description Title
+   * @class CanvasComponent
+   * @classdesc Canvas component class
+   */
+  constructor() {}
+
+  /**
+   * ngOnInit Description
+   * Initiates and assigns all variables
+   * Subscribes armory subject
+   * @method CanvasComponent#ngOnInit
+   * @returns {void}
+   */
+  ngOnInit(): void {
     this.armorySubject.subscribe(event => {
       // Assign event to equipmentInfo
       this.equipmentInfo = event;
@@ -42,20 +62,39 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
-  ngOnDestroy() {
+  /**
+   * ngOnDestroy Description
+   * Unsubscribes all subscriptions
+   * @method CanvasComponent#ngOnDestroy
+   * @returns {void}
+   */
+  ngOnDestroy(): void {
     this.armorySubject.unsubscribe();
   }
 
-  public ngAfterViewInit() {
+  /**
+   * ngAfterViewInit Description
+   * Assign variables after view is initialized
+   * @method CanvasComponent#ngAfterViewInit
+   * @returns {void}
+   */
+  public ngAfterViewInit(): void {
     // Get context
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.cx = canvasEl.getContext('2d');
-    // Set heigth and width
+
+    // Set height and width
     canvasEl.width = this.width;
     canvasEl.height = this.height;
   }
 
-  private renderImage(objtype: number, color: number) {
+  /**
+   * renderImage Description
+   * Renders an image on the canvas based on whats in the equipment-variable
+   * @method CanvasComponent#ngAfterViewInit
+   * @returns {void}
+   */
+  private renderImage(objtype: number, color: number): void {
     // Clear canvas
     this.cx.clearRect(0, 0, this.width, this.height);
 

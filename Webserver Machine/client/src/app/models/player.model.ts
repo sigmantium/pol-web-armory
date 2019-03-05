@@ -1,4 +1,5 @@
 export class Player {
+    // Model variables
     id: number;
     name: string;
     gender: string;
@@ -10,11 +11,21 @@ export class Player {
     guild: string;
     murderer: string;
 
+    /**
+     * Class Description Title
+     * @class Character
+     * @classdesc Character model class
+     * @param {any} data Data to be assigned to model variables
+     */
     constructor(data: any) {
         this.setData(data);
     }
 
-    setData(data: any) {
+    /**
+     * setData Description
+     * @param {any} data Data to be assigned to model variables
+     */
+    setData(data: any): void {
         this.id = data._id || null;
         this.name = data.name || null;
         this.gender = this.getGender(data.gender) || 'Unknown';
@@ -27,10 +38,22 @@ export class Player {
         this.murderer = this.isMurderer(data.murderer) || null;
     }
 
+    /**
+     * isMurderer Description
+     * @method Player#isMurderer
+     * @param {boolean} state The murderer state of the player
+     * @returns {string} Indiciation if the player is a murderer (pk) or not as a string
+     */
     isMurderer(state: boolean): string {
         return (state) ? 'Yes' : 'No';
     }
 
+    /**
+     * getGender Description
+     * @method Player#getGender
+     * @param {number} gender Gender of player (0 = male, 1 = female)
+     * @returns {string} Indiciation of the gender of the player as a string
+     */
     getGender(gender: number): string {
         if (gender === 0) {
             return 'Male';
@@ -41,6 +64,12 @@ export class Player {
         return 'Unknown';
     }
 
+    /**
+     * getRace Description
+     * @method Player#getRace
+     * @param {number} race Race of player (0 = human, 1 = elf, 2 = gargoyle, else = unknown)
+     * @returns {string} Indiciation of the players race as a string
+     */
     getRace(race: number): string {
         if (race === 0) {
             return 'Human';
