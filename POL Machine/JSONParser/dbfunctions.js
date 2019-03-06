@@ -14,8 +14,8 @@ class MongoDB {
 
             if (err) throw err;
 
-            var dbo = db.db(config.database.dbname);
-            var d = new Date();
+            const dbo = db.db(config.database.dbname);
+            const d = new Date();
             dbo.collection('serverstatsservices').insertOne({
                 'accounts': data.accounts,
                 'guildcount': data.guildcount,
@@ -43,7 +43,7 @@ class MongoDB {
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async (err, db) => {
             if (err) throw err;
 
-            var dbo = db.db(config.database.dbname);
+            const dbo = db.db(config.database.dbname);
             data.forEach((elem) => {
                 dbo.collection('playerservices').findOneAndUpdate({ 'serial': elem.serial }, {
                     $set: {
@@ -92,7 +92,7 @@ class MongoDB {
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async (err, db) => {
             if (err) throw err;
 
-            var dbo = db.db(config.database.dbname);
+            const dbo = db.db(config.database.dbname);
             data.forEach(async (elem) => {
                 dbo.collection('guildservices').findOneAndUpdate({ 'guildid': elem.guildid }, {
                     $set: {
@@ -138,7 +138,7 @@ class MongoDB {
             if (err) throw err;
 
             // Declaring the database with its name.
-            var dbo = db.db(config.database.dbname);
+            const dbo = db.db(config.database.dbname);
 
             // get the data to put in to the DB.
             const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
