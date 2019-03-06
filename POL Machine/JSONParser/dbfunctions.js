@@ -67,7 +67,7 @@ class MongoDB {
     static async UpdateOnlinePlayers(data) {   
     
          // Insert all data into array.
-        let deleteArray = data.map(function(elem) { return elem.serial; });
+        let onlinePlayers = data.map(function(elem) { return elem.serial; });
         let toBeDeleted = [];
 
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async function(err,db){
@@ -99,7 +99,7 @@ class MongoDB {
                 const res = await dbo.collection("onlineplayerservice").find({}).toArray();  
                 // Iterate through res array and see if res element exists in deleteArray
                 res.forEach((elem) =>{
-                    if(!deleteArray.includes(elem.serial)){
+                    if(!onlinePlayers.includes(elem.serial) || (onlinePlayers.length == 0 || onlinePlayers === undefined)){
                         toBeDeleted.push(elem);
                     }
                 });
@@ -119,7 +119,7 @@ class MongoDB {
 
     static async UpdateGuilds(data) {   
 
-        let deleteArray = data.map(function(elem) { return elem.guildid; });
+        let activeGuilds = data.map(function(elem) { return elem.guildid; });
         let toBeDeleted = [];
 
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async function(err,db){
@@ -128,6 +128,7 @@ class MongoDB {
                 var dbo = db.db(config.database.dbname);
 
                 data.forEach(async (elem) => {
+
                     dbo.collection('guildservice').findOneAndUpdate({ 'guildid': elem.guildid }, { $set: { 
                         'abbr': elem.abbr,
                         'charter': elem.charter,
@@ -154,14 +155,14 @@ class MongoDB {
                 const res = await dbo.collection("guildservice").find({}).toArray();  
                 // Iterate through res array and see if res element exists in deleteArray
                 res.forEach((elem) =>{
-                    if(!deleteArray.includes(elem.guildid)){
+                    if(!activeGuilds.includes(elem.guildid) || (activeGuilds.length == 0 || activeGuilds === undefined)){
                         toBeDeleted.push(elem);
                     }
                 });
 
                 // Iterate through toBeDeleted and delete it from collection.
                 toBeDeleted.forEach((elem) =>{
-                    dbo.collection("onlineplayerservice").findOneAndDelete({ 'serial': elem.guildid});
+                    dbo.collection("guildservice").findOneAndDelete({ 'guildid': elem.guildid});
                 }); 
 
 

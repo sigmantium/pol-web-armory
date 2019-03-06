@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const filefunction = require('./filefunctions');
 
 // Classes
 const JSONParser = require('./jsonparser');
@@ -13,6 +14,8 @@ app.use(bodyParser.json());
 
 app.post('/', async (req, res) => {
     const incomingData = req.body;
+
+    filefunction.mergeFiles('./../POL/data/pcs.txt','./../POL/data/pcequip.txt',"./data/pcs_pcequip.txt");
 
     const testData = JSON.parse(fs.readFileSync('./data/server.json'));
 
@@ -26,10 +29,10 @@ app.post('/', async (req, res) => {
     await MongoDB.UpdateGuilds(testData[2].guilds);
 
     // Parse the data files into JSON
-    await JSONParser.StartJSONParser();
+    //await JSONParser.StartJSONParser();
 
     // Upload changes to MongoDB
-    await MongoDB.UploadJSON(); 
+    //await MongoDB.UploadJSON(); 
 
     // Send pack response
     res.writeHead(200, {'Content-Type': 'text/html'});

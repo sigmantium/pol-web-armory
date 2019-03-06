@@ -36,7 +36,9 @@
             "Revision",
             "Realm",
             "DecayAt",
-            "Graphic"
+            "Graphic",
+            "RegisteredHouse",
+            "TitleGuild"
         ],
         "statswords" : [
             "Strength",
