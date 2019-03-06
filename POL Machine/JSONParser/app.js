@@ -1,6 +1,7 @@
 // Native libraries
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 // Classes
 const JSONParser = require('./jsonparser');
@@ -12,23 +13,23 @@ app.use(bodyParser.json());
 
 app.post('/', async (req, res) => {
     const incomingData = req.body;
-    
-    console.log('Data: ' + JSON.stringify(incomingData));
-    
+
+    const testData = JSON.parse(fs.readFileSync('./data/server.json'));
+
     // Update server statistics
-    // await MongoDB.UpdateServerStats(incomingData[0]);
+    await MongoDB.UpdateServerStats(testData[0]);
 
     // Update online players data
-    // await MongoDB.UpdateOnlinePlayers(incomingData[1]);
+    await MongoDB.UpdateOnlinePlayers(testData[1].onlineplayers);
 
     // Update guilds data
-    // await MongoDB.UpdateGuilds(incomingData[2]);
+    await MongoDB.UpdateGuilds(testData[2].guilds);
 
     // Parse the data files into JSON
-    // await JSONParser.StartJSONParser();
+    await JSONParser.StartJSONParser();
 
     // Upload changes to MongoDB
-    // await MongoDB.UploadJSON(); 
+    await MongoDB.UploadJSON(); 
 
     // Send pack response
     res.writeHead(200, {'Content-Type': 'text/html'});

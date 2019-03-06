@@ -9,7 +9,6 @@ class FileFunctions {
     static mergeFiles(file1,file2, destination){
         concat([file1,file2], destination, function(err) {
             if(err) throw err
-            console.log('done');
         });
     }
 }

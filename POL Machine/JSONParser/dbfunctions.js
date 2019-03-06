@@ -31,99 +31,146 @@ class MongoDB {
 
     // Update server statistics
     static async UpdateServerStats(data) {
-        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
+ 
+         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async function(err,db){
+
             if (err) throw err;
-            
+        
             var dbo = db.db(config.database.dbname);
-            const data = JSON.parse(fs.readFileSync('./data/server.json'));
-    
-            data.forEach(async (elem) => {
-                dbo.collection('serverstatsservice').insertOne({ $set: { 
-                    'accounts': data.accounts,
-                    'guildcount': data.guildcount,
-                    'itemcount': data.itemcount,
-                    'mobilecount': data.mobilecount,
-                    'onlinecount': data.onlinecount,
-                    'polversion': data.polversion,
-                    'serverload': data.serverload,
-                    'uptime': data.uptime
-                }}, { upsert: true }, (err, res) => {
-                
-                    if (err) throw err;
-    
-                    console.log('Updated record: ' + elem.serial);
-                });
+
+                //Det här går att lägga in elem.serial i en array
+
+            var d = new Date();    
+            dbo.collection('serverstatsservice').insertOne({ 
+                'accounts': data.accounts,
+                'guildcount': data.guildcount,
+                'itemcount': data.itemcount,
+                'mobilecount': data.mobilecount,
+                'onlinecount': data.onlinecount,
+                'polversion': data.polversion,
+                'serverload': data.serverload,
+                'uptime': data.uptime,
+                'uploaded' : d
+            }, { upsert: true }, (err, res) => {
+        
+            if (err) throw err;
+
             });
-            db.close();
-        });
+                
+                // closing db-connection.
+                db.close();
+             
+         });
     }
 
     // Update server statistics
-    static async UpdateOnlinePlayers(data) {
-        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
-            if (err) throw err;
-            
-            var dbo = db.db(config.database.dbname);
-            const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
+    static async UpdateOnlinePlayers(data) {   
     
-            data.forEach(async (elem) => {
-                dbo.collection('onlineplayerservice').findOneAndUpdate({ 'serial': elem.serial }, { $set: { 
-                    'name': elem.name,
-                    'gender': elem.gender,
-                    'race': elem.race,
-                    'title_guild': elem.title_guild,
-                    'title_prefix': elem.title_prefix,
-                    'title_suffix': elem.title_suffix,
-                    'title_race': elem.title_race,
-                    'guild': elem.guild,
-                    'murderer': elem.murderer
-                }}, { upsert: true }, (err, res) => {
+         // Insert all data into array.
+        let deleteArray = data.map(function(elem) { return elem.serial; });
+        let toBeDeleted = [];
+
+        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async function(err,db){
+                if (err) throw err;
+            
+                var dbo = db.db(config.database.dbname);
+
+                data.forEach((elem) => {    
+                    dbo.collection('onlineplayerservice').findOneAndUpdate({ 'serial': elem.serial }, { $set: { 
+                        'name': elem.name,
+                        'gender': elem.gender,
+                        'race': elem.race,
+                        'title_guild': elem.title_guild,
+                        'title_prefix': elem.title_prefix,
+                        'title_suffix': elem.title_suffix,
+                        'title_race': elem.title_race,
+                        'guild': elem.guild,
+                        'murderer': elem.murderer
+                    }}, { upsert: true }, (err, res) => {
                 
                     if (err) throw err;
     
-                    console.log('Update Online Players: updated record: ' + elem.serial);
+                    });
                 });
-    
-                console.log('Done updating all records!');
-            });
-            db.close();
+
+  
+                
+                // Get the current documents from "inventory" collection".
+                const res = await dbo.collection("onlineplayerservice").find({}).toArray();  
+                // Iterate through res array and see if res element exists in deleteArray
+                res.forEach((elem) =>{
+                    if(!deleteArray.includes(elem.serial)){
+                        toBeDeleted.push(elem);
+                    }
+                });
+
+                // Iterate through toBeDeleted and delete it from collection.
+                toBeDeleted.forEach((elem) =>{
+                    dbo.collection("onlineplayerservice").findOneAndDelete({ 'serial': elem.serial});
+                }); 
+
+                // closing db-connection.
+                db.close();
+            
         });
+
+
     }
 
-    static async UpdateGuilds(data) {
-        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
-            if (err) throw err;
-            
-            var dbo = db.db(config.database.dbname);
-            const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
-    
-            data.forEach(async (elem) => {
-                dbo.collection('guildservices').findOneAndUpdate({ 'guildid': elem.guildid }, { $set: { 
-                    'abbr': elem.abbr,
-                    'charter': elem.charter,
-                    'color': elem.color,
-                    'faction': elem.faction,
-                    'master': elem.master,
-                    'name': elem.name,
-                    'stone': elem.stone,
-                    'type': elem.type,
-                    'website': elem.website,
-                    'members': elem.members,
-                    'allies': elem.allies,
-                    'enemies': elem.enemies
-                }}, { upsert: true }, (err, res) => {
-                
-                    if (err) throw err;
-    
-                    console.log('Updated record: ' + elem.serial);
-                });
-    
-                console.log('Done updating all records!');
-            });
-            db.close();
-        });
-    }    
+    static async UpdateGuilds(data) {   
 
+        let deleteArray = data.map(function(elem) { return elem.guildid; });
+        let toBeDeleted = [];
+
+        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async function(err,db){
+                if (err) throw err;
+            
+                var dbo = db.db(config.database.dbname);
+
+                data.forEach(async (elem) => {
+                    dbo.collection('guildservice').findOneAndUpdate({ 'guildid': elem.guildid }, { $set: { 
+                        'abbr': elem.abbr,
+                        'charter': elem.charter,
+                        'color': elem.color,
+                        'faction': elem.faction,
+                        'master': elem.master,
+                        'name': elem.name,
+                        'stone': elem.stone,
+                        'type': elem.type,
+                        'website': elem.website,
+                        'members': elem.members,
+                        'allies': elem.allies,
+                        'enemies': elem.enemies
+                    }}, { upsert: true }, (err, res) => {
+                    
+                        if (err) throw err;
+        
+    
+                    });
+     
+                });
+
+                // Get the current documents from "inventory" collection".
+                const res = await dbo.collection("guildservice").find({}).toArray();  
+                // Iterate through res array and see if res element exists in deleteArray
+                res.forEach((elem) =>{
+                    if(!deleteArray.includes(elem.guildid)){
+                        toBeDeleted.push(elem);
+                    }
+                });
+
+                // Iterate through toBeDeleted and delete it from collection.
+                toBeDeleted.forEach((elem) =>{
+                    dbo.collection("onlineplayerservice").findOneAndDelete({ 'serial': elem.guildid});
+                }); 
+
+
+                db.close();   
+        });
+
+    }  
+    
+    
     static async UploadJSON() { 
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, function(err,db){
             if (err) throw err;
@@ -147,16 +194,11 @@ class MongoDB {
                 
                     if (err) throw err;
     
-                    console.log('UpdateJSON: updated record: ' + elem.serial);
                 });
-    
-               // console.log("Data: "+elem.serial);
-             
             });
-            console.log('Done updating all records!');
             db.close();
         });
-    }    
+    }  
 }
 
 module.exports = MongoDB;
