@@ -133,8 +133,8 @@ class MongoDB {
         });
     }
 
-    static async UploadJSON() {
-        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, (err, db) => {
+    static async UploadJSON() {      
+        MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async (err, db) => {
             if (err) throw err;
 
             // Declaring the database with its name.
@@ -142,6 +142,9 @@ class MongoDB {
 
             // get the data to put in to the DB.
             const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
+
+            let activePlayers = data.map(elem => elem.serial);
+            let toBeDeleted = [];
 
             // Iterate through all the data and insert it into mongo
             data.forEach(async (elem) => {
@@ -160,6 +163,21 @@ class MongoDB {
                 }, (err, res) => {
                     if (err) throw err;
                 });
+            });
+
+             // Get the current documents from "inventory" collection".
+             const res = await dbo.collection("characterservices").find({}).toArray();
+
+             // Iterate through res array and see if res element exists in deleteArray
+             res.forEach((elem) => {
+                 if (!activePlayers.includes(elem.serial) || (activePlayers.length == 0 || activePlayers === undefined)) {
+                     toBeDeleted.push(elem);
+                 }
+             });
+
+             // Iterate through toBeDeleted and delete it from collection.
+            toBeDeleted.forEach((elem) => {
+                dbo.collection("characterservices").findOneAndDelete({ 'serial': elem.serial });
             });
 
             db.close();

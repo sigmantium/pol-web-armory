@@ -1,3 +1,4 @@
+#
 #  PCS.TXT: Player-Character Data
 #
 #  In addition to PC data, this also contains hair, beards, death shrouds,
@@ -32,7 +33,7 @@ Character
 	CProp	SlayerQuest t7:S12:AmountKilleduS12:AmountToKilluS5:Leavei45563S10:LeaveStatei0S9:TemplatesuS4:TimeuS4:Typeu
 	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
 	CProp	craftL i7170
-	CProp	onlinetimer i36677
+	CProp	onlinetimer i37743
 	CmdLevel	dev
 	TrueColor	0x3ea
 	TrueObjtype	0x190
@@ -146,17 +147,19 @@ Character
 	ObjType	0x190
 	Graphic	0x190
 	Color	0x3ea
-	X	6065
-	Y	1244
-	Z	0
-	Facing	2
-	Revision	234
+	X	5854
+	Y	1153
+	Z	7
+	Revision	235
 	Realm	britannia
 	CProp	%RegenRates% d1:S4:manai2750
 	CProp	%TimerList% d0:
 	CProp	Craft d9:S7:Alchemyd5:S6:amounti1S4:lasti56356S4:marki0S6:retaini0S5:skillS7:AlchemyS11:Blacksmithyd5:S6:amounti1S4:lasti61454S4:marki1S6:retaini0S5:skillS11:BlacksmithyS17:BowcraftFletchingd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS17:BowcraftFletchingS9:Carpentryd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:CarpentryS11:Cartographyd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS11:CartographyS11:Inscriptiond5:S6:amounti4S4:lasti7983S4:marki0S6:retaini0S5:skillS11:InscriptionS7:cookingd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS7:cookingS9:tailoringd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:tailoringS9:tinkeringd5:S6:amounti1S4:lasti0S4:marki1S6:retaini0S5:skillS9:tinkering
 	CProp	CreationDate i54227
 	CProp	Fame i0
+	CProp	Fealty i5475
+	CProp	Guild_Clothing i1073817480
+	CProp	Guild_Rank i5
 	CProp	Karma i0
 	CProp	LastDamage t5:S6:amounti17S4:nameS16:a stone gargoyleS6:seriali5532S4:timei1548168802S4:typei-1
 	CProp	Pets d1:i5520i1
@@ -165,12 +168,13 @@ Character
 	CProp	Stolen_from_last_serial i5485
 	CProp	Stolen_timer i166985
 	CProp	craftL i56356
-	CProp	onlinetimer i126282
+	CProp	onlinetimer i139400
 	CProp	setautoDict d2:S7:Fishingi1S6:Miningi1
 	CProp	swings i25
 	CmdLevel	dev
 	TrueColor	0x3ea
 	TrueObjtype	0x190
+	RegisteredHouse	0x40012780
 	Gender	0
 	Race	0
 	MountedSteps	525
@@ -237,6 +241,7 @@ Character
 	Privs	seeinvisitems 
 	Settings	seeinvisitems 
 	CreatedAt	54227
+	TitleGuild	"GuildMaster, [ROB]"
 }
 
 Item
@@ -288,7 +293,7 @@ Item
 	CProp	EquippedOn i5475
 	Layer	21
 	Container	0x1563
-	DecayAt	197593
+	DecayAt	218523
 }
 
 Character
@@ -966,12 +971,101 @@ Item
 	DecayAt	207924
 }
 
+Character
+{
+	Account	player
+	CharIdx	0
+	Name	Player
+	Serial	0x15a1
+	ObjType	0x190
+	Graphic	0x190
+	Color	0x3ea
+	X	535
+	Y	992
+	Z	0
+	Facing	6
+	Revision	0
+	Realm	britannia
+	CProp	%RegenRates% d2:S6:hungeri-1400S4:manai1550
+	CProp	%TimerList% d0:
+	CProp	CreationDate i222388
+	CProp	Pets d0:
+	CProp	StatLocks d3:S9:Dexterityi0S12:Intelligencei0S8:Strengthi0
+	CProp	hunger i9
+	CProp	onlinetimer i675
+	TrueColor	0x3ea
+	TrueObjtype	0x190
+	Gender	0
+	Race	0
+	Strength	44
+	Intelligence	10
+	Dexterity	11
+	Alchemy	50
+	BowcraftFletching	50
+	Hits	44
+	Mana	10
+	Stamina	11
+	Hunger	30
+	FollowersMax	5
+	CreatedAt	222387
+}
+
+Item
+{
+	Serial	0x40012789
+	ObjType	0x203b
+	Graphic	0x203b
+	Color	0x44e
+	X	0
+	Y	0
+	Z	0
+	Facing	11
+	Revision	0
+	Realm	britannia
+	Layer	11
+	Container	0x15a1
+	DecayAt	222987
+}
+
+Item
+{
+	Serial	0x4001278a
+	ObjType	0xe75
+	Graphic	0xe75
+	X	0
+	Y	0
+	Z	0
+	Facing	21
+	Revision	0
+	Realm	britannia
+	Layer	21
+	Container	0x15a1
+	DecayAt	222987
+}
+
 #
 #  PCEQUIP.TXT: Player-Character Equipment Data
 #
 #  This file can be deleted to wipe all items held/equipped by characters
 #  Note that hair, beards, empty backpacks, and death shrouds are in PCS.TXT.
 #
+
+Item
+{
+	Serial	0x4001260b
+	ObjType	0xf4e
+	Graphic	0xf4e
+	X	0
+	Y	0
+	Z	0
+	Facing	2
+	Revision	1
+	Realm	britannia
+	CProp	EquippedOn i2389
+	Layer	2
+	Container	0x955
+	DecayAt	214642
+}
 
 Item
 {
@@ -1128,7 +1222,7 @@ Item
 	CProp	EquippedOn u
 	Layer	22
 	Container	0x955
-	DecayAt	36446
+	DecayAt	214571
 }
 
 Item
@@ -1294,30 +1388,15 @@ Item
 
 Item
 {
-	Serial	0x40011e6d
-	ObjType	0xeed
-	Graphic	0xeed
-	X	65
-	Y	92
-	Z	0
-	Revision	1
-	Realm	britannia
-	Amount	60000
-	Container	0x40006a03
-	DecayAt	192887
-}
-
-Item
-{
 	Serial	0x40011e79
 	ObjType	0xeed
 	Graphic	0xeed
 	X	111
 	Y	85
 	Z	0
-	Revision	1
+	Revision	3
 	Realm	britannia
-	Amount	60000
+	Amount	32000
 	Container	0x40006a03
 	DecayAt	192886
 }
@@ -1410,6 +1489,39 @@ Item
 	Amount	60000
 	Container	0x40006a03
 	DecayAt	195414
+}
+
+Item
+{
+	Serial	0x4001277d
+	ObjType	0x100f
+	Graphic	0x100f
+	X	54
+	Y	93
+	Z	0
+	Revision	1
+	Realm	britannia
+	CProp	LockId i44
+	Container	0x40006a03
+	DecayAt	218512
+}
+
+Item
+{
+	Name	Robins Guild [ROB]
+	Serial	0x40012788
+	ObjType	0x1541
+	Graphic	0x1541
+	Color	0x483
+	X	92
+	Y	94
+	Z	0
+	Facing	17
+	Revision	3
+	Realm	britannia
+	Container	0x40006a03
+	DecayAt	218535
+	Newbie	1
 }
 
 Item
@@ -3512,5 +3624,234 @@ Item
 	Realm	britannia
 	Container	0x400124bf
 	DecayAt	207924
+}
+
+Item
+{
+	Serial	0x4001278d
+	ObjType	0xf51
+	Graphic	0xf51
+	X	0
+	Y	0
+	Z	0
+	Facing	1
+	Revision	0
+	Realm	britannia
+	Layer	1
+	Container	0x15a1
+	DecayAt	222987
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001278c
+	ObjType	0x170f
+	Graphic	0x170f
+	Color	0x21f
+	X	0
+	Y	0
+	Z	0
+	Facing	3
+	Revision	0
+	Realm	britannia
+	Layer	3
+	Container	0x15a1
+	DecayAt	222987
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001278e
+	ObjType	0x152e
+	Graphic	0x152e
+	Color	0x35f
+	X	0
+	Y	0
+	Z	0
+	Facing	4
+	Revision	0
+	Realm	britannia
+	Layer	4
+	Container	0x15a1
+	DecayAt	222987
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001278f
+	ObjType	0x1517
+	Graphic	0x1517
+	Color	0x84
+	X	0
+	Y	0
+	Z	0
+	Facing	5
+	Revision	0
+	Realm	britannia
+	Layer	5
+	Container	0x15a1
+	DecayAt	222987
+	Newbie	1
+}
+
+Item
+{
+	Serial	0x4001278b
+	ObjType	0xeed
+	Graphic	0xeed
+	X	46
+	Y	91
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	200
+	Container	0x4001278a
+	DecayAt	222987
+}
+
+Item
+{
+	Name	 
+	Serial	0x40012790
+	ObjType	0xfef
+	Graphic	0xfef
+	X	131
+	Y	88
+	Z	0
+	Revision	2
+	Realm	britannia
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012791
+	ObjType	0xe9b
+	Graphic	0xe9b
+	X	101
+	Y	93
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012792
+	ObjType	0xf0e
+	Graphic	0xf0e
+	X	89
+	Y	77
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	4
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012793
+	ObjType	0x1f03
+	Graphic	0x1f03
+	X	141
+	Y	139
+	Z	0
+	Facing	22
+	Revision	1
+	Realm	britannia
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012794
+	ObjType	0xf84
+	Graphic	0xf84
+	X	134
+	Y	68
+	Z	0
+	Revision	2
+	Realm	britannia
+	Amount	6
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012795
+	ObjType	0xf7a
+	Graphic	0xf7a
+	X	129
+	Y	99
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	3
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012796
+	ObjType	0xf86
+	Graphic	0xf86
+	X	73
+	Y	115
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	3
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012797
+	ObjType	0x1057
+	Graphic	0x1057
+	X	138
+	Y	92
+	Z	0
+	Revision	1
+	Realm	britannia
+	Container	0x4001278a
+	DecayAt	222988
+}
+
+Item
+{
+	Serial	0x40012798
+	ObjType	0x14eb
+	Graphic	0x14eb
+	X	45
+	Y	74
+	Z	0
+	Revision	1
+	Realm	britannia
+	Amount	4
+	Container	0x4001278a
+	DecayAt	222988
+	xwest	0
+	ynorth	0
+	xeast	0
+	ysouth	0
+	gumpwidth	0
+	gumpheight	0
+	facetid	0
+	editable	1
+	NumPins 0
+
 }
 

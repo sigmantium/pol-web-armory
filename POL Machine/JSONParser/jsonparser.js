@@ -18,6 +18,7 @@ class JSONParser {
     }
 
     static readFile(inPath, outPath, regex) {
+      
       let outData = [];
       let character = 0;
       let item = 0;

@@ -15,7 +15,8 @@ app.use(bodyParser.json());
 app.post('/', async (req, res) => {
     const incomingData = req.body;
 
-    filefunction.mergeFiles('./../POL/data/pcs.txt','./../POL/data/pcequip.txt',"./data/pcs_pcequip.txt");
+    // This function will take pcs.txt and pcequp.txt and make pcs_pcequip.txt
+    await filefunction.mergeFiles('./../POL/data/pcs.txt','./../POL/data/pcequip.txt',"./data/pcs_pcequip.txt"); 
 
     const testData = JSON.parse(fs.readFileSync('./data/server.json'));
 
@@ -28,11 +29,11 @@ app.post('/', async (req, res) => {
     // Update guilds data
     await MongoDB.UpdateGuilds(testData[2].guilds);
 
-    // Parse the data files into JSON
-    //await JSONParser.StartJSONParser();
+    // Parse the data file pcs_pcequip.txt into JSON.
+    await JSONParser.StartJSONParser();
 
     // Upload changes to MongoDB
-    //await MongoDB.UploadJSON(); 
+    await MongoDB.UploadJSON(); 
 
     // Send pack response
     res.writeHead(200, {'Content-Type': 'text/html'});
