@@ -40,7 +40,7 @@ export class ArmoryComponent implements OnInit {
    * ngOnInit Description
    * Initiates and assigns all variables
    * @async
-   * @method ServerStatisticsComponent#ngOnInit
+   * @method ArmoryComponent#ngOnInit
    * @returns {Promise<void>}
    */
   async ngOnInit(): Promise<void> {
@@ -51,10 +51,35 @@ export class ArmoryComponent implements OnInit {
   /**
    * valueChanged Description
    * Event-based function attached to a select-component
+   * @method ArmoryComponent#valueCHanged
+   * @returns {void}
    */
   public valueChanged(): void {
     this.character = this.characters.filter(char => char.name === this.selectedCharacter);
-    this.armorySubject.next(this.character[0].equipment);
+
+    // Add body objtype
+    const equipment = this.addBodyEquipment(this.character[0]);
+
+    // Register it to the subject
+    this.armorySubject.next(equipment);
+  }
+
+  /**
+   * addBodyEquipment
+   * @param character The character to add body graphic to equipment
+   * @method ArmoryComponent#addBodyEquipment
+   * @returns {Equipment[]}
+   */
+  private addBodyEquipment(character: Character): Equipment[] {
+    const equipment = character.equipment;
+
+    if (character.gender === 0) {
+      equipment.push(new Equipment({'ObjType': 13, 'Color': 0, 'Layer': 0}));
+    } else {
+      equipment.push(new Equipment({'ObjType': 13, 'Color': 0, 'Layer': 0}));
+    }
+
+    return equipment;
   }
 
   /**
