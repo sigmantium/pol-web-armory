@@ -62,8 +62,13 @@ class JSONParser {
                 if(!(item && config.parserwords.excludeequipmentsword.indexOf(word) > -1)){
                   if(word)
                     lineNameArray.push(word.toLowerCase());
-                  if(value)
+                  if(value && !(word == 'Name')){
                     lineValueArray.push(value.toLowerCase());
+                  }else{
+                    lineValueArray.push(value);
+                  }
+                    
+
                 }  
               }
             }
