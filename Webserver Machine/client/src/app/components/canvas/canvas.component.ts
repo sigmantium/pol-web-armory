@@ -52,7 +52,8 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
       // Assign event to equipmentInfo
       this.equipmentInfo = event;
 
-      console.log('Equipment info: ' + this.equipmentInfo);
+      // Remove the backpack from the array
+      this.equipmentInfo = this.equipmentInfo.filter(item => item.objtype.toString() !== '0xe75');
 
       // Sort the array based on layers
       this.equipmentInfo.sort((a, b) => a.layer - b.layer);
