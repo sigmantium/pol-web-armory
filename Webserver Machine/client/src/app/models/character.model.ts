@@ -9,6 +9,8 @@ export class Character {
     account: string;
     serial: number;
     name: string;
+    gender: number;
+    color: number;
     stats: Stat[];
     skills: Skill[];
     equipment: Equipment[];
@@ -32,6 +34,8 @@ export class Character {
         this.account = data.account || null;
         this.serial = data.serial || null;
         this.name = data.name || null;
+        this.gender = data.gender || 0;
+        this.color = data.color || 0;
         this.stats = data.stats || null;
         this.skills = data.skills || null;
         this.equipment = data.equipment || null;
