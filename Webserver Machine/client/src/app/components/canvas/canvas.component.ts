@@ -17,21 +17,20 @@ import { Equipment } from 'src/app/models/equipment.model';
 export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
   // Variables for the Canvas
   @Input()
-  armorySubject: Subject<Equipment[]>;
-
-  @ViewChild('canvas')
-  public canvas: ElementRef;
-
-  @Input()
-  public width = 260;
-
-  @Input()
-  public height = 237;
-
-  private cx: CanvasRenderingContext2D;
+  private armorySubject: Subject<Equipment[]>;
 
   // Equipment to show
-  equipmentInfo: Equipment[];
+  private equipmentInfo: Equipment[];
+
+  // Canvas-related
+  private cx: CanvasRenderingContext2D;
+
+  @ViewChild('canvas')
+  private canvas: ElementRef;
+
+  private height: any = 237;
+
+  private width: any = 260;
 
   /**
    * Class Description Title
@@ -52,7 +51,8 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
       // Assign event to equipmentInfo
       this.equipmentInfo = event;
 
-      console.log('Equipment info: ' + this.equipmentInfo);
+      // Remove the backpack from the array
+      this.equipmentInfo = this.equipmentInfo.filter(item => item.objtype.toString() !== '0xe75');
 
       // Sort the array based on layers
       this.equipmentInfo.sort((a, b) => a.layer - b.layer);
@@ -78,7 +78,7 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
    * @method CanvasComponent#ngAfterViewInit
    * @returns {void}
    */
-  public ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     // Get context
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.cx = canvasEl.getContext('2d');
@@ -101,6 +101,8 @@ export class CanvasComponent implements OnInit, OnDestroy, AfterViewInit {
     // Create Image object and attach image
     const image = new Image();
     image.src = './assets/images/' + objtype + '.png';
+
+    console.log('Image source is: ' + image.src);
 
     // Once the image is loaded
     image.onload = () => {

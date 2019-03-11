@@ -19,16 +19,8 @@ const routes: Routes = [
   { path: 'online-players', component: PlayersComponent },
   { path: 'guilds', component: GuildsComponent },
   { path: 'armory', component: ArmoryComponent },
-  {
-    path: 'wiki',
-    component: WikiComponent,
-    children: [
-      {
-        path: ':id',
-        component: WikiDetailComponent
-      }
-    ]
-  }
+  { path: 'wiki', component: WikiComponent },
+  { path: 'wiki/:skill', component: WikiDetailComponent }
 ];
 
 @NgModule({

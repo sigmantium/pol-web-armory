@@ -9,7 +9,7 @@ export class ServerStats {
     polversion: number;
     serverload: number;
     uptime: string;
-    date: Date;
+    uploaded: Date;
 
     /**
      * Class Description Title
@@ -27,14 +27,14 @@ export class ServerStats {
      */
     setData(data: any): void {
         this.id = data._id || null;
-        this.accounts = data.accounts || null;
-        this.guildcount = data.guildcount || null;
+        this.accounts = data.accounts || 0;
+        this.guildcount = data.guildcount || 0;
         this.itemcount = data.itemcount || null;
         this.mobilecount = data.mobilecount || null;
-        this.onlinecount = data.onlinecount || null;
+        this.onlinecount = data.onlinecount || 0;
         this.polversion = data.polversion || null;
-        this.serverload = data.serverload || null;
+        this.serverload = data.serverload || 0;
         this.uptime = data.uptime || null;
-        this.date = data.date || null;
+        this.uploaded = data.uploaded || null;
     }
 }

@@ -20,7 +20,7 @@ export interface IImage {
 })
 export class SliderComponent {
   // Image file paths
-  imageUrls: (string | IImage)[] = [
+  private imageUrls: (string | IImage)[] = [
     { url: 'assets/images/slideshow/shrines.jpg' },
     { url: 'assets/images/slideshow/dung02.jpg' },
     { url: 'assets/images/slideshow/jail.jpg' },

@@ -59,7 +59,7 @@ export class ServerStatisticsComponent implements OnInit {
 
     // Map and re-format date to use for the chart
     const dateInterval = this.serverStats.map(obj =>
-      new Date(obj.date).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
+      new Date(obj.uploaded).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
     );
 
     // Generate the chart

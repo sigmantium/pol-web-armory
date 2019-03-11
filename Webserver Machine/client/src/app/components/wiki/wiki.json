@@ -1,8 +1,8 @@
 {
     "alchemy": {
-        "title": "Title (Alchemy)",
-        "description": "This is a description for Alchemy",
-        "training": "Training guide for alchemy"
+        "title": "Alchemy",
+        "description": "<p>Alchemists is an ancient practise used to brew magical potions. In order to brew potions you use a mortar and pestle, reagents and empty bottles, which can be poured into potion kegs for storing large amount of liquids. Potion kegs can be crafted using Carpentry and Tinkering.&nbsp;</p><p>Alchemy is required to turn raw reagents into ready-to-use reagents. Every 10% skillpoint in Alchemy rewards you with one extra reagent from a raw reagent. Example: if you have 50% Alchemy you will transform one raw reagent into 5 reagents.</p> <p><strong>Craftables</strong></p><table><tbody><tr><td>Img</td><td>Potion Type</td><td>Required Skill</td><td>Required Reagents</td><td>Magical Effect</td><td>Time of effect or delay</td></tr><tr><td>&nbsp;</td><td>Lesser Heal</td><td>1%</td><td>1 Ginseng</td><td>Heals 10 - 19 HP</td><td>15 seconds delay</td></tr></tbody></table>",
+        "training": "You can increase your skill in Alchemy to 33% by vendor training it for 330 gold pieces at Alchemists, Herbalists and Librarians. In order to increase the skill above 33% you can use the following guide:"
     },
     "anatomy": {
         "title": "Title (Anatomy)",

@@ -61,7 +61,7 @@ export class ServerStatsService {
       query: {
         $limit: 1,
         $sort: {
-          date: -1
+          uploaded: 1
         }
       }
     }).then((results: any) => {
@@ -81,9 +81,9 @@ export class ServerStatsService {
   private async apiGetAll(): Promise<ServerStats[]> {
     return await this.service.find({
       query: {
-        $limit: 10,
+        $limit: 1000,
         $sort: {
-          date: 1
+          uploaded: 1
         }
       }
     }).then((results: any) => {

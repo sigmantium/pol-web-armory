@@ -45,7 +45,7 @@ export class PlayersComponent implements OnInit {
   // Table-related variables
   private data: PlayerElement[];
   public dataSource: any;
-  public displayedColumns: string[] = [
+  public columnHeaders: string[] = [
     'name',
     'gender',
     'race',
@@ -86,7 +86,7 @@ export class PlayersComponent implements OnInit {
     // Map and re-format date
     const onlineCount =  this.serverStats.map(obj => obj.onlinecount);
     const dateInterval = this.serverStats.map(obj =>
-      new Date(obj.date).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
+      new Date(obj.uploaded).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })
     );
 
     // Prepare data for table

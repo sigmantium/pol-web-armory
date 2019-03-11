@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // JSON
-// import WikiPage from '../wiki.json';
+import wiki from '../wiki.json';
 
 @Component({
   selector: 'app-wiki-detail',
@@ -13,28 +13,26 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./wiki-detail.component.css']
 })
 export class WikiDetailComponent implements OnInit {
-  private id: number;
-  private wikiPage: Object;
+  private skill: string;
+  private title: string;
+  private description: string;
+  private training: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
-  ngOnInit() {
-    this.id = Number(this.route.snapshot.params['id']);
+  ngOnInit(): void {
+    this.skill = this.route.snapshot.paramMap.get('skill');
 
-    // console.log('Wikipage: ' + WikiPage);
-
-    this.wikiPage = {
-      'title': 'Alchemy',
-      'description': 'Description for alchemy',
-      'training': 'Do this and this...'
-    };
-
-    if (!this.wikiPage) {
-      this.router.navigate(['/not-found']);
+    if (!wiki.hasOwnProperty(this.skill)) {
+      this.router.navigate(['wiki']);
     }
+
+    this.title = wiki[this.skill].title;
+    this.description  = wiki[this.skill].description;
+    this.training = wiki[this.skill].training;
   }
 
 }

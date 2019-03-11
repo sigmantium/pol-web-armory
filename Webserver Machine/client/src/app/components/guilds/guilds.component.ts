@@ -35,7 +35,7 @@ export class GuildsComponent implements OnInit {
   // Table-related variables
   private data: GuildElement[];
   public dataSource: any;
-  public displayedColumns: string[] = [
+  public columnHeaders: string[] = [
     'guildid',
     'abbr',
     'name',

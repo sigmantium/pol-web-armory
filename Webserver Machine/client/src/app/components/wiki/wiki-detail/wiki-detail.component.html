@@ -1,3 +1,14 @@
-<p>
-  wiki-detail works!
-</p>
+<ng-container *ngIf="title && description && training; else noSkill">
+  <h2>{{ title }}</h2><br/>
+
+  <h3>Description</h3>
+  <p [innerHTML]="description"></p>
+
+  <h3>Training</h3>
+  <p [innerHTML]="training"></p>
+  <br/><br/>
+</ng-container>
+
+<ng-template #noSkill>
+  <p>The skill does not exist</p>
+</ng-template>

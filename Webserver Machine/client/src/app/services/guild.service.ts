@@ -73,7 +73,9 @@ export class GuildService {
    */
   private async apiGetAll(): Promise<Guild[]> {
     return await this.service.find({
-      $limit: 1000
+      query: {
+        $limit: 1000,
+      }
     }).then((results: any) => {
       if (results.data && results.data.length > 0) {
         return results.data.map((item: any) => new Guild(item));
