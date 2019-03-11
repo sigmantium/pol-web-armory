@@ -25,7 +25,7 @@ class JSONParser {
     */
     static StartJSONParser() {
         console.log('Starting JSON parser...');
-        this.readFile(config.files.filename, config.files.parsedFilename, new RegExp("[^\\n\\r\\t ]+", 'g'));
+        this.readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
     }
 
     /**
@@ -174,18 +174,33 @@ class JSONParser {
     return line == '{' || line == '}';
   }
 
+  /**
+  *  Function that fill all skills in data array.
+  *  @method JSONParser#fillSkills
+  *  @static
+  */
   static fillSkills(){
     for(var i in skillsNameArray){
         data.skills.push( {"name" : skillsNameArray[i], "value": skillsValueArray[i]});
     }
   }
 
+  /**
+  *  Function that fill all stats in data array.
+  *  @method JSONParser#fillStats
+  *  @static
+  */
   static fillStats(){
     for(var i in statsNameArray){
         data.stats.push( {"name" : statsNameArray[i], "value": statsValueArray[i]});
     }
   }
 
+  /**
+  *  Function that resets the arrays.
+  *  @method JSONParser#fillSkills
+  *  @static
+  */
   static resetValues() {
     data = [];
     lineNameArray = [];
@@ -197,6 +212,13 @@ class JSONParser {
     curlyBrackets = 0;
   }
 
+  /**
+  * Function that check the braces.
+  *  @method JSONParser#writeFile
+  *  @static
+  *  @param {any} data data that should be written.
+  *  @param {any} path the path where the data should be written.
+  */
   static writeFile(data, path) {
     let jsonOut = fs.createWriteStream(path);
     jsonOut.write(JSON.stringify(data));

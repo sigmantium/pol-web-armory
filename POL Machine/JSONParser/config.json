@@ -4,12 +4,6 @@
         "port": "27017",
         "dbname": "armory_backend"
     },
-    "files": [
-        { 
-        "filename": "./data/pcs_pcequip.txt",
-        "parsedFilename": "./data/pcs_pcequip.json"
-        }
-    ],
     "parserwords": {
         "excludewords" : [
             "Character",
