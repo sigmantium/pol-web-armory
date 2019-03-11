@@ -156,7 +156,9 @@ class MongoDB {
                         'name': elem.name,
                         'stats': elem.stats,
                         'skills': elem.skills,
-                        'equipment': elem.equipment
+                        'equipment': elem.equipment,
+                        'gender': elem.gender,
+                        'color': elem.color
                     }
                 }, {
                     upsert: true
