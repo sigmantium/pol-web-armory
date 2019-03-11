@@ -1,15 +1,15 @@
 // config file.
-const config = require('./config.json');
+const config = require('./config/config.json');
 
 // NPM packages.
 const fs = require('fs');
 const MongoClient = require('mongodb').MongoClient;
 
-class MongoDB {
+class MongoDBAdapter {
 
     /**
     * Class Description Title
-    * @class MongoDB
+    * @class MongoDBAdapter
     * @classdesc MongoDB adapter class
     * @hideconstructor
     */
@@ -19,7 +19,7 @@ class MongoDB {
 
     /**
     * Inserts the server statistic into mongoDB database.
-    * @method MongoDB#UpdateServerStats
+    * @method MongoDBAdapter#UpdateServerStats
     * @static
     * @async
     * @param {any} data the data that is needed to be added to the database
@@ -51,7 +51,7 @@ class MongoDB {
 
         /**
     * Inserts current online players into mongoDB database.
-    * @method MongoDB#UpdateOnlinePlayers
+    * @method MongoDBAdapter#UpdateOnlinePlayers
     * @static
     * @async
     * @param {any} data the data that is needed to be added to the database
@@ -108,7 +108,7 @@ class MongoDB {
 
            /**
     * Inserts current active guilds into mongoDB database.
-    * @method MongoDB#UpdateGuilds
+    * @method MongoDBAdapter#UpdateGuilds
     * @static
     * @async
     * @param {any} data the data that is needed to be added to the database
@@ -163,7 +163,7 @@ class MongoDB {
 
            /**
     * Inserts all current players on the server into mongoDB database.
-    * @method MongoDB#UploadJSON
+    * @method MongoDBAdapter#UploadJSON
     * @static
     * @async
     */
@@ -222,4 +222,4 @@ class MongoDB {
     }
 }
 
-module.exports = MongoDB;
+module.exports = MongoDBAdapter;

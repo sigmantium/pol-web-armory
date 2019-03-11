@@ -1,7 +1,7 @@
 const _ = require('underscore');
 const split = require('split');
 const fs = require('fs');
-const config = require('./config.json');
+const config = require('./config/config.json');
 
 let lineNameArray = [], lineValueArray = [];
 let statsNameArray = [], statsValueArray = [];
