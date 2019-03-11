@@ -15,19 +15,17 @@ app.use(bodyParser.json());
 app.post('/', async (req, res) => {
     const incomingData = req.body;
 
-    // This function will take pcs.txt and pcequp.txt and make pcs_pcequip.txt
+    // This function will take pcs.txt and pcequp.txt as argumentsand make pcs_pcequip.txt of it.
     await filefunction.mergeFiles('./../POL/data/pcs.txt','./../POL/data/pcequip.txt',"./data/pcs_pcequip.txt"); 
 
-    const testData = JSON.parse(fs.readFileSync('./data/server.json'));
-
     // Update server statistics
-    await MongoDB.UpdateServerStats(testData[0]);
+    await MongoDB.UpdateServerStats(incomingData[0]);
 
     // Update online players data
-    await MongoDB.UpdateOnlinePlayers(testData[1].onlineplayers);
+    await MongoDB.UpdateOnlinePlayers(incomingData[1].onlineplayers);
 
     // Update guilds data
-    await MongoDB.UpdateGuilds(testData[2].guilds);
+    await MongoDB.UpdateGuilds(incomingData[2].guilds);
 
     // Parse the data file pcs_pcequip.txt into JSON.
     await JSONParser.StartJSONParser();
@@ -40,5 +38,6 @@ app.post('/', async (req, res) => {
     res.end('Done');
 });
 
+// The app listens to port 8888.
 app.listen(8888);
 console.log('Listening at http://localhost:8888');

@@ -4,18 +4,10 @@
         "port": "27017",
         "dbname": "armory_backend"
     },
-    "ftp": {
-        "host": "localhost",
-        "port": "21",
-        "username": "test",
-        "password": "test"
-    },
     "files": [
         { 
-        "filename": "pcs_pcequip.txt",
-        "parsedFilename": "pcs_pcequip.json",
-        "collectionname": "characterservices",
-        "required": true
+        "filename": "./data/pcs_pcequip.txt",
+        "parsedFilename": "./data/pcs_pcequip.json"
         }
     ],
     "parserwords": {

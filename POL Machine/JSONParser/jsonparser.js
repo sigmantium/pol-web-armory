@@ -10,13 +10,32 @@ let data;
 
 let curlyBrackets = 0;
 
+/**
+* Class Description Title
+* @class JSONParser
+* @classdesc Class that parse .txt file into json.
+*/
 class JSONParser {
 
+  
+    /**
+    * Function that starts the parser
+    * @method JSONParser#StartJSONParser
+    * @static
+    */
     static StartJSONParser() {
         console.log('Starting JSON parser...');
-        this.readFile("./data/pcs_pcequip.txt", "./data/pcs_pcequip.json", new RegExp("[^\\n\\r\\t ]+", 'g'));
+        this.readFile(config.files.filename, config.files.parsedFilename, new RegExp("[^\\n\\r\\t ]+", 'g'));
     }
 
+    /**
+    * Function that starts the parser
+    * @method JSONParser#StartJSONParser
+    * @static
+    * @param {any} inPath Parameter showing which txt file should be parsed
+    * @param {any} outPath Parameter showing where to put the JSON-file.
+    * @param {any} regex Sequence of characters that defines the pattern.
+    */
     static readFile(inPath, outPath, regex) {
       
       let outData = [];
@@ -109,6 +128,13 @@ class JSONParser {
     });
   }
 
+  /**
+  * This function has the task of replacing objType in each object to a gumpid. 
+  * Gumpid is the value that images have, so it will be used in the visualization of characters.
+  * @method JSONParser#changeGumpid
+  * @static
+  * @param {any} outData Data that stores all characters. 
+  */
   static changeGumpid(outData){
     var gumpid = fs.readFileSync("objtype_to_gumpid.json");
     var data = JSON.parse(gumpid);
@@ -137,6 +163,13 @@ class JSONParser {
   }
   }
 
+  /**
+   * Function that check the braces.
+  *  @method JSONParser#foundCurlyBrackets
+  *  @static
+  *  @param {any} line Each line in txt file.
+  *  @return {any} if brackets is found. return 1, else 0.
+  */
   static foundCurlyBrackets(line) {
     return line == '{' || line == '}';
   }

@@ -1,14 +1,29 @@
+// config file.
 const config = require('./config.json');
+
+// NPM packages.
 const fs = require('fs');
 const MongoClient = require('mongodb').MongoClient;
 
 class MongoDB {
-    // Constructor
+
+    /**
+    * Class Description Title
+    * @class MongoDB
+    * @classdesc MongoDB adapter class
+    * @hideconstructor
+    */
     constructor() {
-        this.db = null;
+        
     }
 
-    // Update server statistics
+    /**
+    * Inserts the server statistic into mongoDB database.
+    * @method MongoDB#UpdateServerStats
+    * @static
+    * @async
+    * @param {any} data the data that is needed to be added to the database
+    */
     static async UpdateServerStats(data) {
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async (err, db) => {
 
@@ -34,7 +49,13 @@ class MongoDB {
         });
     }
 
-    // Update server statistics
+        /**
+    * Inserts current online players into mongoDB database.
+    * @method MongoDB#UpdateOnlinePlayers
+    * @static
+    * @async
+    * @param {any} data the data that is needed to be added to the database
+    */
     static async UpdateOnlinePlayers(data) {
         // Insert all data into array.
         let onlinePlayers = data.map(elem => elem.serial);
@@ -85,6 +106,13 @@ class MongoDB {
 
     }
 
+           /**
+    * Inserts current active guilds into mongoDB database.
+    * @method MongoDB#UpdateGuilds
+    * @static
+    * @async
+    * @param {any} data the data that is needed to be added to the database
+    */
     static async UpdateGuilds(data) {
         let activeGuilds = data.map(elem => elem.guildid);
         let toBeDeleted = [];
@@ -114,10 +142,10 @@ class MongoDB {
                 });
             });
 
-            // Get the current documents from "inventory" collection".
+            // Get the current documents from "guildservices" collection".
             const res = await dbo.collection("guildservices").find({}).toArray();
 
-            // Iterate through res array and see if res element exists in deleteArray
+            // Iterate through res array and see if res element exists in the array that shows current active guilds.
             res.forEach(elem => {
                 if (!activeGuilds.includes(elem.guildid) || (activeGuilds.length == 0 || activeGuilds === undefined)) {
                     toBeDeleted.push(elem);
@@ -133,20 +161,27 @@ class MongoDB {
         });
     }
 
+           /**
+    * Inserts all current players on the server into mongoDB database.
+    * @method MongoDB#UploadJSON
+    * @static
+    * @async
+    */
     static async UploadJSON() {      
         MongoClient.connect('mongodb://' + config.database.host + ':' + config.database.port, { useNewUrlParser: true }, async (err, db) => {
             if (err) throw err;
 
-            // Declaring the database with its name.
+            // Database variable.
             const dbo = db.db(config.database.dbname);
 
-            // get the data to put in to the DB.
+            // Get the data to be entered into the database.
             const data = JSON.parse(fs.readFileSync('./data/pcs_pcequip.json'));
 
+            // Sort all data and filter on serial.
             let activePlayers = data.map(elem => elem.serial);
             let toBeDeleted = [];
 
-            // Iterate through all the data and insert it into mongo
+            // Step through all the data and insert it into the database
             data.forEach(async (elem) => {
                 dbo.collection("characterservices").findOneAndUpdate({
                     'serial': elem.serial
@@ -167,7 +202,7 @@ class MongoDB {
                 });
             });
 
-             // Get the current documents from "inventory" collection".
+             // Get all documents from "characterservices" collection.
              const res = await dbo.collection("characterservices").find({}).toArray();
 
              // Iterate through res array and see if res element exists in deleteArray
@@ -177,7 +212,7 @@ class MongoDB {
                  }
              });
 
-             // Iterate through toBeDeleted and delete it from collection.
+            // Iterate through toBeDeleted and delete it from collection.
             toBeDeleted.forEach((elem) => {
                 dbo.collection("characterservices").findOneAndDelete({ 'serial': elem.serial });
             });
