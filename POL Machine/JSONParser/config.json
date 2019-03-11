@@ -63,7 +63,11 @@
             "LastCorpse",
             "Concealed",
             "CmdLevel",
-            "Revision"
+            "Revision",
+            "TitleGuild",
+            "TitleRace",
+            "TitleSuffix",
+            "TitlePrefix"
         ],
         "excludeequipmentsword" : [
             "Serial",
