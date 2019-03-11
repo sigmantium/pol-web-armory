@@ -1,12 +1,11 @@
 // Native libraries
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
 const filefunction = require('./filefunctions');
 
 // Classes
 const JSONParser = require('./jsonparser');
-const MongoDB = require('./dbfunctions');
+const MongoDB = require('./mongodbadapter');
 
 const app = express();
 
